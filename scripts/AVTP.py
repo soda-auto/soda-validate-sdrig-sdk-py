@@ -6,6 +6,7 @@ from scapy.layers.l2 import Ether
 class AVTPPacket(Packet):
     name = "AVTPPacket"
     fields_desc = [
+        #@TODO implement with BitField's
         #AVTP HEADER 1A Length
         XByteField("subtype", 0x82),    # AVTP Subtype: Non Time Synchronous Control Format (0x82) ieee1722.subtype
         ByteField("version_cd", 0x80),  # version and control/data indicator 
@@ -14,9 +15,9 @@ class AVTPPacket(Packet):
         ByteField("data_length", 0x00), # Non-Time-Synchronous Control Format
                                         # .... 0... .... .... = Reserved bits: 0x0
                                         # .... .000 0000 0000 = Data Length: 0
-        ByteField("sequence_number", 0),                 # media-reset, timestamp-valid
-        IntField("stream_id_high", 0),    # High part of Stream ID
-        IntField("stream_id_low", 1),    # Low part of Stream ID
+        ByteField("sequence_number", 0),# media-reset, timestamp-valid
+        IntField("stream_id_high", 0),  # High part of Stream ID
+        IntField("stream_id_low", 1),   # Low part of Stream ID
         
         #ACF-CAN Message:
 
