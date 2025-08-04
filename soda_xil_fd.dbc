@@ -1,0 +1,1307 @@
+VERSION ""
+
+
+NS_ : 
+	NS_DESC_
+	CM_
+	BA_DEF_
+	BA_
+	VAL_
+	CAT_DEF_
+	CAT_
+	FILTER
+	BA_DEF_DEF_
+	EV_DATA_
+	ENVVAR_DATA_
+	SGTYPE_
+	SGTYPE_VAL_
+	BA_DEF_SGTYPE_
+	BA_SGTYPE_
+	SIG_TYPE_REF_
+	VAL_TABLE_
+	SIG_GROUP_
+	SIG_VALTYPE_
+	SIGTYPE_VALTYPE_
+	BO_TX_BU_
+	BA_DEF_REL_
+	BA_REL_
+	BA_DEF_DEF_REL_
+	BU_SG_REL_
+	BU_EV_REL_
+	BU_BO_REL_
+	SG_MUL_VAL_
+
+BS_:
+
+BU_: Vector__XX SODA_XIL
+VAL_TABLE_ can_speed_fd 5 "CAN_SPEED_FD_8000_KB" 4 "CAN_SPEED_FD_5000_KB" 3 "CAN_SPEED_FD_4000_KB" 2 "CAN_SPEED_FD_2000_KB" 1 "CAN_SPEED_FD_1000_KB" 0 "CAN_SPEED_FD_OFF" ;
+VAL_TABLE_ can_speed 3 "CAN_SPEED_1000_KB" 2 "CAN_SPEED_500_KB" 1 "CAN_SPEED_250_KB" 0 "CAN_SPEED_OFF" ;
+
+
+BO_ 2349006590 MODULE_INFO_BOOT: 64 Vector__XXX
+ SG_ module_boot_has_update : 400|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ module_app_hw_name_2 : 392|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ module_app_hw_name_1 : 328|64@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ module_app_fw_name_3 : 320|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ module_app_fw_name_2 : 256|64@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ module_app_fw_name_1 : 192|64@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ module_app_target : 61|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ module_app_build_min : 187|5@1+ (2,0) [0|58] "" Vector__XXX
+ SG_ module_app_build_hour : 182|5@1+ (1,0) [0|23] "" Vector__XXX
+ SG_ module_app_build_day : 177|5@1+ (1,1) [1|31] "" Vector__XXX
+ SG_ module_app_build_month : 173|4@1+ (1,1) [1|12] "" Vector__XXX
+ SG_ module_app_build_year : 168|5@1+ (1,2023) [2023|2054] "" Vector__XXX
+ SG_ module_app_ver_build : 136|32@1+ (1,0) [0|4294967295] "" Vector__XXX
+ SG_ module_app_ver_fix : 124|12@1+ (1,0) [0|4095] "" Vector__XXX
+ SG_ module_app_ver_minor : 112|12@1+ (1,0) [0|4095] "" Vector__XXX
+ SG_ module_app_ver_major : 101|11@1+ (1,0) [0|2047] "" Vector__XXX
+ SG_ module_app_ver_gen : 96|5@1+ (1,0) [0|31] "" Vector__XXX
+ SG_ module_app_crc : 64|32@1+ (1,0) [0|4294967295] "" Vector__XXX
+ SG_ module_capabilities : 40|21@1+ (1,0) [0|2097151] "" Vector__XXX
+ SG_ module_info_ver : 36|4@1+ (1,0) [0|15] "" Vector__XXX
+ SG_ module_status : 32|4@1+ (1,0) [0|15] "" Vector__XXX
+ SG_ sys_runtime_s : 0|32@1+ (1,0) [0|4294967295] "s" Vector__XXX
+
+BO_ 2351103742 CAN_STATE_ans: 8 SODA_XIL
+ SG_ can_lec_8 : 60|4@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ can_lec_7 : 52|4@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ can_lec_6 : 44|4@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ can_lec_5 : 36|4@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ can_lec_4 : 28|4@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ can_lec_3 : 20|4@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ can_lec_2 : 12|4@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ can_lec_1 : 4|4@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ can_state_8 : 56|4@1+ (1,0) [0|4] "" Vector__XXX
+ SG_ can_state_7 : 48|4@1+ (1,0) [0|4] "" Vector__XXX
+ SG_ can_state_6 : 40|4@1+ (1,0) [0|4] "" Vector__XXX
+ SG_ can_state_5 : 32|4@1+ (1,0) [0|4] "" Vector__XXX
+ SG_ can_state_4 : 24|4@1+ (1,0) [0|4] "" Vector__XXX
+ SG_ can_state_3 : 16|4@1+ (1,0) [0|4] "" Vector__XXX
+ SG_ can_state_2 : 8|4@1+ (1,0) [0|4] "" Vector__XXX
+ SG_ can_state_1 : 0|4@1+ (1,0) [0|4] "" Vector__XXX
+
+BO_ 2368667390 TEMP_ELM_IN_ans: 8 Vector__XXX
+ SG_ temp_i_8_value : 56|8@1+ (1,0) [0|150] "*C" Vector__XXX
+ SG_ temp_i_7_value : 48|8@1+ (1,0) [0|150] "*C" Vector__XXX
+ SG_ temp_i_6_value : 40|8@1+ (1,0) [0|150] "*C" Vector__XXX
+ SG_ temp_i_5_value : 32|8@1+ (1,0) [0|150] "*C" Vector__XXX
+ SG_ temp_i_4_value : 24|8@1+ (1,0) [0|150] "*C" Vector__XXX
+ SG_ temp_i_3_value : 16|8@1+ (1,0) [0|150] "*C" Vector__XXX
+ SG_ temp_i_2_value : 8|8@1+ (1,0) [0|150] "*C" Vector__XXX
+ SG_ temp_i_1_value : 0|8@1+ (1,0) [0|150] "*C" Vector__XXX
+
+BO_ 2368601854 SWITCH_ELM_DOUT_ans: 8 SODA_XIL
+ SG_ dout_4_en : 3|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ dout_3_en : 2|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ dout_2_en : 1|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ dout_1_en : 0|1@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 2368536318 SWITCH_ELM_DOUT_req: 8 Vector__XX
+ SG_ dout_4_en : 3|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ dout_3_en : 2|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ dout_2_en : 1|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ dout_1_en : 0|1@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 2353200894 LIN_FRAME_SET_req: 12 Vector__XXX
+ SG_ lin_frame_data7 : 64|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_frame_data6 : 56|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_frame_data5 : 48|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_frame_data4 : 40|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_frame_data3 : 32|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_frame_data2 : 24|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_frame_data1 : 16|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_frame_data0 : 8|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_frame_id : 0|8@1+ (1,0) [0|61] "" Vector__XXX
+
+BO_ 2353266430 LIN_FRAME_RCVD_ans: 12 Vector__XXX
+ SG_ lin_frame_data7 : 64|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_frame_data6 : 56|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_frame_data5 : 48|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_frame_data4 : 40|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_frame_data3 : 32|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_frame_data2 : 24|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_frame_data1 : 16|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_frame_data0 : 8|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_frame_id : 0|8@1+ (1,0) [0|61] "" Vector__XXX
+
+BO_ 2353069822 LIN_CFG_req: 64 Vector__XXX
+ SG_ lin_cfg_frm61_enable : 495|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm61_dir_transmit : 492|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm61_cst_classic : 491|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm61_len : 488|3@1+ (1,1) [1|8] "" Vector__XXX
+ SG_ lin_cfg_frm60_enable : 487|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm60_dir_transmit : 484|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm60_cst_classic : 483|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm60_len : 480|3@1+ (1,1) [1|8] "" Vector__XXX
+ SG_ lin_cfg_frm59_enable : 479|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm59_dir_transmit : 476|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm59_cst_classic : 475|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm59_len : 472|3@1+ (1,1) [1|8] "" Vector__XXX
+ SG_ lin_cfg_frm58_enable : 471|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm58_dir_transmit : 468|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm58_cst_classic : 467|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm58_len : 464|3@1+ (1,1) [1|8] "" Vector__XXX
+ SG_ lin_cfg_frm57_enable : 463|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm57_dir_transmit : 460|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm57_cst_classic : 459|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm57_len : 456|3@1+ (1,1) [1|8] "" Vector__XXX
+ SG_ lin_cfg_frm56_enable : 455|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm56_dir_transmit : 452|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm56_cst_classic : 451|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm56_len : 448|3@1+ (1,1) [1|8] "" Vector__XXX
+ SG_ lin_cfg_frm55_enable : 447|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm55_dir_transmit : 444|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm55_cst_classic : 443|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm55_len : 440|3@1+ (1,1) [1|8] "" Vector__XXX
+ SG_ lin_cfg_frm54_enable : 439|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm54_dir_transmit : 436|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm54_cst_classic : 435|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm54_len : 432|3@1+ (1,1) [1|8] "" Vector__XXX
+ SG_ lin_cfg_frm53_enable : 431|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm53_dir_transmit : 428|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm53_cst_classic : 427|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm53_len : 424|3@1+ (1,1) [1|8] "" Vector__XXX
+ SG_ lin_cfg_frm52_enable : 423|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm52_dir_transmit : 420|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm52_cst_classic : 419|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm52_len : 416|3@1+ (1,1) [1|8] "" Vector__XXX
+ SG_ lin_cfg_frm51_enable : 415|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm51_dir_transmit : 412|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm51_cst_classic : 411|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm51_len : 408|3@1+ (1,1) [1|8] "" Vector__XXX
+ SG_ lin_cfg_frm50_enable : 407|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm50_dir_transmit : 404|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm50_cst_classic : 403|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm50_len : 400|3@1+ (1,1) [1|8] "" Vector__XXX
+ SG_ lin_cfg_frm49_enable : 399|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm49_dir_transmit : 396|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm49_cst_classic : 395|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm49_len : 392|3@1+ (1,1) [1|8] "" Vector__XXX
+ SG_ lin_cfg_frm48_enable : 391|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm48_dir_transmit : 388|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm48_cst_classic : 387|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm48_len : 384|3@1+ (1,1) [1|8] "" Vector__XXX
+ SG_ lin_cfg_frm47_enable : 383|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm47_dir_transmit : 380|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm47_cst_classic : 379|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm47_len : 376|3@1+ (1,1) [1|8] "" Vector__XXX
+ SG_ lin_cfg_frm46_enable : 375|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm46_dir_transmit : 372|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm46_cst_classic : 371|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm46_len : 368|3@1+ (1,1) [1|8] "" Vector__XXX
+ SG_ lin_cfg_frm45_enable : 367|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm45_dir_transmit : 364|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm45_cst_classic : 363|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm45_len : 360|3@1+ (1,1) [1|8] "" Vector__XXX
+ SG_ lin_cfg_frm44_enable : 359|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm44_dir_transmit : 356|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm44_cst_classic : 355|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm44_len : 352|3@1+ (1,1) [1|8] "" Vector__XXX
+ SG_ lin_cfg_frm43_enable : 351|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm43_dir_transmit : 348|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm43_cst_classic : 347|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm43_len : 344|3@1+ (1,1) [1|8] "" Vector__XXX
+ SG_ lin_cfg_frm42_enable : 343|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm42_dir_transmit : 340|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm42_cst_classic : 339|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm42_len : 336|3@1+ (1,1) [1|8] "" Vector__XXX
+ SG_ lin_cfg_frm41_enable : 335|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm41_dir_transmit : 332|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm41_cst_classic : 331|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm41_len : 328|3@1+ (1,1) [1|8] "" Vector__XXX
+ SG_ lin_cfg_frm40_enable : 327|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm40_dir_transmit : 324|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm40_cst_classic : 323|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm40_len : 320|3@1+ (1,1) [1|8] "" Vector__XXX
+ SG_ lin_cfg_frm39_enable : 319|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm39_dir_transmit : 316|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm39_cst_classic : 315|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm39_len : 312|3@1+ (1,1) [1|8] "" Vector__XXX
+ SG_ lin_cfg_frm38_enable : 311|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm38_dir_transmit : 308|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm38_cst_classic : 307|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm38_len : 304|3@1+ (1,1) [1|8] "" Vector__XXX
+ SG_ lin_cfg_frm37_enable : 303|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm37_dir_transmit : 300|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm37_cst_classic : 299|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm37_len : 296|3@1+ (1,1) [1|8] "" Vector__XXX
+ SG_ lin_cfg_frm36_enable : 295|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm36_dir_transmit : 292|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm36_cst_classic : 291|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm36_len : 288|3@1+ (1,1) [1|8] "" Vector__XXX
+ SG_ lin_cfg_frm35_enable : 287|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm35_dir_transmit : 284|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm35_cst_classic : 283|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm35_len : 280|3@1+ (1,1) [1|8] "" Vector__XXX
+ SG_ lin_cfg_frm34_enable : 279|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm34_dir_transmit : 276|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm34_cst_classic : 275|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm34_len : 272|3@1+ (1,1) [1|8] "" Vector__XXX
+ SG_ lin_cfg_frm33_enable : 271|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm33_dir_transmit : 268|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm33_cst_classic : 267|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm33_len : 264|3@1+ (1,1) [1|8] "" Vector__XXX
+ SG_ lin_cfg_frm32_enable : 263|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm32_dir_transmit : 260|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm32_cst_classic : 259|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm32_len : 256|3@1+ (1,1) [1|8] "" Vector__XXX
+ SG_ lin_cfg_frm31_enable : 255|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm31_dir_transmit : 252|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm31_cst_classic : 251|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm31_len : 248|3@1+ (1,1) [1|8] "" Vector__XXX
+ SG_ lin_cfg_frm30_enable : 247|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm30_dir_transmit : 244|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm30_cst_classic : 243|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm30_len : 240|3@1+ (1,1) [1|8] "" Vector__XXX
+ SG_ lin_cfg_frm29_enable : 239|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm29_dir_transmit : 236|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm29_cst_classic : 235|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm29_len : 232|3@1+ (1,1) [1|8] "" Vector__XXX
+ SG_ lin_cfg_frm28_enable : 231|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm28_dir_transmit : 228|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm28_cst_classic : 227|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm28_len : 224|3@1+ (1,1) [1|8] "" Vector__XXX
+ SG_ lin_cfg_frm27_enable : 223|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm27_dir_transmit : 220|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm27_cst_classic : 219|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm27_len : 216|3@1+ (1,1) [1|8] "" Vector__XXX
+ SG_ lin_cfg_frm26_enable : 215|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm26_dir_transmit : 212|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm26_cst_classic : 211|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm26_len : 208|3@1+ (1,1) [1|8] "" Vector__XXX
+ SG_ lin_cfg_frm25_enable : 207|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm25_dir_transmit : 204|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm25_cst_classic : 203|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm25_len : 200|3@1+ (1,1) [1|8] "" Vector__XXX
+ SG_ lin_cfg_frm24_enable : 199|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm24_dir_transmit : 196|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm24_cst_classic : 195|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm24_len : 192|3@1+ (1,1) [1|8] "" Vector__XXX
+ SG_ lin_cfg_frm23_enable : 191|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm23_dir_transmit : 188|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm23_cst_classic : 187|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm23_len : 184|3@1+ (1,1) [1|8] "" Vector__XXX
+ SG_ lin_cfg_frm22_enable : 183|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm22_dir_transmit : 180|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm22_cst_classic : 179|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm22_len : 176|3@1+ (1,1) [1|8] "" Vector__XXX
+ SG_ lin_cfg_frm21_enable : 175|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm21_dir_transmit : 172|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm21_cst_classic : 171|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm21_len : 168|3@1+ (1,1) [1|8] "" Vector__XXX
+ SG_ lin_cfg_frm20_enable : 167|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm20_dir_transmit : 164|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm20_cst_classic : 163|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm20_len : 160|3@1+ (1,1) [1|8] "" Vector__XXX
+ SG_ lin_cfg_frm19_enable : 159|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm19_dir_transmit : 156|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm19_cst_classic : 155|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm19_len : 152|3@1+ (1,1) [1|8] "" Vector__XXX
+ SG_ lin_cfg_frm18_enable : 151|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm18_dir_transmit : 148|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm18_cst_classic : 147|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm18_len : 144|3@1+ (1,1) [1|8] "" Vector__XXX
+ SG_ lin_cfg_frm17_enable : 143|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm17_dir_transmit : 140|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm17_cst_classic : 139|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm17_len : 136|3@1+ (1,1) [1|8] "" Vector__XXX
+ SG_ lin_cfg_frm16_enable : 135|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm16_dir_transmit : 132|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm16_cst_classic : 131|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm16_len : 128|3@1+ (1,1) [1|8] "" Vector__XXX
+ SG_ lin_cfg_frm15_enable : 127|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm15_dir_transmit : 124|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm15_cst_classic : 123|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm15_len : 120|3@1+ (1,1) [1|8] "" Vector__XXX
+ SG_ lin_cfg_frm14_enable : 119|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm14_dir_transmit : 116|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm14_cst_classic : 115|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm14_len : 112|3@1+ (1,1) [1|8] "" Vector__XXX
+ SG_ lin_cfg_frm13_enable : 111|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm13_dir_transmit : 108|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm13_cst_classic : 107|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm13_len : 104|3@1+ (1,1) [1|8] "" Vector__XXX
+ SG_ lin_cfg_frm12_enable : 103|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm12_dir_transmit : 100|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm12_cst_classic : 99|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm12_len : 96|3@1+ (1,1) [1|8] "" Vector__XXX
+ SG_ lin_cfg_frm11_enable : 95|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm11_dir_transmit : 92|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm11_cst_classic : 91|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm11_len : 88|3@1+ (1,1) [1|8] "" Vector__XXX
+ SG_ lin_cfg_frm10_enable : 87|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm10_dir_transmit : 84|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm10_cst_classic : 83|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm10_len : 80|3@1+ (1,1) [1|8] "" Vector__XXX
+ SG_ lin_cfg_frm9_enable : 79|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm9_dir_transmit : 76|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm9_cst_classic : 75|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm9_len : 72|3@1+ (1,1) [1|8] "" Vector__XXX
+ SG_ lin_cfg_frm8_enable : 71|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm8_dir_transmit : 68|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm8_cst_classic : 67|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm8_len : 64|3@1+ (1,1) [1|8] "" Vector__XXX
+ SG_ lin_cfg_frm7_enable : 63|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm7_dir_transmit : 60|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm7_cst_classic : 59|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm7_len : 56|3@1+ (1,1) [1|8] "" Vector__XXX
+ SG_ lin_cfg_frm6_enable : 55|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm6_dir_transmit : 52|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm6_cst_classic : 51|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm6_len : 48|3@1+ (1,1) [1|8] "" Vector__XXX
+ SG_ lin_cfg_frm5_enable : 47|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm5_dir_transmit : 44|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm5_cst_classic : 43|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm5_len : 40|3@1+ (1,1) [1|8] "" Vector__XXX
+ SG_ lin_cfg_frm4_enable : 39|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm4_dir_transmit : 36|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm4_cst_classic : 35|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm4_len : 32|3@1+ (1,1) [1|8] "" Vector__XXX
+ SG_ lin_cfg_frm3_enable : 31|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm3_dir_transmit : 28|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm3_cst_classic : 27|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm3_len : 24|3@1+ (1,1) [1|8] "" Vector__XXX
+ SG_ lin_cfg_frm2_enable : 23|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm2_dir_transmit : 20|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm2_cst_classic : 19|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm2_len : 16|3@1+ (1,1) [1|8] "" Vector__XXX
+ SG_ lin_cfg_frm1_enable : 15|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm1_dir_transmit : 12|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm1_cst_classic : 11|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm1_len : 8|3@1+ (1,1) [1|8] "" Vector__XXX
+ SG_ lin_cfg_frm0_enable : 7|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm0_dir_transmit : 4|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm0_cst_classic : 3|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ lin_cfg_frm0_len : 0|3@1+ (1,1) [1|8] "" Vector__XXX
+
+BO_ 2351955966 CAN_MUX_DIAG: 8 Vector__XXX
+ SG_ can_mux_diag_can_number : 0|8@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 2351562494 CAN_MUX_ans: 12 SODA_XIL
+ SG_ can_mux_ext_can8_out : 64|8@1+ (1,0) [0|16] "" Vector__XXX
+ SG_ can_mux_ext_can7_out : 56|8@1+ (1,0) [0|16] "" Vector__XXX
+ SG_ can_mux_ext_can6_out : 48|8@1+ (1,0) [0|16] "" Vector__XXX
+ SG_ can_mux_ext_can5_out : 40|8@1+ (1,0) [0|16] "" Vector__XXX
+ SG_ can_mux_ext_can4_out : 32|8@1+ (1,0) [0|16] "" Vector__XXX
+ SG_ can_mux_ext_can3_out : 24|8@1+ (1,0) [0|16] "" Vector__XXX
+ SG_ can_mux_ext_can2_out : 16|8@1+ (1,0) [0|16] "" Vector__XXX
+ SG_ can_mux_ext_can1_out : 8|8@1+ (1,0) [0|16] "" Vector__XXX
+ SG_ can_mux_int_can8_en : 7|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ can_mux_int_can7_en : 6|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ can_mux_int_can6_en : 5|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ can_mux_int_can5_en : 4|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ can_mux_int_can4_en : 3|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ can_mux_int_can3_en : 2|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ can_mux_int_can2_en : 1|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ can_mux_int_can1_en : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+
+BO_ 2351496958 CAN_MUX_req: 12 Vector__XXX
+ SG_ can_mux_ext_can8_out : 64|8@1+ (1,0) [0|16] "" Vector__XXX
+ SG_ can_mux_ext_can7_out : 56|8@1+ (1,0) [0|16] "" Vector__XXX
+ SG_ can_mux_ext_can6_out : 48|8@1+ (1,0) [0|16] "" Vector__XXX
+ SG_ can_mux_ext_can5_out : 40|8@1+ (1,0) [0|16] "" Vector__XXX
+ SG_ can_mux_ext_can4_out : 32|8@1+ (1,0) [0|16] "" Vector__XXX
+ SG_ can_mux_ext_can3_out : 24|8@1+ (1,0) [0|16] "" Vector__XXX
+ SG_ can_mux_ext_can2_out : 16|8@1+ (1,0) [0|16] "" Vector__XXX
+ SG_ can_mux_ext_can1_out : 8|8@1+ (1,0) [0|16] "" Vector__XXX
+ SG_ can_mux_int_can8_en : 7|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ can_mux_int_can7_en : 6|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ can_mux_int_can6_en : 5|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ can_mux_int_can5_en : 4|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ can_mux_int_can4_en : 3|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ can_mux_int_can3_en : 2|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ can_mux_int_can2_en : 1|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ can_mux_int_can1_en : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+
+BO_ 2368470782 CUR_ELM_OUT_VAL_ans: 16 SODA_XIL
+ SG_ cur_o_8_value : 112|16@1+ (0.0001526,0) [0|10.000641] "A" Vector__XXX
+ SG_ cur_o_7_value : 96|16@1+ (0.0001526,0) [0|10.000641] "A" Vector__XXX
+ SG_ cur_o_6_value : 80|16@1+ (0.0001526,0) [0|10.000641] "A" Vector__XXX
+ SG_ cur_o_5_value : 64|16@1+ (0.0001526,0) [0|10.000641] "A" Vector__XXX
+ SG_ cur_o_4_value : 48|16@1+ (0.0001526,0) [0|10.000641] "A" Vector__XXX
+ SG_ cur_o_3_value : 32|16@1+ (0.0001526,0) [0|10.000641] "A" Vector__XXX
+ SG_ cur_o_2_value : 16|16@1+ (0.0001526,0) [0|10.000641] "A" Vector__XXX
+ SG_ cur_o_1_value : 0|16@1+ (0.0001526,0) [0|10.000641] "A" Vector__XXX
+
+BO_ 2368405246 CUR_ELM_IN_VAL_ans: 16 SODA_XIL
+ SG_ cur_i_8_value : 112|16@1+ (0.0001679,0) [0|11.003326] "A" Vector__XXX
+ SG_ cur_i_7_value : 96|16@1+ (0.0001679,0) [0|11.003326] "A" Vector__XXX
+ SG_ cur_i_6_value : 80|16@1+ (0.0001679,0) [0|11.003326] "A" Vector__XXX
+ SG_ cur_i_5_value : 64|16@1+ (0.0001679,0) [0|11.003326] "A" Vector__XXX
+ SG_ cur_i_4_value : 48|16@1+ (0.0001679,0) [0|11.003326] "A" Vector__XXX
+ SG_ cur_i_3_value : 32|16@1+ (0.0001679,0) [0|11.003326] "A" Vector__XXX
+ SG_ cur_i_2_value : 16|16@1+ (0.0001679,0) [0|11.003326] "A" Vector__XXX
+ SG_ cur_i_1_value : 0|16@1+ (0.0001679,0) [0|11.003326] "A" Vector__XXX
+
+BO_ 2368339710 CUR_ELM_OUT_VAL_req: 16 Vector__XXX
+ SG_ cur_o_8_value : 112|16@1+ (0.0001526,0) [0|10.000641] "A" Vector__XXX
+ SG_ cur_o_7_value : 96|16@1+ (0.0001526,0) [0|10.000641] "A" Vector__XXX
+ SG_ cur_o_6_value : 80|16@1+ (0.0001526,0) [0|10.000641] "A" Vector__XXX
+ SG_ cur_o_5_value : 64|16@1+ (0.0001526,0) [0|10.000641] "A" Vector__XXX
+ SG_ cur_o_4_value : 48|16@1+ (0.0001526,0) [0|10.000641] "A" Vector__XXX
+ SG_ cur_o_3_value : 32|16@1+ (0.0001526,0) [0|10.000641] "A" Vector__XXX
+ SG_ cur_o_2_value : 16|16@1+ (0.0001526,0) [0|10.000641] "A" Vector__XXX
+ SG_ cur_o_1_value : 0|16@1+ (0.0001526,0) [0|10.000641] "A" Vector__XXX
+
+BO_ 2368274174 CUR_LOOP_IN_VAL_ans: 16 SODA_XIL
+ SG_ cur_ma_i_8_value : 112|16@1+ (0.0003815,0) [0|25.001603] "mA" Vector__XXX
+ SG_ cur_ma_i_7_value : 96|16@1+ (0.0003815,0) [0|25.001603] "mA" Vector__XXX
+ SG_ cur_ma_i_6_value : 80|16@1+ (0.0003815,0) [0|25.001603] "mA" Vector__XXX
+ SG_ cur_ma_i_5_value : 64|16@1+ (0.0003815,0) [0|25.001603] "mA" Vector__XXX
+ SG_ cur_ma_i_4_value : 48|16@1+ (0.0003815,0) [0|25.001603] "mA" Vector__XXX
+ SG_ cur_ma_i_3_value : 32|16@1+ (0.0003815,0) [0|25.001603] "mA" Vector__XXX
+ SG_ cur_ma_i_2_value : 16|16@1+ (0.0003815,0) [0|25.001603] "mA" Vector__XXX
+ SG_ cur_ma_i_1_value : 0|16@1+ (0.0003815,0) [0|25.001603] "mA" Vector__XXX
+
+BO_ 2368208638 CUR_LOOP_OUT_VAL_ans: 16 SODA_XIL
+ SG_ cur_ma_o_8_value : 112|16@1+ (0.0003052,0) [0|20.001282] "mA" Vector__XXX
+ SG_ cur_ma_o_7_value : 96|16@1+ (0.0003052,0) [0|20.001282] "mA" Vector__XXX
+ SG_ cur_ma_o_6_value : 80|16@1+ (0.0003052,0) [0|20.001282] "mA" Vector__XXX
+ SG_ cur_ma_o_5_value : 64|16@1+ (0.0003052,0) [0|20.001282] "mA" Vector__XXX
+ SG_ cur_ma_o_4_value : 48|16@1+ (0.0003052,0) [0|20.001282] "mA" Vector__XXX
+ SG_ cur_ma_o_3_value : 32|16@1+ (0.0003052,0) [0|20.001282] "mA" Vector__XXX
+ SG_ cur_ma_o_2_value : 16|16@1+ (0.0003052,0) [0|20.001282] "mA" Vector__XXX
+ SG_ cur_ma_o_1_value : 0|16@1+ (0.0003052,0) [0|20.001282] "mA" Vector__XXX
+
+BO_ 2368143102 CUR_LOOP_OUT_VAL_req: 16 Vector__XX
+ SG_ cur_ma_o_8_value : 112|16@1+ (0.0003052,0) [0|20.001282] "mA" Vector__XXX
+ SG_ cur_ma_o_7_value : 96|16@1+ (0.0003052,0) [0|20.001282] "mA" Vector__XXX
+ SG_ cur_ma_o_6_value : 80|16@1+ (0.0003052,0) [0|20.001282] "mA" Vector__XXX
+ SG_ cur_ma_o_5_value : 64|16@1+ (0.0003052,0) [0|20.001282] "mA" Vector__XXX
+ SG_ cur_ma_o_4_value : 48|16@1+ (0.0003052,0) [0|20.001282] "mA" Vector__XXX
+ SG_ cur_ma_o_3_value : 32|16@1+ (0.0003052,0) [0|20.001282] "mA" Vector__XXX
+ SG_ cur_ma_o_2_value : 16|16@1+ (0.0003052,0) [0|20.001282] "mA" Vector__XXX
+ SG_ cur_ma_o_1_value : 0|16@1+ (0.0003052,0) [0|20.001282] "mA" Vector__XXX
+
+BO_ 2350972670 CAN_INFO_ans: 8 SODA_XIL
+ SG_ can8_speed_fd : 60|4@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ can8_speed : 56|4@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ can7_speed_fd : 52|4@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ can7_speed : 48|4@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ can6_speed_fd : 44|4@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ can6_speed : 40|4@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ can5_speed_fd : 36|4@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ can5_speed : 32|4@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ can4_speed_fd : 28|4@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ can4_speed : 24|4@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ can3_speed_fd : 20|4@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ can3_speed : 16|4@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ can2_speed_fd : 12|4@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ can2_speed : 8|4@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ can1_speed_fd : 4|4@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ can1_speed : 0|4@1+ (1,0) [0|3] "" Vector__XXX
+
+BO_ 2351038206 CAN_INFO_req: 8 Vector__XXX
+ SG_ can8_speed_fd : 60|4@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ can8_speed : 56|4@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ can7_speed_fd : 52|4@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ can7_speed : 48|4@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ can6_speed_fd : 44|4@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ can6_speed : 40|4@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ can5_speed_fd : 36|4@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ can5_speed : 32|4@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ can4_speed_fd : 28|4@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ can4_speed : 24|4@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ can3_speed_fd : 20|4@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ can3_speed : 16|4@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ can2_speed_fd : 12|4@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ can2_speed : 8|4@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ can1_speed_fd : 4|4@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ can1_speed : 0|4@1+ (1,0) [0|3] "" Vector__XXX
+
+BO_ 2349924094 PIN_INFO: 64 SODA_XIL
+ SG_ pin_info_pin_64_capabilities : 504|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ pin_info_pin_63_capabilities : 496|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ pin_info_pin_62_capabilities : 488|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ pin_info_pin_61_capabilities : 480|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ pin_info_pin_60_capabilities : 472|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ pin_info_pin_59_capabilities : 464|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ pin_info_pin_58_capabilities : 456|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ pin_info_pin_57_capabilities : 448|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ pin_info_pin_56_capabilities : 440|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ pin_info_pin_55_capabilities : 432|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ pin_info_pin_54_capabilities : 424|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ pin_info_pin_53_capabilities : 416|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ pin_info_pin_52_capabilities : 408|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ pin_info_pin_51_capabilities : 400|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ pin_info_pin_50_capabilities : 392|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ pin_info_pin_49_capabilities : 384|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ pin_info_pin_48_capabilities : 376|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ pin_info_pin_47_capabilities : 368|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ pin_info_pin_46_capabilities : 360|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ pin_info_pin_45_capabilities : 352|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ pin_info_pin_44_capabilities : 344|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ pin_info_pin_43_capabilities : 336|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ pin_info_pin_42_capabilities : 328|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ pin_info_pin_41_capabilities : 320|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ pin_info_pin_40_capabilities : 312|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ pin_info_pin_39_capabilities : 304|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ pin_info_pin_38_capabilities : 296|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ pin_info_pin_37_capabilities : 288|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ pin_info_pin_36_capabilities : 280|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ pin_info_pin_35_capabilities : 272|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ pin_info_pin_34_capabilities : 264|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ pin_info_pin_33_capabilities : 256|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ pin_info_pin_32_capabilities : 248|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ pin_info_pin_31_capabilities : 240|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ pin_info_pin_30_capabilities : 232|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ pin_info_pin_29_capabilities : 224|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ pin_info_pin_28_capabilities : 216|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ pin_info_pin_27_capabilities : 208|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ pin_info_pin_26_capabilities : 200|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ pin_info_pin_25_capabilities : 192|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ pin_info_pin_24_capabilities : 184|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ pin_info_pin_23_capabilities : 176|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ pin_info_pin_22_capabilities : 168|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ pin_info_pin_21_capabilities : 160|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ pin_info_pin_20_capabilities : 152|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ pin_info_pin_19_capabilities : 144|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ pin_info_pin_18_capabilities : 136|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ pin_info_pin_17_capabilities : 128|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ pin_info_pin_16_capabilities : 120|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ pin_info_pin_15_capabilities : 112|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ pin_info_pin_14_capabilities : 104|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ pin_info_pin_13_capabilities : 96|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ pin_info_pin_12_capabilities : 88|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ pin_info_pin_11_capabilities : 80|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ pin_info_pin_10_capabilities : 72|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ pin_info_pin_9_capabilities : 64|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ pin_info_pin_8_capabilities : 56|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ pin_info_pin_7_capabilities : 48|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ pin_info_pin_6_capabilities : 40|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ pin_info_pin_5_capabilities : 32|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ pin_info_pin_4_capabilities : 24|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ pin_info_pin_3_capabilities : 16|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ pin_info_pin_2_capabilities : 8|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ pin_info_pin_1_capabilities : 0|8@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 2367946494 SWITCH_OUTPUT_req: 8 Vector__XX
+ SG_ sel_cur_i_8 : 39|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sel_cur_i_7 : 38|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sel_cur_i_6 : 37|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sel_cur_i_5 : 36|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sel_cur_i_4 : 35|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sel_cur_i_3 : 34|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sel_cur_i_2 : 33|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sel_cur_i_1 : 32|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sel_cur_o_8 : 31|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sel_cur_o_7 : 30|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sel_cur_o_6 : 29|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sel_cur_o_5 : 28|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sel_cur_o_4 : 27|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sel_cur_o_3 : 26|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sel_cur_o_2 : 25|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sel_cur_o_1 : 24|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sel_vlt_o_8 : 23|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sel_vlt_o_7 : 22|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sel_vlt_o_6 : 21|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sel_vlt_o_5 : 20|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sel_vlt_o_4 : 19|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sel_vlt_o_3 : 18|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sel_vlt_o_2 : 17|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sel_vlt_o_1 : 16|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sel_pwm_8 : 15|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sel_pwm_7 : 14|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sel_pwm_6 : 13|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sel_pwm_5 : 12|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sel_pwm_4 : 11|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sel_pwm_3 : 10|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sel_pwm_2 : 9|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sel_pwm_1 : 8|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sel_icu_8 : 7|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sel_icu_7 : 6|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sel_icu_6 : 5|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sel_icu_5 : 4|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sel_icu_4 : 3|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sel_icu_3 : 2|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sel_icu_2 : 1|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sel_icu_1 : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+
+BO_ 2368012030 SWITCH_OUTPUT_ans: 8 SODA_XIL
+ SG_ sel_cur_i_8 : 39|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sel_cur_i_7 : 38|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sel_cur_i_6 : 37|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sel_cur_i_5 : 36|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sel_cur_i_4 : 35|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sel_cur_i_3 : 34|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sel_cur_i_2 : 33|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sel_cur_i_1 : 32|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sel_cur_o_8 : 31|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sel_cur_o_7 : 30|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sel_cur_o_6 : 29|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sel_cur_o_5 : 28|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sel_cur_o_4 : 27|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sel_cur_o_3 : 26|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sel_cur_o_2 : 25|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sel_cur_o_1 : 24|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sel_vlt_o_8 : 23|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sel_vlt_o_7 : 22|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sel_vlt_o_6 : 21|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sel_vlt_o_5 : 20|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sel_vlt_o_4 : 19|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sel_vlt_o_3 : 18|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sel_vlt_o_2 : 17|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sel_vlt_o_1 : 16|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sel_pwm_8 : 15|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sel_pwm_7 : 14|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sel_pwm_6 : 13|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sel_pwm_5 : 12|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sel_pwm_4 : 11|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sel_pwm_3 : 10|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sel_pwm_2 : 9|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sel_pwm_1 : 8|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sel_icu_8 : 7|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sel_icu_7 : 6|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sel_icu_6 : 5|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sel_icu_5 : 4|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sel_icu_4 : 3|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sel_icu_3 : 2|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sel_icu_2 : 1|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sel_icu_1 : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+
+BO_ 2348875518 MODULE_INFO_req: 8 Vector__XX
+ SG_ module_info_boot_req : 5|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ module_info_can_mux_req : 4|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ module_info_can_info_req : 3|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ module_info_pin_info_req : 2|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ module_info_ex_req : 1|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ module_info_base_req : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+
+BO_ 2349399806 MODULE_INFO_EX: 32 SODA_XIL
+ SG_ module_ip_addr : 183|32@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ module_chip_uid_2 : 119|64@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ module_chip_uid_1 : 55|64@0+ (1,0) [0|0] "" Vector__XXX
+ SG_ module_mac_addr : 0|48@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 2348941054 MODULE_INFO: 64 SODA_XIL
+ SG_ module_calibration_status : 400|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ module_app_hw_name_2 : 392|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ module_app_hw_name_1 : 328|64@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ module_app_fw_name_3 : 320|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ module_app_fw_name_2 : 256|64@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ module_app_fw_name_1 : 192|64@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ module_app_target : 61|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ module_app_build_min : 187|5@1+ (2,0) [0|58] "" Vector__XXX
+ SG_ module_app_build_hour : 182|5@1+ (1,0) [0|23] "" Vector__XXX
+ SG_ module_app_build_day : 177|5@1+ (1,1) [1|31] "" Vector__XXX
+ SG_ module_app_build_month : 173|4@1+ (1,1) [1|12] "" Vector__XXX
+ SG_ module_app_build_year : 168|5@1+ (1,2023) [2023|2054] "" Vector__XXX
+ SG_ module_app_ver_build : 136|32@1+ (1,0) [0|4294967295] "" Vector__XXX
+ SG_ module_app_ver_fix : 124|12@1+ (1,0) [0|4095] "" Vector__XXX
+ SG_ module_app_ver_minor : 112|12@1+ (1,0) [0|4095] "" Vector__XXX
+ SG_ module_app_ver_major : 101|11@1+ (1,0) [0|2047] "" Vector__XXX
+ SG_ module_app_ver_gen : 96|5@1+ (1,0) [0|31] "" Vector__XXX
+ SG_ module_app_crc : 64|32@1+ (1,0) [0|4294967295] "" Vector__XXX
+ SG_ module_capabilities : 40|21@1+ (1,0) [0|2097151] "" Vector__XXX
+ SG_ module_info_ver : 36|4@1+ (1,0) [0|15] "" Vector__XXX
+ SG_ module_status : 32|4@1+ (1,0) [0|15] "" Vector__XXX
+ SG_ sys_runtime_s : 0|32@1+ (1,0) [0|4294967295] "s" Vector__XXX
+
+BO_ 2367880958 PWM_IN_ans: 32 SODA_XIL
+ SG_ icu_8_frequency : 240|16@1+ (1,0) [0|65535] "Hz" Vector__XXX
+ SG_ icu_8_duty : 224|16@1+ (0.1,0) [0|100] "%" Vector__XXX
+ SG_ icu_7_frequency : 208|16@1+ (1,0) [0|65535] "Hz" Vector__XXX
+ SG_ icu_7_duty : 192|16@1+ (0.1,0) [0|100] "%" Vector__XXX
+ SG_ icu_6_frequency : 176|16@1+ (1,0) [0|65535] "Hz" Vector__XXX
+ SG_ icu_6_duty : 160|16@1+ (0.1,0) [0|100] "%" Vector__XXX
+ SG_ icu_5_frequency : 144|16@1+ (1,0) [0|65535] "Hz" Vector__XXX
+ SG_ icu_5_duty : 128|16@1+ (0.1,0) [0|100] "%" Vector__XXX
+ SG_ icu_4_frequency : 112|16@1+ (1,0) [0|65535] "Hz" Vector__XXX
+ SG_ icu_4_duty : 96|16@1+ (0.1,0) [0|100] "%" Vector__XXX
+ SG_ icu_3_frequency : 80|16@1+ (1,0) [0|65535] "Hz" Vector__XXX
+ SG_ icu_3_duty : 64|16@1+ (0.1,0) [0|100] "%" Vector__XXX
+ SG_ icu_2_frequency : 48|16@1+ (1,0) [0|65535] "Hz" Vector__XXX
+ SG_ icu_2_duty : 32|16@1+ (0.1,0) [0|100] "%" Vector__XXX
+ SG_ icu_1_frequency : 16|16@1+ (1,0) [0|65535] "Hz" Vector__XXX
+ SG_ icu_1_duty : 0|16@1+ (0.1,0) [0|100] "%" Vector__XXX
+
+BO_ 2367749886 OP_MODE_ans: 20 SODA_XIL
+ SG_ cur_o_8_op_mode : 141|3@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ cur_o_7_op_mode : 138|3@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ cur_o_6_op_mode : 135|3@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ cur_o_5_op_mode : 132|3@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ cur_o_4_op_mode : 129|3@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ cur_o_3_op_mode : 126|3@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ cur_o_2_op_mode : 123|3@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ cur_o_1_op_mode : 120|3@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ vlt_o_8_op_mode : 117|3@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ vlt_o_7_op_mode : 114|3@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ vlt_o_6_op_mode : 111|3@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ vlt_o_5_op_mode : 108|3@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ vlt_o_4_op_mode : 105|3@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ vlt_o_3_op_mode : 102|3@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ vlt_o_2_op_mode : 99|3@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ vlt_o_1_op_mode : 96|3@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ cur_i_8_op_mode : 93|3@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ cur_i_7_op_mode : 90|3@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ cur_i_6_op_mode : 87|3@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ cur_i_5_op_mode : 84|3@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ cur_i_4_op_mode : 81|3@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ cur_i_3_op_mode : 78|3@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ cur_i_2_op_mode : 75|3@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ cur_i_1_op_mode : 72|3@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ vlt_i_8_op_mode : 69|3@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ vlt_i_7_op_mode : 66|3@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ vlt_i_6_op_mode : 63|3@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ vlt_i_5_op_mode : 60|3@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ vlt_i_4_op_mode : 57|3@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ vlt_i_3_op_mode : 54|3@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ vlt_i_2_op_mode : 51|3@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ vlt_i_1_op_mode : 48|3@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ icu_8_op_mode : 45|3@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ icu_7_op_mode : 42|3@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ icu_6_op_mode : 39|3@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ icu_5_op_mode : 36|3@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ icu_4_op_mode : 33|3@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ icu_3_op_mode : 30|3@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ icu_2_op_mode : 27|3@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ icu_1_op_mode : 24|3@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ pwm_8_op_mode : 21|3@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ pwm_7_op_mode : 18|3@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ pwm_6_op_mode : 15|3@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ pwm_5_op_mode : 12|3@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ pwm_4_op_mode : 9|3@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ pwm_3_op_mode : 6|3@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ pwm_2_op_mode : 3|3@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ pwm_1_op_mode : 0|3@1+ (1,0) [0|5] "" Vector__XXX
+
+BO_ 2367815422 OP_MODE_req: 20 Vector__XX
+ SG_ cur_o_8_op_mode : 141|3@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ cur_o_7_op_mode : 138|3@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ cur_o_6_op_mode : 135|3@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ cur_o_5_op_mode : 132|3@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ cur_o_4_op_mode : 129|3@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ cur_o_3_op_mode : 126|3@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ cur_o_2_op_mode : 123|3@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ cur_o_1_op_mode : 120|3@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ vlt_o_8_op_mode : 117|3@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ vlt_o_7_op_mode : 114|3@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ vlt_o_6_op_mode : 111|3@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ vlt_o_5_op_mode : 108|3@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ vlt_o_4_op_mode : 105|3@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ vlt_o_3_op_mode : 102|3@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ vlt_o_2_op_mode : 99|3@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ vlt_o_1_op_mode : 96|3@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ cur_i_8_op_mode : 93|3@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ cur_i_7_op_mode : 90|3@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ cur_i_6_op_mode : 87|3@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ cur_i_5_op_mode : 84|3@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ cur_i_4_op_mode : 81|3@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ cur_i_3_op_mode : 78|3@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ cur_i_2_op_mode : 75|3@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ cur_i_1_op_mode : 72|3@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ vlt_i_8_op_mode : 69|3@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ vlt_i_7_op_mode : 66|3@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ vlt_i_6_op_mode : 63|3@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ vlt_i_5_op_mode : 60|3@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ vlt_i_4_op_mode : 57|3@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ vlt_i_3_op_mode : 54|3@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ vlt_i_2_op_mode : 51|3@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ vlt_i_1_op_mode : 48|3@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ icu_8_op_mode : 45|3@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ icu_7_op_mode : 42|3@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ icu_6_op_mode : 39|3@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ icu_5_op_mode : 36|3@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ icu_4_op_mode : 33|3@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ icu_3_op_mode : 30|3@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ icu_2_op_mode : 27|3@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ icu_1_op_mode : 24|3@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ pwm_8_op_mode : 21|3@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ pwm_7_op_mode : 18|3@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ pwm_6_op_mode : 15|3@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ pwm_5_op_mode : 12|3@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ pwm_4_op_mode : 9|3@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ pwm_3_op_mode : 6|3@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ pwm_2_op_mode : 3|3@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ pwm_1_op_mode : 0|3@1+ (1,0) [0|5] "" Vector__XXX
+
+BO_ 2367094526 VOLTAGE_OUT_VAL_req: 16 Vector__XX
+ SG_ vlt_o_8_value : 112|16@1+ (0.0006104,0) [0|40.002564] "V" Vector__XXX
+ SG_ vlt_o_7_value : 96|16@1+ (0.0006104,0) [0|40.002564] "V" Vector__XXX
+ SG_ vlt_o_6_value : 80|16@1+ (0.0006104,0) [0|40.002564] "V" Vector__XXX
+ SG_ vlt_o_5_value : 64|16@1+ (0.0006104,0) [0|40.002564] "V" Vector__XXX
+ SG_ vlt_o_4_value : 48|16@1+ (0.0006104,0) [0|40.002564] "V" Vector__XXX
+ SG_ vlt_o_3_value : 32|16@1+ (0.0006104,0) [0|40.002564] "V" Vector__XXX
+ SG_ vlt_o_2_value : 16|16@1+ (0.0006104,0) [0|40.002564] "V" Vector__XXX
+ SG_ vlt_o_1_value : 0|16@1+ (0.0006104,0) [0|40.002564] "V" Vector__XXX
+
+BO_ 2367160062 VOLTAGE_OUT_VAL_ans: 16 SODA_XIL
+ SG_ vlt_o_8_value : 112|16@1+ (0.0006104,0) [0|40.002564] "V" Vector__XXX
+ SG_ vlt_o_7_value : 96|16@1+ (0.0006104,0) [0|40.002564] "V" Vector__XXX
+ SG_ vlt_o_6_value : 80|16@1+ (0.0006104,0) [0|40.002564] "V" Vector__XXX
+ SG_ vlt_o_5_value : 64|16@1+ (0.0006104,0) [0|40.002564] "V" Vector__XXX
+ SG_ vlt_o_4_value : 48|16@1+ (0.0006104,0) [0|40.002564] "V" Vector__XXX
+ SG_ vlt_o_3_value : 32|16@1+ (0.0006104,0) [0|40.002564] "V" Vector__XXX
+ SG_ vlt_o_2_value : 16|16@1+ (0.0006104,0) [0|40.002564] "V" Vector__XXX
+ SG_ vlt_o_1_value : 0|16@1+ (0.0006104,0) [0|40.002564] "V" Vector__XXX
+
+BO_ 2366963454 VOLTAGE_IN_ans: 16 SODA_XIL
+ SG_ vlt_i_8_value : 112|16@1+ (0.0006104,0) [0|40.002564] "V"  Vector__XX
+ SG_ vlt_i_7_value : 96|16@1+ (0.0006104,0) [0|40.002564] "V" Vector__XXX
+ SG_ vlt_i_6_value : 80|16@1+ (0.0006104,0) [0|40.002564] "V" Vector__XXX
+ SG_ vlt_i_5_value : 64|16@1+ (0.0006104,0) [0|40.002564] "V" Vector__XXX
+ SG_ vlt_i_4_value : 48|16@1+ (0.0006104,0) [0|40.002564] "V" Vector__XXX
+ SG_ vlt_i_3_value : 32|16@1+ (0.0006104,0) [0|40.002564] "V" Vector__XXX
+ SG_ vlt_i_2_value : 16|16@1+ (0.0006104,0) [0|40.002564] "V" Vector__XXX
+ SG_ vlt_i_1_value : 0|16@1+ (0.0006104,0) [0|40.002564] "V" Vector__XXX
+
+BO_ 2366832382 PWM_OUT_VAL_req: 48 Vector__XX
+ SG_ pwm_8_voltage : 312|8@1+ (0.1,5) [5|30.5] "" Vector__XXX
+ SG_ pwm_7_voltage : 272|8@1+ (0.1,5) [5|30.5] "" Vector__XXX
+ SG_ pwm_6_voltage : 232|8@1+ (0.1,5) [5|30.5] "" Vector__XXX
+ SG_ pwm_5_voltage : 192|8@1+ (0.1,5) [5|30.5] "" Vector__XXX
+ SG_ pwm_4_voltage : 152|8@1+ (0.1,5) [5|30.5] "" Vector__XXX
+ SG_ pwm_3_voltage : 112|8@1+ (0.1,5) [5|30.5] "" Vector__XXX
+ SG_ pwm_2_voltage : 72|8@1+ (0.1,5) [5|30.5] "" Vector__XXX
+ SG_ pwm_1_voltage : 32|8@1+ (0.1,5) [5|30.5] "" Vector__XXX
+ SG_ pwm_8_frequency : 296|16@1+ (1,0) [0|65535] "Hz" Vector__XXX
+ SG_ pwm_8_duty : 280|16@1+ (0.1,0) [0|100] "%" Vector__XXX
+ SG_ pwm_7_frequency : 256|16@1+ (1,0) [0|65535] "Hz" Vector__XXX
+ SG_ pwm_7_duty : 240|16@1+ (0.1,0) [0|100] "%" Vector__XXX
+ SG_ pwm_6_frequency : 216|16@1+ (1,0) [0|65535] "Hz" Vector__XXX
+ SG_ pwm_6_duty : 200|16@1+ (0.1,0) [0|100] "%" Vector__XXX
+ SG_ pwm_5_frequency : 176|16@1+ (1,0) [0|65535] "Hz" Vector__XXX
+ SG_ pwm_5_duty : 160|16@1+ (0.1,0) [0|100] "%" Vector__XXX
+ SG_ pwm_4_frequency : 136|16@1+ (1,0) [0|65535] "Hz" Vector__XXX
+ SG_ pwm_4_duty : 120|16@1+ (0.1,0) [0|100] "%" Vector__XXX
+ SG_ pwm_3_frequency : 96|16@1+ (1,0) [0|65535] "Hz" Vector__XXX
+ SG_ pwm_3_duty : 80|16@1+ (0.1,0) [0|100] "%" Vector__XXX
+ SG_ pwm_2_frequency : 56|16@1+ (1,0) [0|65535] "Hz" Vector__XXX
+ SG_ pwm_2_duty : 40|16@1+ (0.1,0) [0|100] "%" Vector__XXX
+ SG_ pwm_1_frequency : 16|16@1+ (1,0) [0|65535] "Hz" Vector__XXX
+ SG_ pwm_1_duty : 0|16@1+ (0.1,0) [0|100] "%" Vector__XXX
+
+BO_ 2366897918 PWM_OUT_VAL_ans: 48 SODA_XIL
+ SG_ pwm_8_voltage : 312|8@1+ (0.1,5) [5|30.5] "" Vector__XXX
+ SG_ pwm_7_voltage : 272|8@1+ (0.1,5) [5|30.5] "" Vector__XXX
+ SG_ pwm_6_voltage : 232|8@1+ (0.1,5) [5|30.5] "" Vector__XXX
+ SG_ pwm_5_voltage : 192|8@1+ (0.1,5) [5|30.5] "" Vector__XXX
+ SG_ pwm_4_voltage : 152|8@1+ (0.1,5) [5|30.5] "" Vector__XXX
+ SG_ pwm_3_voltage : 112|8@1+ (0.1,5) [5|30.5] "" Vector__XXX
+ SG_ pwm_2_voltage : 72|8@1+ (0.1,5) [5|30.5] "" Vector__XXX
+ SG_ pwm_1_voltage : 32|8@1+ (0.1,5) [5|30.5] "" Vector__XXX
+ SG_ pwm_8_frequency : 296|16@1+ (1,0) [0|65535] "Hz" Vector__XXX
+ SG_ pwm_8_duty : 280|16@1+ (0.1,0) [0|100] "%" Vector__XXX
+ SG_ pwm_7_frequency : 256|16@1+ (1,0) [0|65535] "Hz" Vector__XXX
+ SG_ pwm_7_duty : 240|16@1+ (0.1,0) [0|100] "%" Vector__XXX
+ SG_ pwm_6_frequency : 216|16@1+ (1,0) [0|65535] "Hz" Vector__XXX
+ SG_ pwm_6_duty : 200|16@1+ (0.1,0) [0|100] "%" Vector__XXX
+ SG_ pwm_5_frequency : 176|16@1+ (1,0) [0|65535] "Hz" Vector__XXX
+ SG_ pwm_5_duty : 160|16@1+ (0.1,0) [0|100] "%" Vector__XXX
+ SG_ pwm_4_frequency : 136|16@1+ (1,0) [0|65535] "Hz" Vector__XXX
+ SG_ pwm_4_duty : 120|16@1+ (0.1,0) [0|100] "%" Vector__XXX
+ SG_ pwm_3_frequency : 96|16@1+ (1,0) [0|65535] "Hz" Vector__XXX
+ SG_ pwm_3_duty : 80|16@1+ (0.1,0) [0|100] "%" Vector__XXX
+ SG_ pwm_2_frequency : 56|16@1+ (1,0) [0|65535] "Hz" Vector__XXX
+ SG_ pwm_2_duty : 40|16@1+ (0.1,0) [0|100] "%" Vector__XXX
+ SG_ pwm_1_frequency : 16|16@1+ (1,0) [0|65535] "Hz" Vector__XXX
+ SG_ pwm_1_duty : 0|16@1+ (0.1,0) [0|100] "%" Vector__XXX
+
+
+
+CM_ SG_ 2349006590 module_boot_has_update "Shows if application has an updated version of bootloader stored";
+CM_ SG_ 2349006590 module_app_hw_name_2 "Second part of application hardware name (char 9)";
+CM_ SG_ 2349006590 module_app_hw_name_1 "First part of application hardware name (chars 1..8)";
+CM_ SG_ 2349006590 module_app_fw_name_3 "Third part of application firmware name (char 17)";
+CM_ SG_ 2349006590 module_app_fw_name_2 "Second part of application firmware name (chars 9..16)";
+CM_ SG_ 2349006590 module_app_fw_name_1 "First part of application firmware name (chars 1..8)";
+CM_ SG_ 2349006590 module_app_target "Build target type Debug/Release. Debug builds not intended to be run on production vehicles";
+CM_ SG_ 2349006590 module_app_build_min "Minute part of date when application was build";
+CM_ SG_ 2349006590 module_app_build_hour "Hour part of date when application was build";
+CM_ SG_ 2349006590 module_app_build_day "Day part of date when application was build";
+CM_ SG_ 2349006590 module_app_build_month "Month part of date when application was build";
+CM_ SG_ 2349006590 module_app_build_year "Year part of date when application was build";
+CM_ SG_ 2349006590 module_app_ver_build "Application build number";
+CM_ SG_ 2349006590 module_app_ver_fix "Application fix version";
+CM_ SG_ 2349006590 module_app_ver_minor "Application Minor version number";
+CM_ SG_ 2349006590 module_app_ver_major "Application Major version number";
+CM_ SG_ 2349006590 module_app_ver_gen "Application Generation number";
+CM_ SG_ 2349006590 module_app_crc "Application CRC32 checksum";
+CM_ SG_ 2349006590 module_capabilities "Device capabilities";
+CM_ SG_ 2349006590 module_info_ver "Increased on every module info modification";
+CM_ SG_ 2349006590 module_status "Common status of module. Same value as ModuleCommonStatus";
+CM_ SG_ 2349006590 sys_runtime_s "Module uptime from last power on";
+CM_ BO_ 2353200894 "Set data to answer on received frame_id header";
+CM_ BO_ 2353266430 "Data received by slave device on the frame_id";
+CM_ SG_ 2348875518 module_info_boot_req "Request base module info";
+CM_ SG_ 2348875518 module_info_can_mux_req "Request can mux configuration info";
+CM_ SG_ 2348875518 module_info_can_info_req "Request can info";
+CM_ SG_ 2348875518 module_info_pin_info_req "Request pin info";
+CM_ SG_ 2348875518 module_info_ex_req "Request extended module info";
+CM_ SG_ 2348875518 module_info_base_req "Request base module info";
+CM_ SG_ 2349399806 module_ip_addr "Device's IPv4 address";
+CM_ SG_ 2349399806 module_chip_uid_2 "Second part of device's chip Unique ID";
+CM_ SG_ 2349399806 module_chip_uid_1 "First part of device's chip Unique ID";
+CM_ SG_ 2349399806 module_mac_addr "Device's MAC address";
+CM_ SG_ 2348941054 module_calibration_status "Shows if module has been calibrated";
+CM_ SG_ 2348941054 module_app_hw_name_2 "Second part of application hardware name (char 9)";
+CM_ SG_ 2348941054 module_app_hw_name_1 "First part of application hardware name (chars 1..8)";
+CM_ SG_ 2348941054 module_app_fw_name_3 "Third part of application firmware name (char 17)";
+CM_ SG_ 2348941054 module_app_fw_name_2 "Second part of application firmware name (chars 9..16)";
+CM_ SG_ 2348941054 module_app_fw_name_1 "First part of application firmware name (chars 1..8)";
+CM_ SG_ 2348941054 module_app_target "Build target type Debug/Release. Debug builds not intended to be run on production vehicles";
+CM_ SG_ 2348941054 module_app_build_min "Minute part of date when application was build";
+CM_ SG_ 2348941054 module_app_build_hour "Hour part of date when application was build";
+CM_ SG_ 2348941054 module_app_build_day "Day part of date when application was build";
+CM_ SG_ 2348941054 module_app_build_month "Month part of date when application was build";
+CM_ SG_ 2348941054 module_app_build_year "Year part of date when application was build";
+CM_ SG_ 2348941054 module_app_ver_build "Application build number";
+CM_ SG_ 2348941054 module_app_ver_fix "Application fix version";
+CM_ SG_ 2348941054 module_app_ver_minor "Application Minor version number";
+CM_ SG_ 2348941054 module_app_ver_major "Application Major version number";
+CM_ SG_ 2348941054 module_app_ver_gen "Application Generation number";
+CM_ SG_ 2348941054 module_app_crc "Application CRC32 checksum";
+CM_ SG_ 2348941054 module_capabilities "Device capabilities";
+CM_ SG_ 2348941054 module_info_ver "Increased on every module info modification";
+CM_ SG_ 2348941054 module_status "Common status of module. Same value as ModuleCommonStatus";
+CM_ SG_ 2348941054 sys_runtime_s "Module uptime from last power on";
+BA_DEF_ SG_  "SigType" ENUM  "Default","Range","RangeSigned","ASCII","Discrete","Control","ReferencePGN","DTC","StringDelimiter","StringLength","StringLengthControl","MessageCounter","MessageChecksum";
+BA_DEF_ BO_  "CANFD_BRS" ENUM  "0","1";
+BA_DEF_ BO_  "GenMsgSendType" ENUM  "cyclic","NotUsed","NotUsed","NotUsed","NotUsed","NotUsed","NotUsed","IfActive","noMsgSendType";
+BA_DEF_ BO_  "GenMsgCycleTime" INT 0 3600000;
+BA_DEF_  "DBName" STRING ;
+BA_DEF_  "BusType" STRING ;
+BA_DEF_ BU_  "NodeLayerModules" STRING ;
+BA_DEF_ BU_  "ECU" STRING ;
+BA_DEF_ BU_  "CANoeJitterMax" INT 0 0;
+BA_DEF_ BU_  "CANoeJitterMin" INT 0 0;
+BA_DEF_ BU_  "CANoeDrift" INT 0 0;
+BA_DEF_ BU_  "CANoeStartDelay" INT 0 0;
+BA_DEF_ BO_  "VFrameFormat" ENUM  "StandardCAN","ExtendedCAN","reserved","J1939PG","reserved","reserved","reserved","reserved","reserved","reserved","reserved","reserved","reserved","reserved","StandardCAN_FD","ExtendedCAN_FD";
+BA_DEF_DEF_  "SigType" "Default";
+BA_DEF_DEF_  "CANFD_BRS" "1";
+BA_DEF_DEF_  "GenMsgSendType" "";
+BA_DEF_DEF_  "GenMsgCycleTime" 0;
+BA_DEF_DEF_  "DBName" "";
+BA_DEF_DEF_  "BusType" "";
+BA_DEF_DEF_  "NodeLayerModules" "";
+BA_DEF_DEF_  "ECU" "";
+BA_DEF_DEF_  "CANoeJitterMax" 0;
+BA_DEF_DEF_  "CANoeJitterMin" 0;
+BA_DEF_DEF_  "CANoeDrift" 0;
+BA_DEF_DEF_  "CANoeStartDelay" 0;
+BA_DEF_DEF_  "VFrameFormat" "J1939PG";
+BA_ "BusType" "CAN FD";
+BA_ "DBName" "fd";
+BA_ "GenMsgCycleTime" BO_ 2349006590 1000;
+BA_ "GenMsgSendType" BO_ 2349006590 0;
+BA_ "VFrameFormat" BO_ 2349006590 15;
+BA_ "GenMsgCycleTime" BO_ 2351103742 1000;
+BA_ "GenMsgSendType" BO_ 2351103742 0;
+BA_ "VFrameFormat" BO_ 2351103742 15;
+BA_ "GenMsgCycleTime" BO_ 2368667390 1000;
+BA_ "GenMsgSendType" BO_ 2368667390 0;
+BA_ "VFrameFormat" BO_ 2368667390 15;
+BA_ "GenMsgSendType" BO_ 2368601854 0;
+BA_ "GenMsgCycleTime" BO_ 2368601854 1000;
+BA_ "VFrameFormat" BO_ 2368601854 15;
+BA_ "GenMsgSendType" BO_ 2368536318 0;
+BA_ "GenMsgCycleTime" BO_ 2368536318 1000;
+BA_ "VFrameFormat" BO_ 2368536318 15;
+BA_ "GenMsgCycleTime" BO_ 2353200894 1000;
+BA_ "GenMsgSendType" BO_ 2353200894 0;
+BA_ "VFrameFormat" BO_ 2353200894 15;
+BA_ "GenMsgCycleTime" BO_ 2353266430 1000;
+BA_ "GenMsgSendType" BO_ 2353266430 0;
+BA_ "VFrameFormat" BO_ 2353266430 15;
+BA_ "GenMsgCycleTime" BO_ 2353069822 1000;
+BA_ "GenMsgSendType" BO_ 2353069822 0;
+BA_ "VFrameFormat" BO_ 2353069822 15;
+BA_ "GenMsgCycleTime" BO_ 2351955966 1000;
+BA_ "GenMsgSendType" BO_ 2351955966 0;
+BA_ "VFrameFormat" BO_ 2351955966 15;
+BA_ "GenMsgCycleTime" BO_ 2351562494 1000;
+BA_ "GenMsgSendType" BO_ 2351562494 0;
+BA_ "VFrameFormat" BO_ 2351562494 15;
+BA_ "GenMsgCycleTime" BO_ 2351496958 1000;
+BA_ "GenMsgSendType" BO_ 2351496958 0;
+BA_ "VFrameFormat" BO_ 2351496958 15;
+BA_ "GenMsgSendType" BO_ 2368470782 0;
+BA_ "GenMsgCycleTime" BO_ 2368470782 1000;
+BA_ "VFrameFormat" BO_ 2368470782 15;
+BA_ "GenMsgCycleTime" BO_ 2368405246 1000;
+BA_ "GenMsgSendType" BO_ 2368405246 0;
+BA_ "VFrameFormat" BO_ 2368405246 15;
+BA_ "GenMsgCycleTime" BO_ 2368339710 1000;
+BA_ "GenMsgSendType" BO_ 2368339710 0;
+BA_ "VFrameFormat" BO_ 2368339710 15;
+BA_ "GenMsgSendType" BO_ 2368274174 0;
+BA_ "GenMsgCycleTime" BO_ 2368274174 1000;
+BA_ "VFrameFormat" BO_ 2368274174 15;
+BA_ "GenMsgSendType" BO_ 2368208638 0;
+BA_ "GenMsgCycleTime" BO_ 2368208638 1000;
+BA_ "VFrameFormat" BO_ 2368208638 15;
+BA_ "GenMsgSendType" BO_ 2368143102 0;
+BA_ "GenMsgCycleTime" BO_ 2368143102 1000;
+BA_ "VFrameFormat" BO_ 2368143102 15;
+BA_ "GenMsgCycleTime" BO_ 2350972670 1000;
+BA_ "GenMsgSendType" BO_ 2350972670 0;
+BA_ "VFrameFormat" BO_ 2350972670 15;
+BA_ "GenMsgCycleTime" BO_ 2351038206 1000;
+BA_ "GenMsgSendType" BO_ 2351038206 0;
+BA_ "VFrameFormat" BO_ 2351038206 15;
+BA_ "GenMsgSendType" BO_ 2349924094 0;
+BA_ "GenMsgCycleTime" BO_ 2349924094 1000;
+BA_ "VFrameFormat" BO_ 2349924094 15;
+BA_ "GenMsgSendType" BO_ 2367946494 0;
+BA_ "GenMsgCycleTime" BO_ 2367946494 1000;
+BA_ "VFrameFormat" BO_ 2367946494 15;
+BA_ "GenMsgSendType" BO_ 2368012030 0;
+BA_ "GenMsgCycleTime" BO_ 2368012030 1000;
+BA_ "VFrameFormat" BO_ 2368012030 15;
+BA_ "GenMsgSendType" BO_ 2348875518 0;
+BA_ "GenMsgCycleTime" BO_ 2348875518 1000;
+BA_ "VFrameFormat" BO_ 2348875518 15;
+BA_ "GenMsgSendType" BO_ 2349399806 0;
+BA_ "GenMsgCycleTime" BO_ 2349399806 1000;
+BA_ "VFrameFormat" BO_ 2349399806 15;
+BA_ "GenMsgSendType" BO_ 2348941054 0;
+BA_ "GenMsgCycleTime" BO_ 2348941054 1000;
+BA_ "VFrameFormat" BO_ 2348941054 15;
+BA_ "GenMsgSendType" BO_ 2367880958 0;
+BA_ "GenMsgCycleTime" BO_ 2367880958 1000;
+BA_ "VFrameFormat" BO_ 2367880958 15;
+BA_ "GenMsgSendType" BO_ 2367749886 0;
+BA_ "GenMsgCycleTime" BO_ 2367749886 1000;
+BA_ "VFrameFormat" BO_ 2367749886 15;
+BA_ "GenMsgSendType" BO_ 2367815422 0;
+BA_ "GenMsgCycleTime" BO_ 2367815422 1000;
+BA_ "VFrameFormat" BO_ 2367815422 15;
+BA_ "GenMsgSendType" BO_ 2367094526 0;
+BA_ "GenMsgCycleTime" BO_ 2367094526 1000;
+BA_ "VFrameFormat" BO_ 2367094526 15;
+BA_ "GenMsgSendType" BO_ 2367160062 0;
+BA_ "GenMsgCycleTime" BO_ 2367160062 1000;
+BA_ "VFrameFormat" BO_ 2367160062 15;
+BA_ "GenMsgSendType" BO_ 2366963454 0;
+BA_ "GenMsgCycleTime" BO_ 2366963454 1000;
+BA_ "VFrameFormat" BO_ 2366963454 15;
+BA_ "GenMsgSendType" BO_ 2366832382 0;
+BA_ "GenMsgCycleTime" BO_ 2366832382 1000;
+BA_ "VFrameFormat" BO_ 2366832382 15;
+BA_ "GenMsgSendType" BO_ 2366897918 0;
+BA_ "GenMsgCycleTime" BO_ 2366897918 1000;
+BA_ "VFrameFormat" BO_ 2366897918 15;
+BA_ "SigType" SG_ 2349006590 module_app_hw_name_2 3;
+BA_ "SigType" SG_ 2349006590 module_app_hw_name_1 3;
+BA_ "SigType" SG_ 2349006590 module_app_fw_name_3 3;
+BA_ "SigType" SG_ 2349006590 module_app_fw_name_2 3;
+BA_ "SigType" SG_ 2349006590 module_app_fw_name_1 3;
+BA_ "SigType" SG_ 2348941054 module_app_hw_name_2 3;
+BA_ "SigType" SG_ 2348941054 module_app_hw_name_1 3;
+BA_ "SigType" SG_ 2348941054 module_app_fw_name_3 3;
+BA_ "SigType" SG_ 2348941054 module_app_fw_name_2 3;
+BA_ "SigType" SG_ 2348941054 module_app_fw_name_1 3;
+VAL_ 2349006590 module_app_target 5 "ReleaseCheck" 4 "DebugCheck" 3 "Other" 2 "Release" 1 "Debug" 0 "NA" ;
+VAL_ 2349006590 module_status 3 "Not Available" 2 "Critical" 1 "Warning" 0 "Ok" ;
+VAL_ 2351103742 can_lec_8 7 "NO_CHANGE" 6 "CRC_ERROR" 5 "BIT0_ERROR" 4 "BIT1_ERROR" 3 "ACK_ERROR" 2 "FORM_ERROR" 1 "STUFF_ERROR" 0 "NO_ERROR" ;
+VAL_ 2351103742 can_lec_7 7 "NO_CHANGE" 6 "CRC_ERROR" 5 "BIT0_ERROR" 4 "BIT1_ERROR" 3 "ACK_ERROR" 2 "FORM_ERROR" 1 "STUFF_ERROR" 0 "NO_ERROR" ;
+VAL_ 2351103742 can_lec_6 7 "NO_CHANGE" 6 "CRC_ERROR" 5 "BIT0_ERROR" 4 "BIT1_ERROR" 3 "ACK_ERROR" 2 "FORM_ERROR" 1 "STUFF_ERROR" 0 "NO_ERROR" ;
+VAL_ 2351103742 can_lec_5 7 "NO_CHANGE" 6 "CRC_ERROR" 5 "BIT0_ERROR" 4 "BIT1_ERROR" 3 "ACK_ERROR" 2 "FORM_ERROR" 1 "STUFF_ERROR" 0 "NO_ERROR" ;
+VAL_ 2351103742 can_lec_4 7 "NO_CHANGE" 6 "CRC_ERROR" 5 "BIT0_ERROR" 4 "BIT1_ERROR" 3 "ACK_ERROR" 2 "FORM_ERROR" 1 "STUFF_ERROR" 0 "NO_ERROR" ;
+VAL_ 2351103742 can_lec_3 7 "NO_CHANGE" 6 "CRC_ERROR" 5 "BIT0_ERROR" 4 "BIT1_ERROR" 3 "ACK_ERROR" 2 "FORM_ERROR" 1 "STUFF_ERROR" 0 "NO_ERROR" ;
+VAL_ 2351103742 can_lec_2 7 "NO_CHANGE" 6 "CRC_ERROR" 5 "BIT0_ERROR" 4 "BIT1_ERROR" 3 "ACK_ERROR" 2 "FORM_ERROR" 1 "STUFF_ERROR" 0 "NO_ERROR" ;
+VAL_ 2351103742 can_lec_1 7 "NO_CHANGE" 6 "CRC_ERROR" 5 "BIT0_ERROR" 4 "BIT1_ERROR" 3 "ACK_ERROR" 2 "FORM_ERROR" 1 "STUFF_ERROR" 0 "NO_ERROR" ;
+VAL_ 2351103742 can_state_8 4 "BUSOFF" 3 "PASSIVE" 2 "WARNING" 1 "ACTIVE" 0 "UNKNOWN" ;
+VAL_ 2351103742 can_state_7 4 "BUSOFF" 3 "PASSIVE" 2 "WARNING" 1 "ACTIVE" 0 "UNKNOWN" ;
+VAL_ 2351103742 can_state_6 4 "BUSOFF" 3 "PASSIVE" 2 "WARNING" 1 "ACTIVE" 0 "UNKNOWN" ;
+VAL_ 2351103742 can_state_5 4 "BUSOFF" 3 "PASSIVE" 2 "WARNING" 1 "ACTIVE" 0 "UNKNOWN" ;
+VAL_ 2351103742 can_state_4 4 "BUSOFF" 3 "PASSIVE" 2 "WARNING" 1 "ACTIVE" 0 "UNKNOWN" ;
+VAL_ 2351103742 can_state_3 4 "BUSOFF" 3 "PASSIVE" 2 "WARNING" 1 "ACTIVE" 0 "UNKNOWN" ;
+VAL_ 2351103742 can_state_2 4 "BUSOFF" 3 "PASSIVE" 2 "WARNING" 1 "ACTIVE" 0 "UNKNOWN" ;
+VAL_ 2351103742 can_state_1 4 "BUSOFF" 3 "PASSIVE" 2 "WARNING" 1 "ACTIVE" 0 "UNKNOWN" ;
+VAL_ 2350972670 can8_speed_fd 5 "CAN_SPEED_FD_8000_KB" 4 "CAN_SPEED_FD_5000_KB" 3 "CAN_SPEED_FD_4000_KB" 2 "CAN_SPEED_FD_2000_KB" 1 "CAN_SPEED_FD_1000_KB" 0 "CAN_SPEED_FD_OFF" ;
+VAL_ 2350972670 can8_speed 3 "CAN_SPEED_1000_KB" 2 "CAN_SPEED_500_KB" 1 "CAN_SPEED_250_KB" 0 "CAN_SPEED_OFF" ;
+VAL_ 2350972670 can7_speed_fd 5 "CAN_SPEED_FD_8000_KB" 4 "CAN_SPEED_FD_5000_KB" 3 "CAN_SPEED_FD_4000_KB" 2 "CAN_SPEED_FD_2000_KB" 1 "CAN_SPEED_FD_1000_KB" 0 "CAN_SPEED_FD_OFF" ;
+VAL_ 2350972670 can7_speed 3 "CAN_SPEED_1000_KB" 2 "CAN_SPEED_500_KB" 1 "CAN_SPEED_250_KB" 0 "CAN_SPEED_OFF" ;
+VAL_ 2350972670 can6_speed_fd 5 "CAN_SPEED_FD_8000_KB" 4 "CAN_SPEED_FD_5000_KB" 3 "CAN_SPEED_FD_4000_KB" 2 "CAN_SPEED_FD_2000_KB" 1 "CAN_SPEED_FD_1000_KB" 0 "CAN_SPEED_FD_OFF" ;
+VAL_ 2350972670 can6_speed 3 "CAN_SPEED_1000_KB" 2 "CAN_SPEED_500_KB" 1 "CAN_SPEED_250_KB" 0 "CAN_SPEED_OFF" ;
+VAL_ 2350972670 can5_speed_fd 5 "CAN_SPEED_FD_8000_KB" 4 "CAN_SPEED_FD_5000_KB" 3 "CAN_SPEED_FD_4000_KB" 2 "CAN_SPEED_FD_2000_KB" 1 "CAN_SPEED_FD_1000_KB" 0 "CAN_SPEED_FD_OFF" ;
+VAL_ 2350972670 can5_speed 3 "CAN_SPEED_1000_KB" 2 "CAN_SPEED_500_KB" 1 "CAN_SPEED_250_KB" 0 "CAN_SPEED_OFF" ;
+VAL_ 2350972670 can4_speed_fd 5 "CAN_SPEED_FD_8000_KB" 4 "CAN_SPEED_FD_5000_KB" 3 "CAN_SPEED_FD_4000_KB" 2 "CAN_SPEED_FD_2000_KB" 1 "CAN_SPEED_FD_1000_KB" 0 "CAN_SPEED_FD_OFF" ;
+VAL_ 2350972670 can4_speed 3 "CAN_SPEED_1000_KB" 2 "CAN_SPEED_500_KB" 1 "CAN_SPEED_250_KB" 0 "CAN_SPEED_OFF" ;
+VAL_ 2350972670 can3_speed_fd 5 "CAN_SPEED_FD_8000_KB" 4 "CAN_SPEED_FD_5000_KB" 3 "CAN_SPEED_FD_4000_KB" 2 "CAN_SPEED_FD_2000_KB" 1 "CAN_SPEED_FD_1000_KB" 0 "CAN_SPEED_FD_OFF" ;
+VAL_ 2350972670 can3_speed 3 "CAN_SPEED_1000_KB" 2 "CAN_SPEED_500_KB" 1 "CAN_SPEED_250_KB" 0 "CAN_SPEED_OFF" ;
+VAL_ 2350972670 can2_speed_fd 5 "CAN_SPEED_FD_8000_KB" 4 "CAN_SPEED_FD_5000_KB" 3 "CAN_SPEED_FD_4000_KB" 2 "CAN_SPEED_FD_2000_KB" 1 "CAN_SPEED_FD_1000_KB" 0 "CAN_SPEED_FD_OFF" ;
+VAL_ 2350972670 can2_speed 3 "CAN_SPEED_1000_KB" 2 "CAN_SPEED_500_KB" 1 "CAN_SPEED_250_KB" 0 "CAN_SPEED_OFF" ;
+VAL_ 2350972670 can1_speed_fd 5 "CAN_SPEED_FD_8000_KB" 4 "CAN_SPEED_FD_5000_KB" 3 "CAN_SPEED_FD_4000_KB" 2 "CAN_SPEED_FD_2000_KB" 1 "CAN_SPEED_FD_1000_KB" 0 "CAN_SPEED_FD_OFF" ;
+VAL_ 2350972670 can1_speed 3 "CAN_SPEED_1000_KB" 2 "CAN_SPEED_500_KB" 1 "CAN_SPEED_250_KB" 0 "CAN_SPEED_OFF" ;
+VAL_ 2351038206 can8_speed_fd 5 "CAN_SPEED_FD_8000_KB" 4 "CAN_SPEED_FD_5000_KB" 3 "CAN_SPEED_FD_4000_KB" 2 "CAN_SPEED_FD_2000_KB" 1 "CAN_SPEED_FD_1000_KB" 0 "CAN_SPEED_FD_OFF" ;
+VAL_ 2351038206 can8_speed 3 "CAN_SPEED_1000_KB" 2 "CAN_SPEED_500_KB" 1 "CAN_SPEED_250_KB" 0 "CAN_SPEED_OFF" ;
+VAL_ 2351038206 can7_speed_fd 5 "CAN_SPEED_FD_8000_KB" 4 "CAN_SPEED_FD_5000_KB" 3 "CAN_SPEED_FD_4000_KB" 2 "CAN_SPEED_FD_2000_KB" 1 "CAN_SPEED_FD_1000_KB" 0 "CAN_SPEED_FD_OFF" ;
+VAL_ 2351038206 can7_speed 3 "CAN_SPEED_1000_KB" 2 "CAN_SPEED_500_KB" 1 "CAN_SPEED_250_KB" 0 "CAN_SPEED_OFF" ;
+VAL_ 2351038206 can6_speed_fd 5 "CAN_SPEED_FD_8000_KB" 4 "CAN_SPEED_FD_5000_KB" 3 "CAN_SPEED_FD_4000_KB" 2 "CAN_SPEED_FD_2000_KB" 1 "CAN_SPEED_FD_1000_KB" 0 "CAN_SPEED_FD_OFF" ;
+VAL_ 2351038206 can6_speed 3 "CAN_SPEED_1000_KB" 2 "CAN_SPEED_500_KB" 1 "CAN_SPEED_250_KB" 0 "CAN_SPEED_OFF" ;
+VAL_ 2351038206 can5_speed_fd 5 "CAN_SPEED_FD_8000_KB" 4 "CAN_SPEED_FD_5000_KB" 3 "CAN_SPEED_FD_4000_KB" 2 "CAN_SPEED_FD_2000_KB" 1 "CAN_SPEED_FD_1000_KB" 0 "CAN_SPEED_FD_OFF" ;
+VAL_ 2351038206 can5_speed 3 "CAN_SPEED_1000_KB" 2 "CAN_SPEED_500_KB" 1 "CAN_SPEED_250_KB" 0 "CAN_SPEED_OFF" ;
+VAL_ 2351038206 can4_speed_fd 5 "CAN_SPEED_FD_8000_KB" 4 "CAN_SPEED_FD_5000_KB" 3 "CAN_SPEED_FD_4000_KB" 2 "CAN_SPEED_FD_2000_KB" 1 "CAN_SPEED_FD_1000_KB" 0 "CAN_SPEED_FD_OFF" ;
+VAL_ 2351038206 can4_speed 3 "CAN_SPEED_1000_KB" 2 "CAN_SPEED_500_KB" 1 "CAN_SPEED_250_KB" 0 "CAN_SPEED_OFF" ;
+VAL_ 2351038206 can3_speed_fd 5 "CAN_SPEED_FD_8000_KB" 4 "CAN_SPEED_FD_5000_KB" 3 "CAN_SPEED_FD_4000_KB" 2 "CAN_SPEED_FD_2000_KB" 1 "CAN_SPEED_FD_1000_KB" 0 "CAN_SPEED_FD_OFF" ;
+VAL_ 2351038206 can3_speed 3 "CAN_SPEED_1000_KB" 2 "CAN_SPEED_500_KB" 1 "CAN_SPEED_250_KB" 0 "CAN_SPEED_OFF" ;
+VAL_ 2351038206 can2_speed_fd 5 "CAN_SPEED_FD_8000_KB" 4 "CAN_SPEED_FD_5000_KB" 3 "CAN_SPEED_FD_4000_KB" 2 "CAN_SPEED_FD_2000_KB" 1 "CAN_SPEED_FD_1000_KB" 0 "CAN_SPEED_FD_OFF" ;
+VAL_ 2351038206 can2_speed 3 "CAN_SPEED_1000_KB" 2 "CAN_SPEED_500_KB" 1 "CAN_SPEED_250_KB" 0 "CAN_SPEED_OFF" ;
+VAL_ 2351038206 can1_speed_fd 5 "CAN_SPEED_FD_8000_KB" 4 "CAN_SPEED_FD_5000_KB" 3 "CAN_SPEED_FD_4000_KB" 2 "CAN_SPEED_FD_2000_KB" 1 "CAN_SPEED_FD_1000_KB" 0 "CAN_SPEED_FD_OFF" ;
+VAL_ 2351038206 can1_speed 3 "CAN_SPEED_1000_KB" 2 "CAN_SPEED_500_KB" 1 "CAN_SPEED_250_KB" 0 "CAN_SPEED_OFF" ;
+VAL_ 2349924094 pin_info_pin_64_capabilities 16 "pcRS485B" 15 "pcRS485A" 14 "pcLIN" 13 "pcCANL" 12 "pcCANH" 11 "pcRELAY" 10 "pcLOAD" 9 "pcCI" 8 "pcCO" 7 "pcVI" 6 "pcVO" 5 "pcIC" 4 "pcPWM" 3 "pcUIO" 2 "pcPWR" 1 "pcGND" 0 "pcNC" ;
+VAL_ 2349924094 pin_info_pin_63_capabilities 16 "pcRS485B" 15 "pcRS485A" 14 "pcLIN" 13 "pcCANL" 12 "pcCANH" 11 "pcRELAY" 10 "pcLOAD" 9 "pcCI" 8 "pcCO" 7 "pcVI" 6 "pcVO" 5 "pcIC" 4 "pcPWM" 3 "pcUIO" 2 "pcPWR" 1 "pcGND" 0 "pcNC" ;
+VAL_ 2349924094 pin_info_pin_62_capabilities 16 "pcRS485B" 15 "pcRS485A" 14 "pcLIN" 13 "pcCANL" 12 "pcCANH" 11 "pcRELAY" 10 "pcLOAD" 9 "pcCI" 8 "pcCO" 7 "pcVI" 6 "pcVO" 5 "pcIC" 4 "pcPWM" 3 "pcUIO" 2 "pcPWR" 1 "pcGND" 0 "pcNC" ;
+VAL_ 2349924094 pin_info_pin_61_capabilities 16 "pcRS485B" 15 "pcRS485A" 14 "pcLIN" 13 "pcCANL" 12 "pcCANH" 11 "pcRELAY" 10 "pcLOAD" 9 "pcCI" 8 "pcCO" 7 "pcVI" 6 "pcVO" 5 "pcIC" 4 "pcPWM" 3 "pcUIO" 2 "pcPWR" 1 "pcGND" 0 "pcNC" ;
+VAL_ 2349924094 pin_info_pin_60_capabilities 16 "pcRS485B" 15 "pcRS485A" 14 "pcLIN" 13 "pcCANL" 12 "pcCANH" 11 "pcRELAY" 10 "pcLOAD" 9 "pcCI" 8 "pcCO" 7 "pcVI" 6 "pcVO" 5 "pcIC" 4 "pcPWM" 3 "pcUIO" 2 "pcPWR" 1 "pcGND" 0 "pcNC" ;
+VAL_ 2349924094 pin_info_pin_59_capabilities 16 "pcRS485B" 15 "pcRS485A" 14 "pcLIN" 13 "pcCANL" 12 "pcCANH" 11 "pcRELAY" 10 "pcLOAD" 9 "pcCI" 8 "pcCO" 7 "pcVI" 6 "pcVO" 5 "pcIC" 4 "pcPWM" 3 "pcUIO" 2 "pcPWR" 1 "pcGND" 0 "pcNC" ;
+VAL_ 2349924094 pin_info_pin_58_capabilities 16 "pcRS485B" 15 "pcRS485A" 14 "pcLIN" 13 "pcCANL" 12 "pcCANH" 11 "pcRELAY" 10 "pcLOAD" 9 "pcCI" 8 "pcCO" 7 "pcVI" 6 "pcVO" 5 "pcIC" 4 "pcPWM" 3 "pcUIO" 2 "pcPWR" 1 "pcGND" 0 "pcNC" ;
+VAL_ 2349924094 pin_info_pin_57_capabilities 16 "pcRS485B" 15 "pcRS485A" 14 "pcLIN" 13 "pcCANL" 12 "pcCANH" 11 "pcRELAY" 10 "pcLOAD" 9 "pcCI" 8 "pcCO" 7 "pcVI" 6 "pcVO" 5 "pcIC" 4 "pcPWM" 3 "pcUIO" 2 "pcPWR" 1 "pcGND" 0 "pcNC" ;
+VAL_ 2349924094 pin_info_pin_56_capabilities 16 "pcRS485B" 15 "pcRS485A" 14 "pcLIN" 13 "pcCANL" 12 "pcCANH" 11 "pcRELAY" 10 "pcLOAD" 9 "pcCI" 8 "pcCO" 7 "pcVI" 6 "pcVO" 5 "pcIC" 4 "pcPWM" 3 "pcUIO" 2 "pcPWR" 1 "pcGND" 0 "pcNC" ;
+VAL_ 2349924094 pin_info_pin_55_capabilities 16 "pcRS485B" 15 "pcRS485A" 14 "pcLIN" 13 "pcCANL" 12 "pcCANH" 11 "pcRELAY" 10 "pcLOAD" 9 "pcCI" 8 "pcCO" 7 "pcVI" 6 "pcVO" 5 "pcIC" 4 "pcPWM" 3 "pcUIO" 2 "pcPWR" 1 "pcGND" 0 "pcNC" ;
+VAL_ 2349924094 pin_info_pin_54_capabilities 16 "pcRS485B" 15 "pcRS485A" 14 "pcLIN" 13 "pcCANL" 12 "pcCANH" 11 "pcRELAY" 10 "pcLOAD" 9 "pcCI" 8 "pcCO" 7 "pcVI" 6 "pcVO" 5 "pcIC" 4 "pcPWM" 3 "pcUIO" 2 "pcPWR" 1 "pcGND" 0 "pcNC" ;
+VAL_ 2349924094 pin_info_pin_53_capabilities 16 "pcRS485B" 15 "pcRS485A" 14 "pcLIN" 13 "pcCANL" 12 "pcCANH" 11 "pcRELAY" 10 "pcLOAD" 9 "pcCI" 8 "pcCO" 7 "pcVI" 6 "pcVO" 5 "pcIC" 4 "pcPWM" 3 "pcUIO" 2 "pcPWR" 1 "pcGND" 0 "pcNC" ;
+VAL_ 2349924094 pin_info_pin_52_capabilities 16 "pcRS485B" 15 "pcRS485A" 14 "pcLIN" 13 "pcCANL" 12 "pcCANH" 11 "pcRELAY" 10 "pcLOAD" 9 "pcCI" 8 "pcCO" 7 "pcVI" 6 "pcVO" 5 "pcIC" 4 "pcPWM" 3 "pcUIO" 2 "pcPWR" 1 "pcGND" 0 "pcNC" ;
+VAL_ 2349924094 pin_info_pin_51_capabilities 16 "pcRS485B" 15 "pcRS485A" 14 "pcLIN" 13 "pcCANL" 12 "pcCANH" 11 "pcRELAY" 10 "pcLOAD" 9 "pcCI" 8 "pcCO" 7 "pcVI" 6 "pcVO" 5 "pcIC" 4 "pcPWM" 3 "pcUIO" 2 "pcPWR" 1 "pcGND" 0 "pcNC" ;
+VAL_ 2349924094 pin_info_pin_50_capabilities 16 "pcRS485B" 15 "pcRS485A" 14 "pcLIN" 13 "pcCANL" 12 "pcCANH" 11 "pcRELAY" 10 "pcLOAD" 9 "pcCI" 8 "pcCO" 7 "pcVI" 6 "pcVO" 5 "pcIC" 4 "pcPWM" 3 "pcUIO" 2 "pcPWR" 1 "pcGND" 0 "pcNC" ;
+VAL_ 2349924094 pin_info_pin_49_capabilities 16 "pcRS485B" 15 "pcRS485A" 14 "pcLIN" 13 "pcCANL" 12 "pcCANH" 11 "pcRELAY" 10 "pcLOAD" 9 "pcCI" 8 "pcCO" 7 "pcVI" 6 "pcVO" 5 "pcIC" 4 "pcPWM" 3 "pcUIO" 2 "pcPWR" 1 "pcGND" 0 "pcNC" ;
+VAL_ 2349924094 pin_info_pin_48_capabilities 16 "pcRS485B" 15 "pcRS485A" 14 "pcLIN" 13 "pcCANL" 12 "pcCANH" 11 "pcRELAY" 10 "pcLOAD" 9 "pcCI" 8 "pcCO" 7 "pcVI" 6 "pcVO" 5 "pcIC" 4 "pcPWM" 3 "pcUIO" 2 "pcPWR" 1 "pcGND" 0 "pcNC" ;
+VAL_ 2349924094 pin_info_pin_47_capabilities 16 "pcRS485B" 15 "pcRS485A" 14 "pcLIN" 13 "pcCANL" 12 "pcCANH" 11 "pcRELAY" 10 "pcLOAD" 9 "pcCI" 8 "pcCO" 7 "pcVI" 6 "pcVO" 5 "pcIC" 4 "pcPWM" 3 "pcUIO" 2 "pcPWR" 1 "pcGND" 0 "pcNC" ;
+VAL_ 2349924094 pin_info_pin_46_capabilities 16 "pcRS485B" 15 "pcRS485A" 14 "pcLIN" 13 "pcCANL" 12 "pcCANH" 11 "pcRELAY" 10 "pcLOAD" 9 "pcCI" 8 "pcCO" 7 "pcVI" 6 "pcVO" 5 "pcIC" 4 "pcPWM" 3 "pcUIO" 2 "pcPWR" 1 "pcGND" 0 "pcNC" ;
+VAL_ 2349924094 pin_info_pin_45_capabilities 16 "pcRS485B" 15 "pcRS485A" 14 "pcLIN" 13 "pcCANL" 12 "pcCANH" 11 "pcRELAY" 10 "pcLOAD" 9 "pcCI" 8 "pcCO" 7 "pcVI" 6 "pcVO" 5 "pcIC" 4 "pcPWM" 3 "pcUIO" 2 "pcPWR" 1 "pcGND" 0 "pcNC" ;
+VAL_ 2349924094 pin_info_pin_44_capabilities 16 "pcRS485B" 15 "pcRS485A" 14 "pcLIN" 13 "pcCANL" 12 "pcCANH" 11 "pcRELAY" 10 "pcLOAD" 9 "pcCI" 8 "pcCO" 7 "pcVI" 6 "pcVO" 5 "pcIC" 4 "pcPWM" 3 "pcUIO" 2 "pcPWR" 1 "pcGND" 0 "pcNC" ;
+VAL_ 2349924094 pin_info_pin_43_capabilities 16 "pcRS485B" 15 "pcRS485A" 14 "pcLIN" 13 "pcCANL" 12 "pcCANH" 11 "pcRELAY" 10 "pcLOAD" 9 "pcCI" 8 "pcCO" 7 "pcVI" 6 "pcVO" 5 "pcIC" 4 "pcPWM" 3 "pcUIO" 2 "pcPWR" 1 "pcGND" 0 "pcNC" ;
+VAL_ 2349924094 pin_info_pin_42_capabilities 16 "pcRS485B" 15 "pcRS485A" 14 "pcLIN" 13 "pcCANL" 12 "pcCANH" 11 "pcRELAY" 10 "pcLOAD" 9 "pcCI" 8 "pcCO" 7 "pcVI" 6 "pcVO" 5 "pcIC" 4 "pcPWM" 3 "pcUIO" 2 "pcPWR" 1 "pcGND" 0 "pcNC" ;
+VAL_ 2349924094 pin_info_pin_41_capabilities 16 "pcRS485B" 15 "pcRS485A" 14 "pcLIN" 13 "pcCANL" 12 "pcCANH" 11 "pcRELAY" 10 "pcLOAD" 9 "pcCI" 8 "pcCO" 7 "pcVI" 6 "pcVO" 5 "pcIC" 4 "pcPWM" 3 "pcUIO" 2 "pcPWR" 1 "pcGND" 0 "pcNC" ;
+VAL_ 2349924094 pin_info_pin_40_capabilities 16 "pcRS485B" 15 "pcRS485A" 14 "pcLIN" 13 "pcCANL" 12 "pcCANH" 11 "pcRELAY" 10 "pcLOAD" 9 "pcCI" 8 "pcCO" 7 "pcVI" 6 "pcVO" 5 "pcIC" 4 "pcPWM" 3 "pcUIO" 2 "pcPWR" 1 "pcGND" 0 "pcNC" ;
+VAL_ 2349924094 pin_info_pin_39_capabilities 16 "pcRS485B" 15 "pcRS485A" 14 "pcLIN" 13 "pcCANL" 12 "pcCANH" 11 "pcRELAY" 10 "pcLOAD" 9 "pcCI" 8 "pcCO" 7 "pcVI" 6 "pcVO" 5 "pcIC" 4 "pcPWM" 3 "pcUIO" 2 "pcPWR" 1 "pcGND" 0 "pcNC" ;
+VAL_ 2349924094 pin_info_pin_38_capabilities 16 "pcRS485B" 15 "pcRS485A" 14 "pcLIN" 13 "pcCANL" 12 "pcCANH" 11 "pcRELAY" 10 "pcLOAD" 9 "pcCI" 8 "pcCO" 7 "pcVI" 6 "pcVO" 5 "pcIC" 4 "pcPWM" 3 "pcUIO" 2 "pcPWR" 1 "pcGND" 0 "pcNC" ;
+VAL_ 2349924094 pin_info_pin_37_capabilities 16 "pcRS485B" 15 "pcRS485A" 14 "pcLIN" 13 "pcCANL" 12 "pcCANH" 11 "pcRELAY" 10 "pcLOAD" 9 "pcCI" 8 "pcCO" 7 "pcVI" 6 "pcVO" 5 "pcIC" 4 "pcPWM" 3 "pcUIO" 2 "pcPWR" 1 "pcGND" 0 "pcNC" ;
+VAL_ 2349924094 pin_info_pin_36_capabilities 16 "pcRS485B" 15 "pcRS485A" 14 "pcLIN" 13 "pcCANL" 12 "pcCANH" 11 "pcRELAY" 10 "pcLOAD" 9 "pcCI" 8 "pcCO" 7 "pcVI" 6 "pcVO" 5 "pcIC" 4 "pcPWM" 3 "pcUIO" 2 "pcPWR" 1 "pcGND" 0 "pcNC" ;
+VAL_ 2349924094 pin_info_pin_35_capabilities 16 "pcRS485B" 15 "pcRS485A" 14 "pcLIN" 13 "pcCANL" 12 "pcCANH" 11 "pcRELAY" 10 "pcLOAD" 9 "pcCI" 8 "pcCO" 7 "pcVI" 6 "pcVO" 5 "pcIC" 4 "pcPWM" 3 "pcUIO" 2 "pcPWR" 1 "pcGND" 0 "pcNC" ;
+VAL_ 2349924094 pin_info_pin_34_capabilities 16 "pcRS485B" 15 "pcRS485A" 14 "pcLIN" 13 "pcCANL" 12 "pcCANH" 11 "pcRELAY" 10 "pcLOAD" 9 "pcCI" 8 "pcCO" 7 "pcVI" 6 "pcVO" 5 "pcIC" 4 "pcPWM" 3 "pcUIO" 2 "pcPWR" 1 "pcGND" 0 "pcNC" ;
+VAL_ 2349924094 pin_info_pin_33_capabilities 16 "pcRS485B" 15 "pcRS485A" 14 "pcLIN" 13 "pcCANL" 12 "pcCANH" 11 "pcRELAY" 10 "pcLOAD" 9 "pcCI" 8 "pcCO" 7 "pcVI" 6 "pcVO" 5 "pcIC" 4 "pcPWM" 3 "pcUIO" 2 "pcPWR" 1 "pcGND" 0 "pcNC" ;
+VAL_ 2349924094 pin_info_pin_32_capabilities 16 "pcRS485B" 15 "pcRS485A" 14 "pcLIN" 13 "pcCANL" 12 "pcCANH" 11 "pcRELAY" 10 "pcLOAD" 9 "pcCI" 8 "pcCO" 7 "pcVI" 6 "pcVO" 5 "pcIC" 4 "pcPWM" 3 "pcUIO" 2 "pcPWR" 1 "pcGND" 0 "pcNC" ;
+VAL_ 2349924094 pin_info_pin_31_capabilities 16 "pcRS485B" 15 "pcRS485A" 14 "pcLIN" 13 "pcCANL" 12 "pcCANH" 11 "pcRELAY" 10 "pcLOAD" 9 "pcCI" 8 "pcCO" 7 "pcVI" 6 "pcVO" 5 "pcIC" 4 "pcPWM" 3 "pcUIO" 2 "pcPWR" 1 "pcGND" 0 "pcNC" ;
+VAL_ 2349924094 pin_info_pin_30_capabilities 16 "pcRS485B" 15 "pcRS485A" 14 "pcLIN" 13 "pcCANL" 12 "pcCANH" 11 "pcRELAY" 10 "pcLOAD" 9 "pcCI" 8 "pcCO" 7 "pcVI" 6 "pcVO" 5 "pcIC" 4 "pcPWM" 3 "pcUIO" 2 "pcPWR" 1 "pcGND" 0 "pcNC" ;
+VAL_ 2349924094 pin_info_pin_29_capabilities 16 "pcRS485B" 15 "pcRS485A" 14 "pcLIN" 13 "pcCANL" 12 "pcCANH" 11 "pcRELAY" 10 "pcLOAD" 9 "pcCI" 8 "pcCO" 7 "pcVI" 6 "pcVO" 5 "pcIC" 4 "pcPWM" 3 "pcUIO" 2 "pcPWR" 1 "pcGND" 0 "pcNC" ;
+VAL_ 2349924094 pin_info_pin_28_capabilities 16 "pcRS485B" 15 "pcRS485A" 14 "pcLIN" 13 "pcCANL" 12 "pcCANH" 11 "pcRELAY" 10 "pcLOAD" 9 "pcCI" 8 "pcCO" 7 "pcVI" 6 "pcVO" 5 "pcIC" 4 "pcPWM" 3 "pcUIO" 2 "pcPWR" 1 "pcGND" 0 "pcNC" ;
+VAL_ 2349924094 pin_info_pin_27_capabilities 16 "pcRS485B" 15 "pcRS485A" 14 "pcLIN" 13 "pcCANL" 12 "pcCANH" 11 "pcRELAY" 10 "pcLOAD" 9 "pcCI" 8 "pcCO" 7 "pcVI" 6 "pcVO" 5 "pcIC" 4 "pcPWM" 3 "pcUIO" 2 "pcPWR" 1 "pcGND" 0 "pcNC" ;
+VAL_ 2349924094 pin_info_pin_26_capabilities 16 "pcRS485B" 15 "pcRS485A" 14 "pcLIN" 13 "pcCANL" 12 "pcCANH" 11 "pcRELAY" 10 "pcLOAD" 9 "pcCI" 8 "pcCO" 7 "pcVI" 6 "pcVO" 5 "pcIC" 4 "pcPWM" 3 "pcUIO" 2 "pcPWR" 1 "pcGND" 0 "pcNC" ;
+VAL_ 2349924094 pin_info_pin_25_capabilities 16 "pcRS485B" 15 "pcRS485A" 14 "pcLIN" 13 "pcCANL" 12 "pcCANH" 11 "pcRELAY" 10 "pcLOAD" 9 "pcCI" 8 "pcCO" 7 "pcVI" 6 "pcVO" 5 "pcIC" 4 "pcPWM" 3 "pcUIO" 2 "pcPWR" 1 "pcGND" 0 "pcNC" ;
+VAL_ 2349924094 pin_info_pin_24_capabilities 16 "pcRS485B" 15 "pcRS485A" 14 "pcLIN" 13 "pcCANL" 12 "pcCANH" 11 "pcRELAY" 10 "pcLOAD" 9 "pcCI" 8 "pcCO" 7 "pcVI" 6 "pcVO" 5 "pcIC" 4 "pcPWM" 3 "pcUIO" 2 "pcPWR" 1 "pcGND" 0 "pcNC" ;
+VAL_ 2349924094 pin_info_pin_23_capabilities 16 "pcRS485B" 15 "pcRS485A" 14 "pcLIN" 13 "pcCANL" 12 "pcCANH" 11 "pcRELAY" 10 "pcLOAD" 9 "pcCI" 8 "pcCO" 7 "pcVI" 6 "pcVO" 5 "pcIC" 4 "pcPWM" 3 "pcUIO" 2 "pcPWR" 1 "pcGND" 0 "pcNC" ;
+VAL_ 2349924094 pin_info_pin_22_capabilities 16 "pcRS485B" 15 "pcRS485A" 14 "pcLIN" 13 "pcCANL" 12 "pcCANH" 11 "pcRELAY" 10 "pcLOAD" 9 "pcCI" 8 "pcCO" 7 "pcVI" 6 "pcVO" 5 "pcIC" 4 "pcPWM" 3 "pcUIO" 2 "pcPWR" 1 "pcGND" 0 "pcNC" ;
+VAL_ 2349924094 pin_info_pin_21_capabilities 16 "pcRS485B" 15 "pcRS485A" 14 "pcLIN" 13 "pcCANL" 12 "pcCANH" 11 "pcRELAY" 10 "pcLOAD" 9 "pcCI" 8 "pcCO" 7 "pcVI" 6 "pcVO" 5 "pcIC" 4 "pcPWM" 3 "pcUIO" 2 "pcPWR" 1 "pcGND" 0 "pcNC" ;
+VAL_ 2349924094 pin_info_pin_20_capabilities 16 "pcRS485B" 15 "pcRS485A" 14 "pcLIN" 13 "pcCANL" 12 "pcCANH" 11 "pcRELAY" 10 "pcLOAD" 9 "pcCI" 8 "pcCO" 7 "pcVI" 6 "pcVO" 5 "pcIC" 4 "pcPWM" 3 "pcUIO" 2 "pcPWR" 1 "pcGND" 0 "pcNC" ;
+VAL_ 2349924094 pin_info_pin_19_capabilities 16 "pcRS485B" 15 "pcRS485A" 14 "pcLIN" 13 "pcCANL" 12 "pcCANH" 11 "pcRELAY" 10 "pcLOAD" 9 "pcCI" 8 "pcCO" 7 "pcVI" 6 "pcVO" 5 "pcIC" 4 "pcPWM" 3 "pcUIO" 2 "pcPWR" 1 "pcGND" 0 "pcNC" ;
+VAL_ 2349924094 pin_info_pin_18_capabilities 16 "pcRS485B" 15 "pcRS485A" 14 "pcLIN" 13 "pcCANL" 12 "pcCANH" 11 "pcRELAY" 10 "pcLOAD" 9 "pcCI" 8 "pcCO" 7 "pcVI" 6 "pcVO" 5 "pcIC" 4 "pcPWM" 3 "pcUIO" 2 "pcPWR" 1 "pcGND" 0 "pcNC" ;
+VAL_ 2349924094 pin_info_pin_17_capabilities 16 "pcRS485B" 15 "pcRS485A" 14 "pcLIN" 13 "pcCANL" 12 "pcCANH" 11 "pcRELAY" 10 "pcLOAD" 9 "pcCI" 8 "pcCO" 7 "pcVI" 6 "pcVO" 5 "pcIC" 4 "pcPWM" 3 "pcUIO" 2 "pcPWR" 1 "pcGND" 0 "pcNC" ;
+VAL_ 2349924094 pin_info_pin_16_capabilities 16 "pcRS485B" 15 "pcRS485A" 14 "pcLIN" 13 "pcCANL" 12 "pcCANH" 11 "pcRELAY" 10 "pcLOAD" 9 "pcCI" 8 "pcCO" 7 "pcVI" 6 "pcVO" 5 "pcIC" 4 "pcPWM" 3 "pcUIO" 2 "pcPWR" 1 "pcGND" 0 "pcNC" ;
+VAL_ 2349924094 pin_info_pin_15_capabilities 16 "pcRS485B" 15 "pcRS485A" 14 "pcLIN" 13 "pcCANL" 12 "pcCANH" 11 "pcRELAY" 10 "pcLOAD" 9 "pcCI" 8 "pcCO" 7 "pcVI" 6 "pcVO" 5 "pcIC" 4 "pcPWM" 3 "pcUIO" 2 "pcPWR" 1 "pcGND" 0 "pcNC" ;
+VAL_ 2349924094 pin_info_pin_14_capabilities 16 "pcRS485B" 15 "pcRS485A" 14 "pcLIN" 13 "pcCANL" 12 "pcCANH" 11 "pcRELAY" 10 "pcLOAD" 9 "pcCI" 8 "pcCO" 7 "pcVI" 6 "pcVO" 5 "pcIC" 4 "pcPWM" 3 "pcUIO" 2 "pcPWR" 1 "pcGND" 0 "pcNC" ;
+VAL_ 2349924094 pin_info_pin_13_capabilities 16 "pcRS485B" 15 "pcRS485A" 14 "pcLIN" 13 "pcCANL" 12 "pcCANH" 11 "pcRELAY" 10 "pcLOAD" 9 "pcCI" 8 "pcCO" 7 "pcVI" 6 "pcVO" 5 "pcIC" 4 "pcPWM" 3 "pcUIO" 2 "pcPWR" 1 "pcGND" 0 "pcNC" ;
+VAL_ 2349924094 pin_info_pin_12_capabilities 16 "pcRS485B" 15 "pcRS485A" 14 "pcLIN" 13 "pcCANL" 12 "pcCANH" 11 "pcRELAY" 10 "pcLOAD" 9 "pcCI" 8 "pcCO" 7 "pcVI" 6 "pcVO" 5 "pcIC" 4 "pcPWM" 3 "pcUIO" 2 "pcPWR" 1 "pcGND" 0 "pcNC" ;
+VAL_ 2349924094 pin_info_pin_11_capabilities 16 "pcRS485B" 15 "pcRS485A" 14 "pcLIN" 13 "pcCANL" 12 "pcCANH" 11 "pcRELAY" 10 "pcLOAD" 9 "pcCI" 8 "pcCO" 7 "pcVI" 6 "pcVO" 5 "pcIC" 4 "pcPWM" 3 "pcUIO" 2 "pcPWR" 1 "pcGND" 0 "pcNC" ;
+VAL_ 2349924094 pin_info_pin_10_capabilities 16 "pcRS485B" 15 "pcRS485A" 14 "pcLIN" 13 "pcCANL" 12 "pcCANH" 11 "pcRELAY" 10 "pcLOAD" 9 "pcCI" 8 "pcCO" 7 "pcVI" 6 "pcVO" 5 "pcIC" 4 "pcPWM" 3 "pcUIO" 2 "pcPWR" 1 "pcGND" 0 "pcNC" ;
+VAL_ 2349924094 pin_info_pin_9_capabilities 16 "pcRS485B" 15 "pcRS485A" 14 "pcLIN" 13 "pcCANL" 12 "pcCANH" 11 "pcRELAY" 10 "pcLOAD" 9 "pcCI" 8 "pcCO" 7 "pcVI" 6 "pcVO" 5 "pcIC" 4 "pcPWM" 3 "pcUIO" 2 "pcPWR" 1 "pcGND" 0 "pcNC" ;
+VAL_ 2349924094 pin_info_pin_8_capabilities 16 "pcRS485B" 15 "pcRS485A" 14 "pcLIN" 13 "pcCANL" 12 "pcCANH" 11 "pcRELAY" 10 "pcLOAD" 9 "pcCI" 8 "pcCO" 7 "pcVI" 6 "pcVO" 5 "pcIC" 4 "pcPWM" 3 "pcUIO" 2 "pcPWR" 1 "pcGND" 0 "pcNC" ;
+VAL_ 2349924094 pin_info_pin_7_capabilities 16 "pcRS485B" 15 "pcRS485A" 14 "pcLIN" 13 "pcCANL" 12 "pcCANH" 11 "pcRELAY" 10 "pcLOAD" 9 "pcCI" 8 "pcCO" 7 "pcVI" 6 "pcVO" 5 "pcIC" 4 "pcPWM" 3 "pcUIO" 2 "pcPWR" 1 "pcGND" 0 "pcNC" ;
+VAL_ 2349924094 pin_info_pin_6_capabilities 16 "pcRS485B" 15 "pcRS485A" 14 "pcLIN" 13 "pcCANL" 12 "pcCANH" 11 "pcRELAY" 10 "pcLOAD" 9 "pcCI" 8 "pcCO" 7 "pcVI" 6 "pcVO" 5 "pcIC" 4 "pcPWM" 3 "pcUIO" 2 "pcPWR" 1 "pcGND" 0 "pcNC" ;
+VAL_ 2349924094 pin_info_pin_5_capabilities 16 "pcRS485B" 15 "pcRS485A" 14 "pcLIN" 13 "pcCANL" 12 "pcCANH" 11 "pcRELAY" 10 "pcLOAD" 9 "pcCI" 8 "pcCO" 7 "pcVI" 6 "pcVO" 5 "pcIC" 4 "pcPWM" 3 "pcUIO" 2 "pcPWR" 1 "pcGND" 0 "pcNC" ;
+VAL_ 2349924094 pin_info_pin_4_capabilities 16 "pcRS485B" 15 "pcRS485A" 14 "pcLIN" 13 "pcCANL" 12 "pcCANH" 11 "pcRELAY" 10 "pcLOAD" 9 "pcCI" 8 "pcCO" 7 "pcVI" 6 "pcVO" 5 "pcIC" 4 "pcPWM" 3 "pcUIO" 2 "pcPWR" 1 "pcGND" 0 "pcNC" ;
+VAL_ 2349924094 pin_info_pin_3_capabilities 16 "pcRS485B" 15 "pcRS485A" 14 "pcLIN" 13 "pcCANL" 12 "pcCANH" 11 "pcRELAY" 10 "pcLOAD" 9 "pcCI" 8 "pcCO" 7 "pcVI" 6 "pcVO" 5 "pcIC" 4 "pcPWM" 3 "pcUIO" 2 "pcPWR" 1 "pcGND" 0 "pcNC" ;
+VAL_ 2349924094 pin_info_pin_2_capabilities 16 "pcRS485B" 15 "pcRS485A" 14 "pcLIN" 13 "pcCANL" 12 "pcCANH" 11 "pcRELAY" 10 "pcLOAD" 9 "pcCI" 8 "pcCO" 7 "pcVI" 6 "pcVO" 5 "pcIC" 4 "pcPWM" 3 "pcUIO" 2 "pcPWR" 1 "pcGND" 0 "pcNC" ;
+VAL_ 2349924094 pin_info_pin_1_capabilities 16 "pcRS485B" 15 "pcRS485A" 14 "pcLIN" 13 "pcCANL" 12 "pcCANH" 11 "pcRELAY" 10 "pcLOAD" 9 "pcCI" 8 "pcCO" 7 "pcVI" 6 "pcVO" 5 "pcIC" 4 "pcPWM" 3 "pcUIO" 2 "pcPWR" 1 "pcGND" 0 "pcNC" ;
+VAL_ 2348941054 module_app_target 5 "ReleaseCheck" 4 "DebugCheck" 3 "Other" 2 "Release" 1 "Debug" 0 "NA" ;
+VAL_ 2348941054 module_status 3 "Not Available" 2 "Critical" 1 "Warning" 0 "Ok" ;
+VAL_ 2367749886 cur_o_8_op_mode 0 "FEATURE_STATUS_NA" 1 "FEATURE_STATUS_IDLE" 2 "FEATURE_STATUS_DISABLED" 3 "FEATURE_STATUS_OPERATE" 4 "FEATURE_STATUS_WARNING" 5 "FEATURE_STATUS_ERROR" ;
+VAL_ 2367749886 cur_o_7_op_mode 0 "FEATURE_STATUS_NA" 1 "FEATURE_STATUS_IDLE" 2 "FEATURE_STATUS_DISABLED" 3 "FEATURE_STATUS_OPERATE" 4 "FEATURE_STATUS_WARNING" 5 "FEATURE_STATUS_ERROR" ;
+VAL_ 2367749886 cur_o_6_op_mode 0 "FEATURE_STATUS_NA" 1 "FEATURE_STATUS_IDLE" 2 "FEATURE_STATUS_DISABLED" 3 "FEATURE_STATUS_OPERATE" 4 "FEATURE_STATUS_WARNING" 5 "FEATURE_STATUS_ERROR" ;
+VAL_ 2367749886 cur_o_5_op_mode 0 "FEATURE_STATUS_NA" 1 "FEATURE_STATUS_IDLE" 2 "FEATURE_STATUS_DISABLED" 3 "FEATURE_STATUS_OPERATE" 4 "FEATURE_STATUS_WARNING" 5 "FEATURE_STATUS_ERROR" ;
+VAL_ 2367749886 cur_o_4_op_mode 5 "FEATURE_STATUS_ERROR" 4 "FEATURE_STATUS_WARNING" 3 "FEATURE_STATUS_OPERATE" 2 "FEATURE_STATUS_DISABLED" 1 "FEATURE_STATUS_IDLE" 0 "FEATURE_STATUS_NA" ;
+VAL_ 2367749886 cur_o_3_op_mode 5 "FEATURE_STATUS_ERROR" 4 "FEATURE_STATUS_WARNING" 3 "FEATURE_STATUS_OPERATE" 2 "FEATURE_STATUS_DISABLED" 1 "FEATURE_STATUS_IDLE" 0 "FEATURE_STATUS_NA" ;
+VAL_ 2367749886 cur_o_2_op_mode 5 "FEATURE_STATUS_ERROR" 4 "FEATURE_STATUS_WARNING" 3 "FEATURE_STATUS_OPERATE" 2 "FEATURE_STATUS_DISABLED" 1 "FEATURE_STATUS_IDLE" 0 "FEATURE_STATUS_NA" ;
+VAL_ 2367749886 cur_o_1_op_mode 5 "FEATURE_STATUS_ERROR" 4 "FEATURE_STATUS_WARNING" 3 "FEATURE_STATUS_OPERATE" 2 "FEATURE_STATUS_DISABLED" 1 "FEATURE_STATUS_IDLE" 0 "FEATURE_STATUS_NA" ;
+VAL_ 2367749886 vlt_o_8_op_mode 0 "FEATURE_STATUS_NA" 1 "FEATURE_STATUS_IDLE" 2 "FEATURE_STATUS_DISABLED" 3 "FEATURE_STATUS_OPERATE" 4 "FEATURE_STATUS_WARNING" 5 "FEATURE_STATUS_ERROR" ;
+VAL_ 2367749886 vlt_o_7_op_mode 0 "FEATURE_STATUS_NA" 1 "FEATURE_STATUS_IDLE" 2 "FEATURE_STATUS_DISABLED" 3 "FEATURE_STATUS_OPERATE" 4 "FEATURE_STATUS_WARNING" 5 "FEATURE_STATUS_ERROR" ;
+VAL_ 2367749886 vlt_o_6_op_mode 0 "FEATURE_STATUS_NA" 1 "FEATURE_STATUS_IDLE" 2 "FEATURE_STATUS_DISABLED" 3 "FEATURE_STATUS_OPERATE" 4 "FEATURE_STATUS_WARNING" 5 "FEATURE_STATUS_ERROR" ;
+VAL_ 2367749886 vlt_o_5_op_mode 0 "FEATURE_STATUS_NA" 1 "FEATURE_STATUS_IDLE" 2 "FEATURE_STATUS_DISABLED" 3 "FEATURE_STATUS_OPERATE" 4 "FEATURE_STATUS_WARNING" 5 "FEATURE_STATUS_ERROR" ;
+VAL_ 2367749886 vlt_o_4_op_mode 5 "FEATURE_STATUS_ERROR" 4 "FEATURE_STATUS_WARNING" 3 "FEATURE_STATUS_OPERATE" 2 "FEATURE_STATUS_DISABLED" 1 "FEATURE_STATUS_IDLE" 0 "FEATURE_STATUS_NA" ;
+VAL_ 2367749886 vlt_o_3_op_mode 5 "FEATURE_STATUS_ERROR" 4 "FEATURE_STATUS_WARNING" 3 "FEATURE_STATUS_OPERATE" 2 "FEATURE_STATUS_DISABLED" 1 "FEATURE_STATUS_IDLE" 0 "FEATURE_STATUS_NA" ;
+VAL_ 2367749886 vlt_o_2_op_mode 5 "FEATURE_STATUS_ERROR" 4 "FEATURE_STATUS_WARNING" 3 "FEATURE_STATUS_OPERATE" 2 "FEATURE_STATUS_DISABLED" 1 "FEATURE_STATUS_IDLE" 0 "FEATURE_STATUS_NA" ;
+VAL_ 2367749886 vlt_o_1_op_mode 5 "FEATURE_STATUS_ERROR" 4 "FEATURE_STATUS_WARNING" 3 "FEATURE_STATUS_OPERATE" 2 "FEATURE_STATUS_DISABLED" 1 "FEATURE_STATUS_IDLE" 0 "FEATURE_STATUS_NA" ;
+VAL_ 2367749886 cur_i_8_op_mode 0 "FEATURE_STATUS_NA" 1 "FEATURE_STATUS_IDLE" 2 "FEATURE_STATUS_DISABLED" 3 "FEATURE_STATUS_OPERATE" 4 "FEATURE_STATUS_WARNING" 5 "FEATURE_STATUS_ERROR" ;
+VAL_ 2367749886 cur_i_7_op_mode 0 "FEATURE_STATUS_NA" 1 "FEATURE_STATUS_IDLE" 2 "FEATURE_STATUS_DISABLED" 3 "FEATURE_STATUS_OPERATE" 4 "FEATURE_STATUS_WARNING" 5 "FEATURE_STATUS_ERROR" ;
+VAL_ 2367749886 cur_i_6_op_mode 0 "FEATURE_STATUS_NA" 1 "FEATURE_STATUS_IDLE" 2 "FEATURE_STATUS_DISABLED" 3 "FEATURE_STATUS_OPERATE" 4 "FEATURE_STATUS_WARNING" 5 "FEATURE_STATUS_ERROR" ;
+VAL_ 2367749886 cur_i_5_op_mode 0 "FEATURE_STATUS_NA" 1 "FEATURE_STATUS_IDLE" 2 "FEATURE_STATUS_DISABLED" 3 "FEATURE_STATUS_OPERATE" 4 "FEATURE_STATUS_WARNING" 5 "FEATURE_STATUS_ERROR" ;
+VAL_ 2367749886 cur_i_4_op_mode 0 "FEATURE_STATUS_NA" 1 "FEATURE_STATUS_IDLE" 2 "FEATURE_STATUS_DISABLED" 3 "FEATURE_STATUS_OPERATE" 4 "FEATURE_STATUS_WARNING" 5 "FEATURE_STATUS_ERROR" ;
+VAL_ 2367749886 cur_i_3_op_mode 0 "FEATURE_STATUS_NA" 1 "FEATURE_STATUS_IDLE" 2 "FEATURE_STATUS_DISABLED" 3 "FEATURE_STATUS_OPERATE" 4 "FEATURE_STATUS_WARNING" 5 "FEATURE_STATUS_ERROR" ;
+VAL_ 2367749886 cur_i_2_op_mode 0 "FEATURE_STATUS_NA" 1 "FEATURE_STATUS_IDLE" 2 "FEATURE_STATUS_DISABLED" 3 "FEATURE_STATUS_OPERATE" 4 "FEATURE_STATUS_WARNING" 5 "FEATURE_STATUS_ERROR" ;
+VAL_ 2367749886 cur_i_1_op_mode 0 "FEATURE_STATUS_NA" 1 "FEATURE_STATUS_IDLE" 2 "FEATURE_STATUS_DISABLED" 3 "FEATURE_STATUS_OPERATE" 4 "FEATURE_STATUS_WARNING" 5 "FEATURE_STATUS_ERROR" ;
+VAL_ 2367749886 vlt_i_8_op_mode 0 "FEATURE_STATUS_NA" 1 "FEATURE_STATUS_IDLE" 2 "FEATURE_STATUS_DISABLED" 3 "FEATURE_STATUS_OPERATE" 4 "FEATURE_STATUS_WARNING" 5 "FEATURE_STATUS_ERROR" ;
+VAL_ 2367749886 vlt_i_7_op_mode 0 "FEATURE_STATUS_NA" 1 "FEATURE_STATUS_IDLE" 2 "FEATURE_STATUS_DISABLED" 3 "FEATURE_STATUS_OPERATE" 4 "FEATURE_STATUS_WARNING" 5 "FEATURE_STATUS_ERROR" ;
+VAL_ 2367749886 vlt_i_6_op_mode 0 "FEATURE_STATUS_NA" 1 "FEATURE_STATUS_IDLE" 2 "FEATURE_STATUS_DISABLED" 3 "FEATURE_STATUS_OPERATE" 4 "FEATURE_STATUS_WARNING" 5 "FEATURE_STATUS_ERROR" ;
+VAL_ 2367749886 vlt_i_5_op_mode 0 "FEATURE_STATUS_NA" 1 "FEATURE_STATUS_IDLE" 2 "FEATURE_STATUS_DISABLED" 3 "FEATURE_STATUS_OPERATE" 4 "FEATURE_STATUS_WARNING" 5 "FEATURE_STATUS_ERROR" ;
+VAL_ 2367749886 vlt_i_4_op_mode 0 "FEATURE_STATUS_NA" 1 "FEATURE_STATUS_IDLE" 2 "FEATURE_STATUS_DISABLED" 3 "FEATURE_STATUS_OPERATE" 4 "FEATURE_STATUS_WARNING" 5 "FEATURE_STATUS_ERROR" ;
+VAL_ 2367749886 vlt_i_3_op_mode 0 "FEATURE_STATUS_NA" 1 "FEATURE_STATUS_IDLE" 2 "FEATURE_STATUS_DISABLED" 3 "FEATURE_STATUS_OPERATE" 4 "FEATURE_STATUS_WARNING" 5 "FEATURE_STATUS_ERROR" ;
+VAL_ 2367749886 vlt_i_2_op_mode 0 "FEATURE_STATUS_NA" 1 "FEATURE_STATUS_IDLE" 2 "FEATURE_STATUS_DISABLED" 3 "FEATURE_STATUS_OPERATE" 4 "FEATURE_STATUS_WARNING" 5 "FEATURE_STATUS_ERROR" ;
+VAL_ 2367749886 vlt_i_1_op_mode 0 "FEATURE_STATUS_NA" 1 "FEATURE_STATUS_IDLE" 2 "FEATURE_STATUS_DISABLED" 3 "FEATURE_STATUS_OPERATE" 4 "FEATURE_STATUS_WARNING" 5 "FEATURE_STATUS_ERROR" ;
+VAL_ 2367749886 icu_8_op_mode 0 "FEATURE_STATUS_NA" 1 "FEATURE_STATUS_IDLE" 2 "FEATURE_STATUS_DISABLED" 3 "FEATURE_STATUS_OPERATE" 4 "FEATURE_STATUS_WARNING" 5 "FEATURE_STATUS_ERROR" ;
+VAL_ 2367749886 icu_7_op_mode 0 "FEATURE_STATUS_NA" 1 "FEATURE_STATUS_IDLE" 2 "FEATURE_STATUS_DISABLED" 3 "FEATURE_STATUS_OPERATE" 4 "FEATURE_STATUS_WARNING" 5 "FEATURE_STATUS_ERROR" ;
+VAL_ 2367749886 icu_6_op_mode 0 "FEATURE_STATUS_NA" 1 "FEATURE_STATUS_IDLE" 2 "FEATURE_STATUS_DISABLED" 3 "FEATURE_STATUS_OPERATE" 4 "FEATURE_STATUS_WARNING" 5 "FEATURE_STATUS_ERROR" ;
+VAL_ 2367749886 icu_5_op_mode 0 "FEATURE_STATUS_NA" 1 "FEATURE_STATUS_IDLE" 2 "FEATURE_STATUS_DISABLED" 3 "FEATURE_STATUS_OPERATE" 4 "FEATURE_STATUS_WARNING" 5 "FEATURE_STATUS_ERROR" ;
+VAL_ 2367749886 icu_4_op_mode 0 "FEATURE_STATUS_NA" 1 "FEATURE_STATUS_IDLE" 2 "FEATURE_STATUS_DISABLED" 3 "FEATURE_STATUS_OPERATE" 4 "FEATURE_STATUS_WARNING" 5 "FEATURE_STATUS_ERROR" ;
+VAL_ 2367749886 icu_3_op_mode 0 "FEATURE_STATUS_NA" 1 "FEATURE_STATUS_IDLE" 2 "FEATURE_STATUS_DISABLED" 3 "FEATURE_STATUS_OPERATE" 4 "FEATURE_STATUS_WARNING" 5 "FEATURE_STATUS_ERROR" ;
+VAL_ 2367749886 icu_2_op_mode 0 "FEATURE_STATUS_NA" 1 "FEATURE_STATUS_IDLE" 2 "FEATURE_STATUS_DISABLED" 3 "FEATURE_STATUS_OPERATE" 4 "FEATURE_STATUS_WARNING" 5 "FEATURE_STATUS_ERROR" ;
+VAL_ 2367749886 icu_1_op_mode 0 "FEATURE_STATUS_NA" 1 "FEATURE_STATUS_IDLE" 2 "FEATURE_STATUS_DISABLED" 3 "FEATURE_STATUS_OPERATE" 4 "FEATURE_STATUS_WARNING" 5 "FEATURE_STATUS_ERROR" ;
+VAL_ 2367749886 pwm_8_op_mode 0 "FEATURE_STATUS_NA" 1 "FEATURE_STATUS_IDLE" 2 "FEATURE_STATUS_DISABLED" 3 "FEATURE_STATUS_OPERATE" 4 "FEATURE_STATUS_WARNING" 5 "FEATURE_STATUS_ERROR" ;
+VAL_ 2367749886 pwm_7_op_mode 0 "FEATURE_STATUS_NA" 1 "FEATURE_STATUS_IDLE" 2 "FEATURE_STATUS_DISABLED" 3 "FEATURE_STATUS_OPERATE" 4 "FEATURE_STATUS_WARNING" 5 "FEATURE_STATUS_ERROR" ;
+VAL_ 2367749886 pwm_6_op_mode 0 "FEATURE_STATUS_NA" 1 "FEATURE_STATUS_IDLE" 2 "FEATURE_STATUS_DISABLED" 3 "FEATURE_STATUS_OPERATE" 4 "FEATURE_STATUS_WARNING" 5 "FEATURE_STATUS_ERROR" ;
+VAL_ 2367749886 pwm_5_op_mode 0 "FEATURE_STATUS_NA" 1 "FEATURE_STATUS_IDLE" 2 "FEATURE_STATUS_DISABLED" 3 "FEATURE_STATUS_OPERATE" 4 "FEATURE_STATUS_WARNING" 5 "FEATURE_STATUS_ERROR" ;
+VAL_ 2367749886 pwm_4_op_mode 0 "FEATURE_STATUS_NA" 1 "FEATURE_STATUS_IDLE" 2 "FEATURE_STATUS_DISABLED" 3 "FEATURE_STATUS_OPERATE" 4 "FEATURE_STATUS_WARNING" 5 "FEATURE_STATUS_ERROR" ;
+VAL_ 2367749886 pwm_3_op_mode 0 "FEATURE_STATUS_NA" 1 "FEATURE_STATUS_IDLE" 2 "FEATURE_STATUS_DISABLED" 3 "FEATURE_STATUS_OPERATE" 4 "FEATURE_STATUS_WARNING" 5 "FEATURE_STATUS_ERROR" ;
+VAL_ 2367749886 pwm_2_op_mode 0 "FEATURE_STATUS_NA" 1 "FEATURE_STATUS_IDLE" 2 "FEATURE_STATUS_DISABLED" 3 "FEATURE_STATUS_OPERATE" 4 "FEATURE_STATUS_WARNING" 5 "FEATURE_STATUS_ERROR" ;
+VAL_ 2367749886 pwm_1_op_mode 0 "FEATURE_STATUS_NA" 1 "FEATURE_STATUS_IDLE" 2 "FEATURE_STATUS_DISABLED" 3 "FEATURE_STATUS_OPERATE" 4 "FEATURE_STATUS_WARNING" 5 "FEATURE_STATUS_ERROR" ;
+VAL_ 2367815422 cur_o_8_op_mode 0 "FEATURE_STATUS_NA" 1 "FEATURE_STATUS_IDLE" 2 "FEATURE_STATUS_DISABLED" 3 "FEATURE_STATUS_OPERATE" 4 "FEATURE_STATUS_WARNING" 5 "FEATURE_STATUS_ERROR" ;
+VAL_ 2367815422 cur_o_7_op_mode 0 "FEATURE_STATUS_NA" 1 "FEATURE_STATUS_IDLE" 2 "FEATURE_STATUS_DISABLED" 3 "FEATURE_STATUS_OPERATE" 4 "FEATURE_STATUS_WARNING" 5 "FEATURE_STATUS_ERROR" ;
+VAL_ 2367815422 cur_o_6_op_mode 0 "FEATURE_STATUS_NA" 1 "FEATURE_STATUS_IDLE" 2 "FEATURE_STATUS_DISABLED" 3 "FEATURE_STATUS_OPERATE" 4 "FEATURE_STATUS_WARNING" 5 "FEATURE_STATUS_ERROR" ;
+VAL_ 2367815422 cur_o_5_op_mode 0 "FEATURE_STATUS_NA" 1 "FEATURE_STATUS_IDLE" 2 "FEATURE_STATUS_DISABLED" 3 "FEATURE_STATUS_OPERATE" 4 "FEATURE_STATUS_WARNING" 5 "FEATURE_STATUS_ERROR" ;
+VAL_ 2367815422 cur_o_4_op_mode 5 "FEATURE_STATUS_ERROR" 4 "FEATURE_STATUS_WARNING" 3 "FEATURE_STATUS_OPERATE" 2 "FEATURE_STATUS_DISABLED" 1 "FEATURE_STATUS_IDLE" 0 "FEATURE_STATUS_NA" ;
+VAL_ 2367815422 cur_o_3_op_mode 5 "FEATURE_STATUS_ERROR" 4 "FEATURE_STATUS_WARNING" 3 "FEATURE_STATUS_OPERATE" 2 "FEATURE_STATUS_DISABLED" 1 "FEATURE_STATUS_IDLE" 0 "FEATURE_STATUS_NA" ;
+VAL_ 2367815422 cur_o_2_op_mode 5 "FEATURE_STATUS_ERROR" 4 "FEATURE_STATUS_WARNING" 3 "FEATURE_STATUS_OPERATE" 2 "FEATURE_STATUS_DISABLED" 1 "FEATURE_STATUS_IDLE" 0 "FEATURE_STATUS_NA" ;
+VAL_ 2367815422 cur_o_1_op_mode 5 "FEATURE_STATUS_ERROR" 4 "FEATURE_STATUS_WARNING" 3 "FEATURE_STATUS_OPERATE" 2 "FEATURE_STATUS_DISABLED" 1 "FEATURE_STATUS_IDLE" 0 "FEATURE_STATUS_NA" ;
+VAL_ 2367815422 vlt_o_8_op_mode 0 "FEATURE_STATUS_NA" 1 "FEATURE_STATUS_IDLE" 2 "FEATURE_STATUS_DISABLED" 3 "FEATURE_STATUS_OPERATE" 4 "FEATURE_STATUS_WARNING" 5 "FEATURE_STATUS_ERROR" ;
+VAL_ 2367815422 vlt_o_7_op_mode 0 "FEATURE_STATUS_NA" 1 "FEATURE_STATUS_IDLE" 2 "FEATURE_STATUS_DISABLED" 3 "FEATURE_STATUS_OPERATE" 4 "FEATURE_STATUS_WARNING" 5 "FEATURE_STATUS_ERROR" ;
+VAL_ 2367815422 vlt_o_6_op_mode 0 "FEATURE_STATUS_NA" 1 "FEATURE_STATUS_IDLE" 2 "FEATURE_STATUS_DISABLED" 3 "FEATURE_STATUS_OPERATE" 4 "FEATURE_STATUS_WARNING" 5 "FEATURE_STATUS_ERROR" ;
+VAL_ 2367815422 vlt_o_5_op_mode 0 "FEATURE_STATUS_NA" 1 "FEATURE_STATUS_IDLE" 2 "FEATURE_STATUS_DISABLED" 3 "FEATURE_STATUS_OPERATE" 4 "FEATURE_STATUS_WARNING" 5 "FEATURE_STATUS_ERROR" ;
+VAL_ 2367815422 vlt_o_4_op_mode 5 "FEATURE_STATUS_ERROR" 4 "FEATURE_STATUS_WARNING" 3 "FEATURE_STATUS_OPERATE" 2 "FEATURE_STATUS_DISABLED" 1 "FEATURE_STATUS_IDLE" 0 "FEATURE_STATUS_NA" ;
+VAL_ 2367815422 vlt_o_3_op_mode 5 "FEATURE_STATUS_ERROR" 4 "FEATURE_STATUS_WARNING" 3 "FEATURE_STATUS_OPERATE" 2 "FEATURE_STATUS_DISABLED" 1 "FEATURE_STATUS_IDLE" 0 "FEATURE_STATUS_NA" ;
+VAL_ 2367815422 vlt_o_2_op_mode 5 "FEATURE_STATUS_ERROR" 4 "FEATURE_STATUS_WARNING" 3 "FEATURE_STATUS_OPERATE" 2 "FEATURE_STATUS_DISABLED" 1 "FEATURE_STATUS_IDLE" 0 "FEATURE_STATUS_NA" ;
+VAL_ 2367815422 vlt_o_1_op_mode 5 "FEATURE_STATUS_ERROR" 4 "FEATURE_STATUS_WARNING" 3 "FEATURE_STATUS_OPERATE" 2 "FEATURE_STATUS_DISABLED" 1 "FEATURE_STATUS_IDLE" 0 "FEATURE_STATUS_NA" ;
+VAL_ 2367815422 cur_i_8_op_mode 0 "FEATURE_STATUS_NA" 1 "FEATURE_STATUS_IDLE" 2 "FEATURE_STATUS_DISABLED" 3 "FEATURE_STATUS_OPERATE" 4 "FEATURE_STATUS_WARNING" 5 "FEATURE_STATUS_ERROR" ;
+VAL_ 2367815422 cur_i_7_op_mode 0 "FEATURE_STATUS_NA" 1 "FEATURE_STATUS_IDLE" 2 "FEATURE_STATUS_DISABLED" 3 "FEATURE_STATUS_OPERATE" 4 "FEATURE_STATUS_WARNING" 5 "FEATURE_STATUS_ERROR" ;
+VAL_ 2367815422 cur_i_6_op_mode 0 "FEATURE_STATUS_NA" 1 "FEATURE_STATUS_IDLE" 2 "FEATURE_STATUS_DISABLED" 3 "FEATURE_STATUS_OPERATE" 4 "FEATURE_STATUS_WARNING" 5 "FEATURE_STATUS_ERROR" ;
+VAL_ 2367815422 cur_i_5_op_mode 0 "FEATURE_STATUS_NA" 1 "FEATURE_STATUS_IDLE" 2 "FEATURE_STATUS_DISABLED" 3 "FEATURE_STATUS_OPERATE" 4 "FEATURE_STATUS_WARNING" 5 "FEATURE_STATUS_ERROR" ;
+VAL_ 2367815422 cur_i_4_op_mode 0 "FEATURE_STATUS_NA" 1 "FEATURE_STATUS_IDLE" 2 "FEATURE_STATUS_DISABLED" 3 "FEATURE_STATUS_OPERATE" 4 "FEATURE_STATUS_WARNING" 5 "FEATURE_STATUS_ERROR" ;
+VAL_ 2367815422 cur_i_3_op_mode 0 "FEATURE_STATUS_NA" 1 "FEATURE_STATUS_IDLE" 2 "FEATURE_STATUS_DISABLED" 3 "FEATURE_STATUS_OPERATE" 4 "FEATURE_STATUS_WARNING" 5 "FEATURE_STATUS_ERROR" ;
+VAL_ 2367815422 cur_i_2_op_mode 0 "FEATURE_STATUS_NA" 1 "FEATURE_STATUS_IDLE" 2 "FEATURE_STATUS_DISABLED" 3 "FEATURE_STATUS_OPERATE" 4 "FEATURE_STATUS_WARNING" 5 "FEATURE_STATUS_ERROR" ;
+VAL_ 2367815422 cur_i_1_op_mode 0 "FEATURE_STATUS_NA" 1 "FEATURE_STATUS_IDLE" 2 "FEATURE_STATUS_DISABLED" 3 "FEATURE_STATUS_OPERATE" 4 "FEATURE_STATUS_WARNING" 5 "FEATURE_STATUS_ERROR" ;
+VAL_ 2367815422 vlt_i_8_op_mode 0 "FEATURE_STATUS_NA" 1 "FEATURE_STATUS_IDLE" 2 "FEATURE_STATUS_DISABLED" 3 "FEATURE_STATUS_OPERATE" 4 "FEATURE_STATUS_WARNING" 5 "FEATURE_STATUS_ERROR" ;
+VAL_ 2367815422 vlt_i_7_op_mode 0 "FEATURE_STATUS_NA" 1 "FEATURE_STATUS_IDLE" 2 "FEATURE_STATUS_DISABLED" 3 "FEATURE_STATUS_OPERATE" 4 "FEATURE_STATUS_WARNING" 5 "FEATURE_STATUS_ERROR" ;
+VAL_ 2367815422 vlt_i_6_op_mode 0 "FEATURE_STATUS_NA" 1 "FEATURE_STATUS_IDLE" 2 "FEATURE_STATUS_DISABLED" 3 "FEATURE_STATUS_OPERATE" 4 "FEATURE_STATUS_WARNING" 5 "FEATURE_STATUS_ERROR" ;
+VAL_ 2367815422 vlt_i_5_op_mode 0 "FEATURE_STATUS_NA" 1 "FEATURE_STATUS_IDLE" 2 "FEATURE_STATUS_DISABLED" 3 "FEATURE_STATUS_OPERATE" 4 "FEATURE_STATUS_WARNING" 5 "FEATURE_STATUS_ERROR" ;
+VAL_ 2367815422 vlt_i_4_op_mode 0 "FEATURE_STATUS_NA" 1 "FEATURE_STATUS_IDLE" 2 "FEATURE_STATUS_DISABLED" 3 "FEATURE_STATUS_OPERATE" 4 "FEATURE_STATUS_WARNING" 5 "FEATURE_STATUS_ERROR" ;
+VAL_ 2367815422 vlt_i_3_op_mode 0 "FEATURE_STATUS_NA" 1 "FEATURE_STATUS_IDLE" 2 "FEATURE_STATUS_DISABLED" 3 "FEATURE_STATUS_OPERATE" 4 "FEATURE_STATUS_WARNING" 5 "FEATURE_STATUS_ERROR" ;
+VAL_ 2367815422 vlt_i_2_op_mode 0 "FEATURE_STATUS_NA" 1 "FEATURE_STATUS_IDLE" 2 "FEATURE_STATUS_DISABLED" 3 "FEATURE_STATUS_OPERATE" 4 "FEATURE_STATUS_WARNING" 5 "FEATURE_STATUS_ERROR" ;
+VAL_ 2367815422 vlt_i_1_op_mode 0 "FEATURE_STATUS_NA" 1 "FEATURE_STATUS_IDLE" 2 "FEATURE_STATUS_DISABLED" 3 "FEATURE_STATUS_OPERATE" 4 "FEATURE_STATUS_WARNING" 5 "FEATURE_STATUS_ERROR" ;
+VAL_ 2367815422 icu_8_op_mode 0 "FEATURE_STATUS_NA" 1 "FEATURE_STATUS_IDLE" 2 "FEATURE_STATUS_DISABLED" 3 "FEATURE_STATUS_OPERATE" 4 "FEATURE_STATUS_WARNING" 5 "FEATURE_STATUS_ERROR" ;
+VAL_ 2367815422 icu_7_op_mode 0 "FEATURE_STATUS_NA" 1 "FEATURE_STATUS_IDLE" 2 "FEATURE_STATUS_DISABLED" 3 "FEATURE_STATUS_OPERATE" 4 "FEATURE_STATUS_WARNING" 5 "FEATURE_STATUS_ERROR" ;
+VAL_ 2367815422 icu_6_op_mode 0 "FEATURE_STATUS_NA" 1 "FEATURE_STATUS_IDLE" 2 "FEATURE_STATUS_DISABLED" 3 "FEATURE_STATUS_OPERATE" 4 "FEATURE_STATUS_WARNING" 5 "FEATURE_STATUS_ERROR" ;
+VAL_ 2367815422 icu_5_op_mode 0 "FEATURE_STATUS_NA" 1 "FEATURE_STATUS_IDLE" 2 "FEATURE_STATUS_DISABLED" 3 "FEATURE_STATUS_OPERATE" 4 "FEATURE_STATUS_WARNING" 5 "FEATURE_STATUS_ERROR" ;
+VAL_ 2367815422 icu_4_op_mode 0 "FEATURE_STATUS_NA" 1 "FEATURE_STATUS_IDLE" 2 "FEATURE_STATUS_DISABLED" 3 "FEATURE_STATUS_OPERATE" 4 "FEATURE_STATUS_WARNING" 5 "FEATURE_STATUS_ERROR" ;
+VAL_ 2367815422 icu_3_op_mode 0 "FEATURE_STATUS_NA" 1 "FEATURE_STATUS_IDLE" 2 "FEATURE_STATUS_DISABLED" 3 "FEATURE_STATUS_OPERATE" 4 "FEATURE_STATUS_WARNING" 5 "FEATURE_STATUS_ERROR" ;
+VAL_ 2367815422 icu_2_op_mode 0 "FEATURE_STATUS_NA" 1 "FEATURE_STATUS_IDLE" 2 "FEATURE_STATUS_DISABLED" 3 "FEATURE_STATUS_OPERATE" 4 "FEATURE_STATUS_WARNING" 5 "FEATURE_STATUS_ERROR" ;
+VAL_ 2367815422 icu_1_op_mode 0 "FEATURE_STATUS_NA" 1 "FEATURE_STATUS_IDLE" 2 "FEATURE_STATUS_DISABLED" 3 "FEATURE_STATUS_OPERATE" 4 "FEATURE_STATUS_WARNING" 5 "FEATURE_STATUS_ERROR" ;
+VAL_ 2367815422 pwm_8_op_mode 0 "FEATURE_STATUS_NA" 1 "FEATURE_STATUS_IDLE" 2 "FEATURE_STATUS_DISABLED" 3 "FEATURE_STATUS_OPERATE" 4 "FEATURE_STATUS_WARNING" 5 "FEATURE_STATUS_ERROR" ;
+VAL_ 2367815422 pwm_7_op_mode 0 "FEATURE_STATUS_NA" 1 "FEATURE_STATUS_IDLE" 2 "FEATURE_STATUS_DISABLED" 3 "FEATURE_STATUS_OPERATE" 4 "FEATURE_STATUS_WARNING" 5 "FEATURE_STATUS_ERROR" ;
+VAL_ 2367815422 pwm_6_op_mode 0 "FEATURE_STATUS_NA" 1 "FEATURE_STATUS_IDLE" 2 "FEATURE_STATUS_DISABLED" 3 "FEATURE_STATUS_OPERATE" 4 "FEATURE_STATUS_WARNING" 5 "FEATURE_STATUS_ERROR" ;
+VAL_ 2367815422 pwm_5_op_mode 0 "FEATURE_STATUS_NA" 1 "FEATURE_STATUS_IDLE" 2 "FEATURE_STATUS_DISABLED" 3 "FEATURE_STATUS_OPERATE" 4 "FEATURE_STATUS_WARNING" 5 "FEATURE_STATUS_ERROR" ;
+VAL_ 2367815422 pwm_4_op_mode 0 "FEATURE_STATUS_NA" 1 "FEATURE_STATUS_IDLE" 2 "FEATURE_STATUS_DISABLED" 3 "FEATURE_STATUS_OPERATE" 4 "FEATURE_STATUS_WARNING" 5 "FEATURE_STATUS_ERROR" ;
+VAL_ 2367815422 pwm_3_op_mode 0 "FEATURE_STATUS_NA" 1 "FEATURE_STATUS_IDLE" 2 "FEATURE_STATUS_DISABLED" 3 "FEATURE_STATUS_OPERATE" 4 "FEATURE_STATUS_WARNING" 5 "FEATURE_STATUS_ERROR" ;
+VAL_ 2367815422 pwm_2_op_mode 0 "FEATURE_STATUS_NA" 1 "FEATURE_STATUS_IDLE" 2 "FEATURE_STATUS_DISABLED" 3 "FEATURE_STATUS_OPERATE" 4 "FEATURE_STATUS_WARNING" 5 "FEATURE_STATUS_ERROR" ;
+VAL_ 2367815422 pwm_1_op_mode 0 "FEATURE_STATUS_NA" 1 "FEATURE_STATUS_IDLE" 2 "FEATURE_STATUS_DISABLED" 3 "FEATURE_STATUS_OPERATE" 4 "FEATURE_STATUS_WARNING" 5 "FEATURE_STATUS_ERROR" ;
+
