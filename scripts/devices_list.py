@@ -186,7 +186,7 @@ class CanMessageHandler:
 
 if __name__ == "__main__":
     handler = CanMessageHandler('soda_xil_fd.dbc')
-    manager = AvtpCanManager(iface="lo", stream_id=1)
+    manager = AvtpCanManager(iface="enp2s0.3900", stream_id=1)
     manager.start_receiving(handler.parse_avtp_frame)
     acf_can_bus_id = int(0)
     acf_can_id = int(0x0400fffe)

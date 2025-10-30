@@ -1,11 +1,13 @@
 from scapy.all import sendp, sniff, Ether
 from typing import Callable, Optional
 import threading
+from scapy.config import conf
 import time
 from AVTP import AVTPPacket
 
 class AvtpCanManager:
-    def __init__(self, iface: str, stream_id: int):
+    # def __init__(self, iface: str, stream_id: int):
+    def __init__(self, iface: str, stream_id: Optional[int] = None):
         self.iface = iface
         self.stream_id = stream_id
         self.sequence_number = 0
@@ -77,17 +79,22 @@ class AvtpCanManager:
             self.recv_thread.join()
 
     def _recv_loop(self):
+        conf.use_pcap = False
+
         def process(pkt):
             if AVTPPacket not in pkt:
                 return
-            avtp = pkt[AVTPPacket]
-            if avtp.stream_id() != self.stream_id:
-                return
-            
+            if self.stream_id is not None:
+                try:
+                    if pkt[AVTPPacket].stream_id() != self.stream_id:
+                        return
+                except Exception:
+                    return
             if self.recv_callback:
-                self.recv_callback(pkt)
+                # Отдаём сырые байты — твой парсер ждёт bytes
+                self.recv_callback(bytes(pkt))
 
-        sniff(iface=self.iface, prn=process, stop_filter=lambda x: not self.running, store=0, filter="ether proto 0x22f0")
+        sniff(iface=self.iface, prn=process, store=0, stop_filter=lambda x: not self.running)
 
 
 
