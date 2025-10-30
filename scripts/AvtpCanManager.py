@@ -1,9 +1,11 @@
-from scapy.all import sendp, sniff, Ether
+from scapy.all import sendp, sniff, Ether, get_if_hwaddr  # type: ignore
 from typing import Callable, Optional
 import threading
-from scapy.config import conf
+from scapy.config import conf  # type: ignore
 import time
 from AVTP import AVTPPacket
+import os
+
 
 class AvtpCanManager:
     # def __init__(self, iface: str, stream_id: int):
@@ -14,16 +16,52 @@ class AvtpCanManager:
         self.running = False
         self.recv_thread: Optional[threading.Thread] = None
         self.recv_callback: Optional[Callable[[int, bytes], None]] = None
+        self.src_mac = self._resolve_src_mac()
+
+    # --- minimal MAC fix helpers ---
+    def _read_sys_mac(self, iface: str) -> Optional[str]:
+        p = f"/sys/class/net/{iface}/address"
+        try:
+            if os.path.exists(p):
+                mac = open(p).read().strip()
+                if mac and not mac.startswith("00:00:00"):
+                    return mac
+        except Exception:
+            pass
+        return None
+
+    def _resolve_src_mac(self) -> str:
+        mac = None
+        # 1) попробовать scapy
+        try:
+            mac = get_if_hwaddr(self.iface)
+        except Exception:
+            mac = None
+        if not mac or mac.startswith("00:00:00"):
+            # 2) попробовать /sys
+            mac = self._read_sys_mac(self.iface)
+
+        if (not mac or mac.startswith("00:00:00")) and "." in self.iface:
+            # 3) если VLAN — взять MAC у родителя
+            parent = self.iface.split(".", 1)[0]
+            mac = self._read_sys_mac(parent) or (get_if_hwaddr(parent) if parent else None)
+
+        if not mac or mac.startswith("00:00:00"):
+            raise RuntimeError(
+                f"Cannot determine valid MAC for {self.iface}. "
+                f"Mount /sys/class/net into the container (ro) or run on host."
+            )
+        return mac
 
     def build_packet(self, can_id: int, msg_id: int, data: bytes, extended_id: bool, can_fd: bool) -> Ether:
-        
+
         data = data[:64]
         payload_len = len(data)
 
         # Quadlets = (ACF  + data) / 4
         # ACF:header(2) + flags (1) + can_id (1) + msg_id (4) + data (64)
         acf_payload_length = 2 + 1 + 1 + 4 + payload_len
-        quadlets = (acf_payload_length ) // 4
+        quadlets = (acf_payload_length) // 4
 
         # ACF Header:
         # - Message Type: 0b010 (CAN Brief)
@@ -32,9 +70,10 @@ class AvtpCanManager:
         acf_header = (message_type << 9) | (quadlets & 0x1FFF)
 
         # Общая длина AVTP-пейлоада (в байтах) — всё после поля sequence_number
-        avtp_payload_length = acf_payload_length  
+        avtp_payload_length = acf_payload_length
 
-        pkt = Ether(dst="ff:ff:ff:ff:ff:ff", type=0x22F0) / AVTPPacket()
+        # >>> единственное поведение, которое меняем: проставляем src MAC <<<
+        pkt = Ether(dst="ff:ff:ff:ff:ff:ff", src=self.src_mac, type=0x22F0) / AVTPPacket()
         avtp = pkt[AVTPPacket]
 
         avtp.subtype = 0x82
@@ -48,9 +87,9 @@ class AvtpCanManager:
         avtp.flags = 0x00
         # if timestamp_valid == True :
         #     avtp.flags = avtp.flags | 0x20
-        if extended_id == True :
+        if extended_id is True:
             avtp.flags = avtp.flags | 0x08
-        if can_fd == True :
+        if can_fd is True:
             avtp.flags = avtp.flags | 0x02
         avtp.can_id = can_id
         avtp.msg_id = msg_id
@@ -82,20 +121,22 @@ class AvtpCanManager:
         conf.use_pcap = False
 
         def process(pkt):
-            if AVTPPacket not in pkt:
-                return
-            if self.stream_id is not None:
-                try:
-                    if pkt[AVTPPacket].stream_id() != self.stream_id:
-                        return
-                except Exception:
+            try:
+                if AVTPPacket not in pkt:
                     return
-            if self.recv_callback:
-                # Отдаём сырые байты — твой парсер ждёт bytes
-                self.recv_callback(bytes(pkt))
+                if self.stream_id is not None:
+                    try:
+                        if pkt[AVTPPacket].stream_id() != self.stream_id:
+                            return
+                    except Exception:
+                        return
+                if self.recv_callback:
+                    self.recv_callback(bytes(pkt))
+            except Exception:
+                # Никогда не падаем из-за одного кривого кадра
+                pass
 
         sniff(iface=self.iface, prn=process, store=0, stop_filter=lambda x: not self.running)
-
 
 
 def on_can_message(pkt):
@@ -104,6 +145,7 @@ def on_can_message(pkt):
     msg_id = avtp.msg_id
     data = bytes(pkt[AVTPPacket].payload)
     print(f"Rcv CAN# {can_id}: MSG ID=0x{msg_id:X}, data={data.hex()}")
+
 
 if __name__ == "__main__":
     manager = AvtpCanManager(iface="lo", stream_id=1)
