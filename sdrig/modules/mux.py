@@ -1,53 +1,40 @@
-
 from __future__ import annotations
-from dataclasses import dataclass
-from typing import Dict, List, Optional
-from ..core.base import BaseModule, ModuleCommonCfg
-from ..transport.j1939 import CTRL_BUS_ID, WILDCARD_SA
+from typing import Dict, Any, Optional
 
-@dataclass
-class MuxCfg(ModuleCommonCfg):
-    pgn_can_info_req: int = 0x021FF
-    pgn_can_mux_req: int  = 0x028FF
-    pgn_lin_cfg_req: int  = 0x040FF
-    pgn_lin_set_req: int  = 0x042FF
+class Mux:
+    """MUX high-level API.
 
-class Mux(BaseModule):
-    async def set_can_speeds(self, speeds: Dict[int, int], speeds_fd: Optional[Dict[int, int]] = None):
-        sigs = {}
-        for ch, br in speeds.items():
-            sigs[f"can{ch}_speed"] = int(br)
-        if speeds_fd:
-            for ch, br in speeds_fd.items():
-                sigs[f"can{ch}_speed_fd"] = int(br)
+    set_can_speeds accepts sparse dicts:
+      speeds={1:500000} speeds_fd={1:2000000}
+    The method introspects the DBC message "CAN_INFO_req" and auto-fills
+    all required fields (can{N}_speed and can{N}_speed_fd) with 0 if missing.
+    """
+    def __init__(self, cfg):
+        self.cfg = cfg
+
+    async def set_can_speeds(self, speeds: Optional[Dict[int,int]] = None, *, speeds_fd: Optional[Dict[int,int]] = None):
+        speeds = speeds or {}
+        speeds_fd = speeds_fd or {}
+
+        # Build signals dynamically from DBC message definition
+        msg = self.cfg.dbc.db.get_message_by_name("CAN_INFO_req")
+        sigs: Dict[str, Any] = {}
+
+        for s in msg.signals:
+            name = s.name
+            # Match patterns can{idx}_speed and can{idx}_speed_fd
+            if name.startswith("can") and name.endswith("_speed"):
+                try:
+                    idx = int(name[3:-6])  # between 'can' and '_speed'
+                    sigs[name] = int(speeds.get(idx, 0))
+                except Exception:
+                    pass
+            elif name.startswith("can") and name.endswith("_speed_fd"):
+                try:
+                    idx = int(name[3:-9])  # between 'can' and '_speed_fd'
+                    sigs[name] = int(speeds_fd.get(idx, 0))
+                except Exception:
+                    pass
+
         frame_id, payload = self.cfg.dbc.encode("CAN_INFO_req", sigs)
-        self.cfg.avtp.send_can(CTRL_BUS_ID, (frame_id & 0xFFFFFF00) | WILDCARD_SA, payload, eff=True)
-
-    async def set_mux_relays(self, int_enable: Optional[Dict[int, int]] = None, ext_out: Optional[Dict[int, int]] = None):
-        sigs = {}
-        if int_enable:
-            for ch, en in int_enable.items():
-                sigs[f"can_mux_int_can{ch}_en"] = int(en)
-        if ext_out:
-            for ch, out in ext_out.items():
-                sigs[f"can_mux_ext_can{ch}_out"] = int(out)
-        frame_id, payload = self.cfg.dbc.encode("CAN_MUX_req", sigs)
-        self.cfg.avtp.send_can(CTRL_BUS_ID, (frame_id & 0xFFFFFF00) | WILDCARD_SA, payload, eff=True)
-
-    async def lin_config(self, frames: List[dict]):
-        sigs = {}
-        for i, fr in enumerate(frames[:62]):
-            sigs[f"lin_cfg_frm{i}_enable"] = 1 if fr.get("enable", True) else 0
-            sigs[f"lin_cfg_frm{i}_dir_transmit"] = 1 if fr.get("dir_transmit", False) else 0
-            sigs[f"lin_cfg_frm{i}_cst_classic"] = 1 if fr.get("cst_classic", True) else 0
-            sigs[f"lin_cfg_frm{i}_len"] = int(fr.get("length", 8))
-        frame_id, payload = self.cfg.dbc.encode("LIN_CFG_req", sigs)
-        self.cfg.avtp.send_can(CTRL_BUS_ID, (frame_id & 0xFFFFFF00) | WILDCARD_SA, payload, eff=True)
-
-    async def lin_send_frame(self, frame_id: int, data: bytes):
-        d = bytes(data[:8]) + b"\x00" * max(0, 8 - len(data))
-        frame_id_enc, payload = self.cfg.dbc.encode("LIN_FRAME_SET_req", {
-            "lin_frame_id": frame_id,
-            **{f"lin_frame_data{i}": d[i] for i in range(8)}
-        })
-        self.cfg.avtp.send_can(CTRL_BUS_ID, (frame_id_enc & 0xFFFFFF00) | WILDCARD_SA, payload, eff=True)
+        await self.cfg.tx.send(frame_id, payload, extended=True, can_fd=True)

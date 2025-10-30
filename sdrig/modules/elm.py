@@ -1,47 +1,56 @@
-
 from __future__ import annotations
-from dataclasses import dataclass
-from typing import Dict
-from ..core.base import BaseModule, ModuleCommonCfg
+from typing import Dict, Any, Iterable, Optional
 
-@dataclass
-class ElmCfg(ModuleCommonCfg):
-    pass
+def _expand_enable_list(prefix: str, values: Optional[Iterable[int]], count: int) -> Dict[str, int]:
+    res: Dict[str, int] = {}
+    s = set(values or [])
+    for i in range(1, count+1):
+        res[f"{prefix}_{i}_enable"] = 1 if i in s else 0
+    return res
 
-class Elm(BaseModule):
-    async def set_op_mode(self, **modes):
-        frame_id, payload = self.cfg.dbc.encode("OP_MODE_req", modes)
-        self.cfg.avtp.send_can(0, (frame_id & 0xFFFFFF00) | 0xFE, payload, eff=True)
+class ELM:
+    """ELM high-level API mirroring UIO for OP_MODE_req."""
+    def __init__(self, cfg):
+        self.cfg = cfg
 
-    async def set_voltage_out(self, values: Dict[int, float]):
-        sigs = {f"voltage_o_{ch}_value": float(v) for ch, v in values.items()}
-        frame_id, payload = self.cfg.dbc.encode("VOLTAGE_OUT_VAL_req", sigs)
-        self.cfg.avtp.send_can(0, (frame_id & 0xFFFFFF00) | 0xFE, payload, eff=True)
+    async def set_op_mode(
+        self,
+        *,
+        vo_enable: Optional[Iterable[int]] = None,
+        vi_enable: Optional[Iterable[int]] = None,
+        co_enable: Optional[Iterable[int]] = None,
+        ci_enable: Optional[Iterable[int]] = None,
+        dout_enable: Optional[Iterable[int]] = None,
+        pwm_mode: Optional[Dict[int, int]] = None,
+    ):
+        pwm_mode = pwm_mode or {}
+        msg = self.cfg.dbc.db.get_message_by_name("OP_MODE_req")
 
-    async def set_current_out(self, values: Dict[int, float]):
-        sigs = {f"cur_elm_o_{ch}_value": float(v) for ch, v in values.items()}
-        frame_id, payload = self.cfg.dbc.encode("CUR_ELM_OUT_VAL_req", sigs)
-        self.cfg.avtp.send_can(0, (frame_id & 0xFFFFFF00) | 0xFE, payload, eff=True)
+        counts = {"vo": 0, "vi": 0, "co": 0, "ci": 0, "dout": 0, "pwm": 0}
+        for s in msg.signals:
+            for k in ["vo", "vi", "co", "ci", "dout"]:
+                if s.name.startswith(f"{k}_") and s.name.endswith("_enable"):
+                    try:
+                        idx = int(s.name.split("_")[1])
+                        counts[k] = max(counts[k], idx)
+                    except Exception:
+                        pass
+            if s.name.startswith("pwm_") and s.name.endswith("_op_mode"):
+                try:
+                    idx = int(s.name.split("_")[1])
+                    counts["pwm"] = max(counts["pwm"], idx)
+                except Exception:
+                    pass
 
-    async def set_dout(self, state: Dict[int, int]):
-        sigs = {f"switch_dout_{ch}": int(v) for ch, v in state.items()}
-        frame_id, payload = self.cfg.dbc.encode("SWITCH_DOUT_req", sigs)
-        self.cfg.avtp.send_can(0, (frame_id & 0xFFFFFF00) | 0xFE, payload, eff=True)
+        sigs: Dict[str, Any] = {}
+        sigs.update(_expand_enable_list("vo", vo_enable, counts["vo"]))
+        sigs.update(_expand_enable_list("vi", vi_enable, counts["vi"]))
+        sigs.update(_expand_enable_list("co", co_enable, counts["co"]))
+        sigs.update(_expand_enable_list("ci", ci_enable, counts["ci"]))
+        sigs.update(_expand_enable_list("dout", dout_enable, counts["dout"]))
 
-    async def read_voltage_in_once(self, timeout=1.0) -> dict:
-        return await self.wait_for("VOLTAGE_IN_ans", timeout=timeout)
+        for i in range(1, counts["pwm"]+1):
+            sigs[f"pwm_{i}_op_mode"] = int(pwm_mode.get(i, 0))
 
-    async def read_current_in_once(self, timeout=1.0) -> dict:
-        return await self.wait_for("CUR_ELM_IN_VAL_ans", timeout=timeout)
-
-    async def read_temp_in_once(self, timeout=1.0) -> dict:
-        return await self.wait_for("TEMP_ELM_IN_ans", timeout=timeout)
-
-    async def read_voltage_out_once(self, timeout=1.0) -> dict:
-        return await self.wait_for("VOLTAGE_OUT_VAL_ans", timeout=timeout)
-
-    async def read_current_out_once(self, timeout=1.0) -> dict:
-        return await self.wait_for("CUR_ELM_OUT_VAL_ans", timeout=timeout)
-
-    async def read_dout_once(self, timeout=1.0) -> dict:
-        return await self.wait_for("SWITCH_DOUT_ans", timeout=timeout)
+        frame_id, payload = self.cfg.dbc.encode("OP_MODE_req", sigs)
+        await self.cfg.tx.send(frame_id, payload, extended=True, can_fd=True)
