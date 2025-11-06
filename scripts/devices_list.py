@@ -193,13 +193,13 @@ if __name__ == "__main__":
     acf_can_data =  bytes(b'\x1f\x00\x00\x00\x00\x00\x00\x00')
 
     for _i in range(3):
-        manager.send_can_message(acf_can_bus_id, acf_can_id, acf_can_data, True, False)
+        manager.send_can_message(acf_can_bus_id, acf_can_id, acf_can_data, True, False,"FF:FF:FF:FF:FF:FF")
         time.sleep(0.05)
     
 
     try:
         while True:
-            manager.send_can_message(acf_can_bus_id, acf_can_id, acf_can_data, True, False)
+            manager.send_can_message(acf_can_bus_id, acf_can_id, acf_can_data, True, False,"FF:FF:FF:FF:FF:FF")
             handler.print_devices()
             time.sleep(1)
     except KeyboardInterrupt:

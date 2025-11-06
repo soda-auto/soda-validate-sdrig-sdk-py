@@ -53,7 +53,7 @@ class AvtpCanManager:
             )
         return mac
 
-    def build_packet(self, can_id: int, msg_id: int, data: bytes, extended_id: bool, can_fd: bool) -> Ether:
+    def build_packet(self, can_id: int, msg_id: int, data: bytes, extended_id: bool, can_fd: bool, dst: str) -> Ether:
 
         data = data[:64]
         payload_len = len(data)
@@ -73,7 +73,7 @@ class AvtpCanManager:
         avtp_payload_length = acf_payload_length
 
         # >>> единственное поведение, которое меняем: проставляем src MAC <<<
-        pkt = Ether(dst="ff:ff:ff:ff:ff:ff", src=self.src_mac, type=0x22F0) / AVTPPacket()
+        pkt = Ether(dst=dst, src=self.src_mac, type=0x22F0) / AVTPPacket()
         avtp = pkt[AVTPPacket]
 
         avtp.subtype = 0x82
@@ -102,8 +102,8 @@ class AvtpCanManager:
         self.sequence_number = (self.sequence_number + 1) % 256
         return pkt
 
-    def send_can_message(self, can_id: int, msg_id: int, data: bytes, extended_id: bool, can_fd: bool):
-        pkt = self.build_packet(can_id, msg_id, data, extended_id, can_fd)
+    def send_can_message(self, can_id: int, msg_id: int, data: bytes, extended_id: bool, can_fd: bool, dst: str):
+        pkt = self.build_packet(can_id, msg_id, data, extended_id, can_fd, dst)
         sendp(pkt, iface=self.iface, verbose=False)
 
     def start_receiving(self, callback: Callable[[int, bytes], None]):
