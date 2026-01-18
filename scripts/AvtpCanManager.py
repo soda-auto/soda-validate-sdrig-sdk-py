@@ -32,17 +32,17 @@ class AvtpCanManager:
 
     def _resolve_src_mac(self) -> str:
         mac = None
-        # 1) попробовать scapy
+        # 1) try scapy
         try:
             mac = get_if_hwaddr(self.iface)
         except Exception:
             mac = None
         if not mac or mac.startswith("00:00:00"):
-            # 2) попробовать /sys
+            # 2) try /sys
             mac = self._read_sys_mac(self.iface)
 
         if (not mac or mac.startswith("00:00:00")) and "." in self.iface:
-            # 3) если VLAN — взять MAC у родителя
+            # 3) if VLAN - get MAC from parent
             parent = self.iface.split(".", 1)[0]
             mac = self._read_sys_mac(parent) or (get_if_hwaddr(parent) if parent else None)
 
@@ -69,10 +69,10 @@ class AvtpCanManager:
         message_type = 0b010
         acf_header = (message_type << 9) | (quadlets & 0x1FFF)
 
-        # Общая длина AVTP-пейлоада (в байтах) — всё после поля sequence_number
+        # Total AVTP payload length (in bytes) - everything after sequence_number field
         avtp_payload_length = acf_payload_length
 
-        # >>> единственное поведение, которое меняем: проставляем src MAC <<<
+        # >>> Only behavior we change: set src MAC <<<
         pkt = Ether(dst=dst, src=self.src_mac, type=0x22F0) / AVTPPacket()
         avtp = pkt[AVTPPacket]
 
@@ -133,7 +133,7 @@ class AvtpCanManager:
                 if self.recv_callback:
                     self.recv_callback(bytes(pkt))
             except Exception:
-                # Никогда не падаем из-за одного кривого кадра
+                # Never crash from a single bad frame
                 pass
 
         sniff(iface=self.iface, prn=process, store=0, stop_filter=lambda x: not self.running)

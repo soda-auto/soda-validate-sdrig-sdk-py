@@ -279,8 +279,8 @@ def main():
         epilog=__doc__
     )
 
-    parser.add_argument("--iface", default="enp2s0.3900",
-                        help="Network interface (default: enp2s0.3900)")
+    parser.add_argument("--iface", default="enp0s31f6",
+                        help="Network interface (default: enp0s31f6)")
     parser.add_argument("--stream-id", type=int, default=1,
                         help="AVTP stream ID (default: 1)")
     parser.add_argument("--dbc", default="soda_xil_fd.dbc",

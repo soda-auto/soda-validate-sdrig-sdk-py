@@ -6,7 +6,7 @@ from AvtpCanManager import AvtpCanManager
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--iface", default="enp2s0.3900")
+    ap.add_argument("--iface", default="enp0s31f6")
     ap.add_argument("--stream-id", type=int, default=1)
     args = ap.parse_args()
 
