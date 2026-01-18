@@ -1,0 +1,6 @@
+sdrig/__pycache__/*
+sdrig/protocol/__pycache__/*
+sdrig/devices/__pycache__/*
+tests/__pycache__/*
+*.pyc
+.vscode/

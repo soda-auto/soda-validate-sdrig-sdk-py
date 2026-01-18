@@ -1,0 +1,58 @@
+version: '3.8'
+
+services:
+  sdrig-sdk:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: sdrig-sdk:latest
+    container_name: sdrig-sdk
+
+    # Required for AVTP/raw ethernet access
+    network_mode: host
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
+
+    # Environment variables from .env file
+    env_file:
+      - .env
+
+    # Mount current directory for development
+    volumes:
+      - .:/app
+
+    # Keep container running in interactive mode
+    stdin_open: true
+    tty: true
+
+    # Default command
+    command: /bin/bash
+
+  # Service for running examples
+  sdrig-examples:
+    extends: sdrig-sdk
+    container_name: sdrig-examples
+    volumes:
+      - ./examples:/app/examples:ro
+      - ./soda_xil_fd.dbc:/app/soda_xil_fd.dbc:ro
+    command: python examples/01_device_discovery.py
+
+  # Service for running tests
+  sdrig-tests:
+    extends: sdrig-sdk
+    container_name: sdrig-tests
+    volumes:
+      - ./tests:/app/tests:ro
+      - ./sdrig:/app/sdrig:ro
+    command: pytest tests/unit/ -v
+
+# Usage:
+# Build:        docker-compose build
+# Run shell:    docker-compose run --rm sdrig-sdk
+# Run example:  docker-compose run --rm sdrig-examples
+# Run tests:    docker-compose run --rm sdrig-tests
+#
+# Development:  docker-compose up -d sdrig-sdk
+#               docker-compose exec sdrig-sdk bash
+# Stop:         docker-compose down

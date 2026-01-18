@@ -19,7 +19,7 @@ def resolve_dst(s: str) -> str:
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--iface", default="enp2s0.3900")
+    ap.add_argument("--iface", default="enp0s31f6")
     ap.add_argument("--stream-id", type=int, default=1)
     ap.add_argument("--bus", type=lambda x: int(x, 0), default=0x00,
                     help="ACF/CAN route id (first parameter to AvtpCanManager.send_can_message)")
@@ -27,8 +27,8 @@ def main():
                     help="CAN message id (e.g. 0x18FF50E5)")
     ap.add_argument("--data", default="1122334455667788",
                     help="hex payload, up to 64 bytes (<=128 hex chars)")
-    ap.add_argument("--ext", action="store_true", help="use 29-bit (extended) ID")
-    ap.add_argument("--fd", action="store_true", help="set CAN-FD flag")
+    ap.add_argument("--ext", action="store_true", default=True, help="use 29-bit (extended) ID")
+    ap.add_argument("--fd", action="store_true", default=True, help="set CAN-FD flag")
     ap.add_argument("--dst", default="FF:FF:FF:FF:FF:FF",
                     help="target MAC or alias (UIO1/UIO2/UIO3/ELM1/ELM2/IFMUX)")
     args = ap.parse_args()

@@ -1,0 +1,112 @@
+[build-system]
+requires = ["setuptools>=65.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sdrig-sdk"
+version = "0.1.0"
+description = "Python SDK for SDRIG (Software-Defined Remote Interface Gateway)"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+authors = [
+    {name = "SODA Validate", email = "chubuchnyi@soda.auto"}
+]
+keywords = ["sdrig", "can", "avtp", "automotive", "hardware", "testing"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: System :: Hardware",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+dependencies = [
+    "scapy>=2.5.0",
+    "cantools>=39.0.0",
+    "python-can>=4.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "black>=22.0.0",
+    "pylint>=2.15.0",
+    "mypy>=0.990",
+]
+docs = [
+    "sphinx>=5.0.0",
+    "sphinx-rtd-theme>=1.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/soda-auto/soda-validate-sdrig-sdk-py"
+Documentation = "https://github.com/soda-auto/soda-validate-sdrig-sdk-py"
+Repository = "https://github.com/soda-auto/soda-validate-sdrig-sdk-py"
+"Bug Tracker" = "https://github.com/soda-auto/soda-validate-sdrig-sdk-py/issues"
+
+[tool.setuptools]
+packages = ["sdrig", "sdrig.devices", "sdrig.protocol", "sdrig.utils", "sdrig.types"]
+
+[tool.setuptools.package-data]
+"*" = ["*.dbc"]
+
+[tool.black]
+line-length = 100
+target-version = ['py38', 'py39', 'py310', 'py311', 'py312']
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+  # directories
+  \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | build
+  | dist
+)/
+'''
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+addopts = "-ra -q --strict-markers"
+testpaths = [
+    "tests",
+]
+python_files = ["test_*.py", "*_test.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = false
+disallow_incomplete_defs = false
+check_untyped_defs = true
+no_implicit_optional = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+warn_no_return = true
+warn_unreachable = true
+strict_equality = true
+
+[tool.pylint.messages_control]
+disable = [
+    "C0111",  # missing-docstring
+    "C0103",  # invalid-name
+    "R0913",  # too-many-arguments
+    "R0914",  # too-many-locals
+    "R0902",  # too-many-instance-attributes
+]
+
+[tool.pylint.format]
+max-line-length = 100
