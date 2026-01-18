@@ -22,7 +22,7 @@ def resolve_dst(s: str) -> str:
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--iface", default="enp2s0.3900")
+    ap.add_argument("--iface", default="enp0s31f6")
     ap.add_argument("--stream-id", type=int, default=1)
     ap.add_argument("--dbc", default="soda_xil_fd.dbc")
     ap.add_argument("--dst", default="FF:FF:FF:FF:FF:FF",
@@ -49,13 +49,13 @@ def main():
     data   = bytes([0x1F, 0, 0, 0, 0, 0, 0, 0])
 
     for _ in range(3):
-        mgr.send_can_message(can_id, msg_id, data, extended_id=True, can_fd=False, dst=dst)
+        mgr.send_can_message(can_id, msg_id, data, extended_id=True, can_fd=True, dst=dst)
         time.sleep(0.05)
 
     print("Waiting for MODULE_INFO / PIN_INFO ... (Ctrl+C to stop)")
     try:
         while True:
-            mgr.send_can_message(can_id, msg_id, data, extended_id=True, can_fd=False, dst=dst)
+            mgr.send_can_message(can_id, msg_id, data, extended_id=True, can_fd=True, dst=dst)
             for mac, dev in handler.devices.items():
                 if "PIN_INFO" in dev:
                     pin_info = dev["PIN_INFO"]

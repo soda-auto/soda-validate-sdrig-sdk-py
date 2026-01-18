@@ -4,6 +4,12 @@ from typing import Dict, Any
 import socket
 import struct
 import time
+import sys
+from pathlib import Path
+
+# Add parent directory to path to import from sdrig package
+sys.path.insert(0, str(Path(__file__).parent.parent))
+from sdrig.protocol.can_protocol import normalize_can_id_for_dbc
 
 class CanMessageHandler:
     def __init__(self, dbc_path: str):
@@ -16,15 +22,6 @@ class CanMessageHandler:
     def extract_pgn(self,can_id: int) -> int:
         # PGN: bits 8–25
         return (can_id >> 8) & 0x3FFFF
-
-    def fix_can_id_j1939(self,can_id: int) -> int:
-        """
-        Replace source address (lowest byte) with 0xFE (wildcard)
-        """
-        if not self.is_j1939(can_id):
-            return can_id
-        return (can_id & 0xFFFFFF00) | 0x080000FE
-    
 
     def print_devices(self):
         
@@ -99,7 +96,7 @@ class CanMessageHandler:
         bus_id = (message[3] ) & 0x1F
         frame_length = (message_length_quadlets * 4 ) - 8
         can_id = ((message[4] & 0x1F) << 24) | (message[5] << 16) | (message[6] << 8) | (message[7] & 0xFF)
-        can_id = self.fix_can_id_j1939(can_id)
+        can_id = normalize_can_id_for_dbc(can_id)
         data = message[8:(message_length_quadlets * 4 )]
         des_message = {}
         if bus_id == 0 :
@@ -186,20 +183,20 @@ class CanMessageHandler:
 
 if __name__ == "__main__":
     handler = CanMessageHandler('soda_xil_fd.dbc')
-    manager = AvtpCanManager(iface="enp2s0.3900", stream_id=1)
+    manager = AvtpCanManager(iface="enp0s31f6", stream_id=1)
     manager.start_receiving(handler.parse_avtp_frame)
     acf_can_bus_id = int(0)
     acf_can_id = int(0x0400fffe)
     acf_can_data =  bytes(b'\x1f\x00\x00\x00\x00\x00\x00\x00')
 
     for _i in range(3):
-        manager.send_can_message(acf_can_bus_id, acf_can_id, acf_can_data, True, False,"FF:FF:FF:FF:FF:FF")
+        manager.send_can_message(acf_can_bus_id, acf_can_id, acf_can_data, True, True,"FF:FF:FF:FF:FF:FF")
         time.sleep(0.05)
     
 
     try:
         while True:
-            manager.send_can_message(acf_can_bus_id, acf_can_id, acf_can_data, True, False,"FF:FF:FF:FF:FF:FF")
+            manager.send_can_message(acf_can_bus_id, acf_can_id, acf_can_data, True, True,"FF:FF:FF:FF:FF:FF")
             handler.print_devices()
             time.sleep(1)
     except KeyboardInterrupt:
