@@ -330,7 +330,7 @@ class IntegrationTest:
 
         # Test CAN_INFO messages
         self.log("\nTesting CAN_INFO_REQ (0x021FE) / CAN_INFO_ANS (0x020FE)...")
-        self.ifmux.channel(0).set_speed(CANSpeed.CAN_500K, CANSpeed.CAN_FD_2M)
+        self.ifmux.channel(0).set_speed(CANSpeed.SPEED_2M)
         time.sleep(0.2)
         self.assert_pgn_sent(PGN.CAN_INFO_REQ, "CAN_INFO_REQ sent")
         self.assert_pgn_received(PGN.CAN_INFO_ANS, "CAN_INFO_ANS received", timeout=1.0)
@@ -339,7 +339,7 @@ class IntegrationTest:
         self.log("\nTesting CAN_STATE_ANS (0x022FE)...")
         time.sleep(0.5)
         self.assert_pgn_received(PGN.CAN_STATE_ANS, "CAN_STATE_ANS received", timeout=2.0)
-        state = self.ifmux.can(0).get_state()
+        state = self.ifmux.channel(0).get_state()
         self.assert_true(state is not None, f"CAN state: {state}")
 
         # Test CAN_MUX messages

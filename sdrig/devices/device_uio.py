@@ -128,7 +128,7 @@ class Pin:
         Set PWM output on this pin
 
         Args:
-            frequency: PWM frequency in Hz (20-5000)
+            frequency: PWM frequency in Hz (0-5000)
             duty_cycle: Duty cycle in percent (0-100)
             voltage: PWM voltage level in volts (default: 5.0)
 
@@ -138,8 +138,8 @@ class Pin:
             but is internally clamped to 5.0V.
         """
         # Validate frequency range
-        if not 20 <= frequency <= 5000:
-            raise ValueError(f"Frequency must be 20-5000 Hz, got {frequency}")
+        if not 0 <= frequency <= 5000:
+            raise ValueError(f"Frequency must be 0-5000 Hz, got {frequency}")
 
         # Validate duty cycle range
         if not 0 <= duty_cycle <= 100:

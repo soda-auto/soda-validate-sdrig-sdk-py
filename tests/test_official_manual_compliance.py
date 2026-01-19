@@ -146,19 +146,21 @@ class ManualComplianceTest:
         self.log("      SDK implementation uses task_monitor with correct intervals:")
         self.log("      - UIO: MODULE_INFO every 9s, parameters every 3s")
         self.log("      - ELoad: MODULE_INFO every 9s, parameters every 3s")
+        self.log("      For performance optimisation, this has been changed ")
+        self.log("      to MODULE_INFO every 4s, parameters every 0.1s")
 
         # Check task monitor configuration
         if hasattr(uio, 'task_monitor') and hasattr(uio.task_monitor, 'tasks'):
             tasks = uio.task_monitor.tasks
             for task_name, task_info in tasks.items():
                 if 'module_info' in task_name.lower():
-                    interval = task_info.get('interval_sec', 0)
-                    self.assert_in_range(interval, 8.0, 10.0,
-                                       f"MODULE_INFO interval is 9±1s (configured: {interval}s)")
+                    interval = task_info.period_us * 1e-6
+                    self.assert_in_range(interval, 3.0, 5.0,
+                                       f"MODULE_INFO interval is 4±1s (configured: {interval}s)")
                 elif 'parameter' in task_name.lower() or 'send_all' in task_name.lower():
-                    interval = task_info.get('interval_sec', 0)
-                    self.assert_in_range(interval, 2.0, 4.0,
-                                       f"Parameter interval is 3±1s (configured: {interval}s)")
+                    interval = task_info.period_us * 1e-6
+                    self.assert_in_range(interval, 0.05, 0.15,
+                                       f"Parameter interval is 0.1±0.05s (configured: {interval}s)")
 
     def test_message_sequence(self, uio):
         """
@@ -349,7 +351,7 @@ class ManualComplianceTest:
         time.sleep(0.5)
 
         # Check that ICU switch is enabled
-        icu_switch = uio._switch_states.get('icu', {}).get(3, False)
+        icu_switch = uio._switch_states['icu'][2] # Pin 3 is index 2
         self.assert_true(icu_switch == True, "ICU switch enabled for pin 3")
 
         # Read PWM input (should not fail)
@@ -361,8 +363,8 @@ class ManualComplianceTest:
         uio.pin(4).set_pwm(frequency=1000, duty_cycle=50.0)
         time.sleep(0.5)
 
-        pwm_switch = uio._switch_states.get('pwm', {}).get(4, False)
-        icu_switch = uio._switch_states.get('icu', {}).get(4, False)
+        pwm_switch = uio._switch_states['pwm'][3] # Pin 4 is index 3
+        icu_switch = uio._switch_states['icu'][3] # Pin 4 is index 3
         self.assert_true(pwm_switch == True, "PWM switch enabled for pin 4")
         self.assert_true(icu_switch == True, "ICU switch enabled for pin 4 (for readback)")
 
@@ -400,11 +402,11 @@ class ManualComplianceTest:
                            f"{percent}% = {calculated:.1f}mA (expected {expected_ma}mA)")
 
             # Set current
-            uio.pin(1).set_current(calculated)
+            uio.pin(1).set_tx_current(calculated)
             time.sleep(0.3)
 
         # Cleanup
-        uio.pin(1).set_current(0.0)
+        uio.pin(1).set_tx_current(0.0)
         time.sleep(0.2)
 
     def test_device_info_pgn_values(self):
@@ -473,10 +475,10 @@ class ManualComplianceTest:
             uio_mac = None
             eload_mac = None
 
-            for device in devices:
-                if 'UIO' in device.device_type.upper():
+            for _, device in devices.items():
+                if 'UIO' in device.app_name.upper():
                     uio_mac = device.mac_address
-                elif 'ELOAD' in device.device_type.upper() or 'ELM' in device.device_type.upper():
+                elif 'ELOAD' in device.app_name.upper() or 'ELM' in device.app_name.upper():
                     eload_mac = device.mac_address
 
             # Connect to devices
