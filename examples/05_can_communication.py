@@ -58,10 +58,13 @@ def main():
         ifmux.channel(0).set_speed(CANSpeed.SPEED_500K)
         ifmux.channel(0).set_internal_relay(True) # Enable internal relay
         #ifmux.channel(0).set_external_relay(1, True)  # Connect to Channel 1 via relay matrix optional
+        #ifmux.channel(0).set_external_relay(0, True)  # Connect to Channel 1 via relay matrix optional
 
         # Channel 1: 500 kbps
         ifmux.channel(1).set_speed(CANSpeed.SPEED_500K)
         ifmux.channel(1).set_internal_relay(True)   # Enable internal relay
+        #ifmux.channel(1).set_external_relay(0, True)  # Connect to Channel 0 via relay matrix optional
+        #ifmux.channel(1).set_external_relay(1, True)  # Connect to Channel 0 via relay matrix optional
 
         time.sleep(1)
 
