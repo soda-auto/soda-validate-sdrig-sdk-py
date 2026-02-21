@@ -44,10 +44,15 @@ class RelayState(IntEnum):
 
 
 class CANSpeed(IntEnum):
-    """CAN bus speed configuration"""
+    """CAN classic bus speed configuration (arbitration phase)"""
     SPEED_125K = 125000
     SPEED_250K = 250000
     SPEED_500K = 500000
+    SPEED_1M = 1000000
+
+
+class CANFDSpeed(IntEnum):
+    """CAN FD data phase speed configuration"""
     SPEED_1M = 1000000
     SPEED_2M = 2000000
     SPEED_4M = 4000000

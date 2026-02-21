@@ -24,6 +24,7 @@ from .types.enums import (
     FeatureState,
     RelayState,
     CANSpeed,
+    CANFDSpeed,
     CANState,
     PGN
 )
@@ -61,6 +62,7 @@ __all__ = [
     'FeatureState',
     'RelayState',
     'CANSpeed',
+    'CANFDSpeed',
     'CANState',
     'PGN',
 

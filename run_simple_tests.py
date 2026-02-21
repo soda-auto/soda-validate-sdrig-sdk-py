@@ -24,6 +24,7 @@ Feature = enums.Feature
 FeatureState = enums.FeatureState
 RelayState = enums.RelayState
 CANSpeed = enums.CANSpeed
+CANFDSpeed = enums.CANFDSpeed
 CANState = enums.CANState
 LastErrorCode = enums.LastErrorCode
 
@@ -34,32 +35,32 @@ def test_pgn_values():
     print("="*70)
 
     tests = [
-        ("MODULE_INFO_REQ", PGN.MODULE_INFO_REQ, 0x00000),
-        ("MODULE_INFO", PGN.MODULE_INFO, 0x00100),
-        ("MODULE_INFO_EX", PGN.MODULE_INFO_EX, 0x00800),
-        ("MODULE_INFO_BOOT", PGN.MODULE_INFO_BOOT, 0x00200),
-        ("PIN_INFO", PGN.PIN_INFO, 0x01000),
-        ("OP_MODE_REQ", PGN.OP_MODE_REQ, 0x121FF),
-        ("OP_MODE_ANS", PGN.OP_MODE_ANS, 0x120FF),
-        ("VOLTAGE_IN_ANS", PGN.VOLTAGE_IN_ANS, 0x114FF),
-        ("VOLTAGE_OUT_VAL_REQ", PGN.VOLTAGE_OUT_VAL_REQ, 0x116FF),
-        ("PWM_IN_ANS", PGN.PWM_IN_ANS, 0x122FF),
-        ("CUR_LOOP_IN_VAL_ANS", PGN.CUR_LOOP_IN_VAL_ANS, 0x128FF),
-        ("SWITCH_OUTPUT_REQ", PGN.SWITCH_OUTPUT_REQ, 0x123FF),
-        ("VOLTAGE_ELM_OUT_VAL_REQ", PGN.VOLTAGE_ELM_OUT_VAL_REQ, 0x116FF),
-        ("VOLTAGE_ELM_IN_ANS", PGN.VOLTAGE_ELM_IN_ANS, 0x114FF),
-        ("CUR_ELM_OUT_VAL_REQ", PGN.CUR_ELM_OUT_VAL_REQ, 0x129FF),
-        ("CUR_ELM_IN_VAL_ANS", PGN.CUR_ELM_IN_VAL_ANS, 0x12AFF),
-        ("TEMP_ELM_IN_ANS", PGN.TEMP_ELM_IN_ANS, 0x12EFF),
-        ("SWITCH_ELM_DOUT_REQ", PGN.SWITCH_ELM_DOUT_REQ, 0x12CFF),
-        ("SWITCH_ELM_DOUT_ANS", PGN.SWITCH_ELM_DOUT_ANS, 0x12DFF),
-        ("CAN_INFO_REQ", PGN.CAN_INFO_REQ, 0x021FF),
-        ("CAN_INFO_ANS", PGN.CAN_INFO_ANS, 0x02000),
-        ("CAN_MUX_REQ", PGN.CAN_MUX_REQ, 0x028FF),
-        ("CAN_MUX_ANS", PGN.CAN_MUX_ANS, 0x02900),
-        ("LIN_CFG_REQ", PGN.LIN_CFG_REQ, 0x140FF),
-        ("LIN_FRAME_SET_REQ", PGN.LIN_FRAME_SET_REQ, 0x142FF),
-        ("LIN_FRAME_RCVD_ANS", PGN.LIN_FRAME_RCVD_ANS, 0x143FF),
+        ("MODULE_INFO_REQ", PGN.MODULE_INFO_REQ, 0x000FE),
+        ("MODULE_INFO", PGN.MODULE_INFO, 0x001FE),
+        ("MODULE_INFO_EX", PGN.MODULE_INFO_EX, 0x008FE),
+        ("MODULE_INFO_BOOT", PGN.MODULE_INFO_BOOT, 0x002FE),
+        ("PIN_INFO", PGN.PIN_INFO, 0x010FE),
+        ("OP_MODE_REQ", PGN.OP_MODE_REQ, 0x121FE),
+        ("OP_MODE_ANS", PGN.OP_MODE_ANS, 0x120FE),
+        ("VOLTAGE_IN_ANS", PGN.VOLTAGE_IN_ANS, 0x114FE),
+        ("VOLTAGE_OUT_VAL_REQ", PGN.VOLTAGE_OUT_VAL_REQ, 0x116FE),
+        ("PWM_IN_ANS", PGN.PWM_IN_ANS, 0x122FE),
+        ("CUR_LOOP_IN_VAL_ANS", PGN.CUR_LOOP_IN_VAL_ANS, 0x128FE),
+        ("SWITCH_OUTPUT_REQ", PGN.SWITCH_OUTPUT_REQ, 0x123FE),
+        ("VOLTAGE_ELM_OUT_VAL_REQ", PGN.VOLTAGE_ELM_OUT_VAL_REQ, 0x116FE),
+        ("VOLTAGE_ELM_IN_ANS", PGN.VOLTAGE_ELM_IN_ANS, 0x114FE),
+        ("CUR_ELM_OUT_VAL_REQ", PGN.CUR_ELM_OUT_VAL_REQ, 0x129FE),
+        ("CUR_ELM_IN_VAL_ANS", PGN.CUR_ELM_IN_VAL_ANS, 0x12AFE),
+        ("TEMP_ELM_IN_ANS", PGN.TEMP_ELM_IN_ANS, 0x12EFE),
+        ("SWITCH_ELM_DOUT_REQ", PGN.SWITCH_ELM_DOUT_REQ, 0x12CFE),
+        ("SWITCH_ELM_DOUT_ANS", PGN.SWITCH_ELM_DOUT_ANS, 0x12DFE),
+        ("CAN_INFO_REQ", PGN.CAN_INFO_REQ, 0x021FE),
+        ("CAN_INFO_ANS", PGN.CAN_INFO_ANS, 0x020FE),
+        ("CAN_MUX_REQ", PGN.CAN_MUX_REQ, 0x028FE),
+        ("CAN_MUX_ANS", PGN.CAN_MUX_ANS, 0x029FE),
+        ("LIN_CFG_REQ", PGN.LIN_CFG_REQ, 0x040FE),
+        ("LIN_FRAME_SET_REQ", PGN.LIN_FRAME_SET_REQ, 0x042FE),
+        ("LIN_FRAME_RCVD_ANS", PGN.LIN_FRAME_RCVD_ANS, 0x043FE),
     ]
 
     passed = 0
@@ -172,9 +173,6 @@ def test_can_speeds():
         ("SPEED_250K", CANSpeed.SPEED_250K, 250000),
         ("SPEED_500K", CANSpeed.SPEED_500K, 500000),
         ("SPEED_1M", CANSpeed.SPEED_1M, 1000000),
-        ("SPEED_2M", CANSpeed.SPEED_2M, 2000000),
-        ("SPEED_4M", CANSpeed.SPEED_4M, 4000000),
-        ("SPEED_5M", CANSpeed.SPEED_5M, 5000000),
     ]
 
     passed = 0
@@ -186,6 +184,23 @@ def test_can_speeds():
             passed += 1
         else:
             print(f"  ✗ CANSpeed.{name} = {actual} (expected {expected})")
+            failed += 1
+
+    # Test CANFDSpeed enum
+    print("\n  CAN FD data phase speeds:")
+    fd_tests = [
+        ("SPEED_1M", CANFDSpeed.SPEED_1M, 1000000),
+        ("SPEED_2M", CANFDSpeed.SPEED_2M, 2000000),
+        ("SPEED_4M", CANFDSpeed.SPEED_4M, 4000000),
+        ("SPEED_5M", CANFDSpeed.SPEED_5M, 5000000),
+    ]
+
+    for name, actual, expected in fd_tests:
+        if actual == expected:
+            print(f"  ✓ CANFDSpeed.{name} = {actual}")
+            passed += 1
+        else:
+            print(f"  ✗ CANFDSpeed.{name} = {actual} (expected {expected})")
             failed += 1
 
     return passed, failed
