@@ -13,7 +13,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
 from sdrig.types.enums import (
     PGN, DeviceType, Feature, FeatureState,
-    RelayState, CANSpeed, CANState, LastErrorCode
+    RelayState, CANSpeed, CANFDSpeed, CANState, LastErrorCode
 )
 
 
@@ -155,17 +155,25 @@ class TestRelayState:
 
 
 class TestCANSpeed:
-    """Test CANSpeed enum"""
+    """Test CANSpeed enum (classic / arbitration phase)"""
 
     def test_can_speeds(self):
-        """Test CAN speed values"""
+        """Test classic CAN speed values"""
         assert CANSpeed.SPEED_125K == 125000
         assert CANSpeed.SPEED_250K == 250000
         assert CANSpeed.SPEED_500K == 500000
         assert CANSpeed.SPEED_1M == 1000000
-        assert CANSpeed.SPEED_2M == 2000000
-        assert CANSpeed.SPEED_4M == 4000000
-        assert CANSpeed.SPEED_5M == 5000000
+
+
+class TestCANFDSpeed:
+    """Test CANFDSpeed enum (data phase)"""
+
+    def test_can_fd_speeds(self):
+        """Test CAN FD data phase speed values"""
+        assert CANFDSpeed.SPEED_1M == 1000000
+        assert CANFDSpeed.SPEED_2M == 2000000
+        assert CANFDSpeed.SPEED_4M == 4000000
+        assert CANFDSpeed.SPEED_5M == 5000000
 
 
 class TestCANState:

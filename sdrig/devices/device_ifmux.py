@@ -7,7 +7,7 @@ multiplexer modules with 8 CAN channels and optional LIN support.
 
 from typing import List, Dict, Optional, Callable
 from ..devices.device_sdr import DeviceSDR
-from ..types.enums import DeviceType, PGN, CANSpeed, CANState, LastErrorCode
+from ..types.enums import DeviceType, PGN, CANSpeed, CANFDSpeed, CANState, LastErrorCode
 from ..types.structs import CANChannelState
 from ..utils.logger import get_logger
 
@@ -38,43 +38,80 @@ class CANChannel:
         self.channel_id = channel_id
         self.state = CANChannelState(channel_id=channel_id)
 
+    # Classic speed value mapping: 0=OFF, 1=250K, 2=500K, 3=1M
+    _CLASSIC_SPEED_MAP = {
+        125000: 1,   # 125K (mapped to 250K - closest supported)
+        250000: 1,
+        500000: 2,
+        1000000: 3,
+    }
+
+    # FD data phase speed value mapping: 0=OFF, 1=1M, 2=2M, 3=4M, 4=5M, 5=8M
+    _FD_SPEED_MAP = {
+        1000000: 1,
+        2000000: 2,
+        4000000: 3,
+        5000000: 4,
+        8000000: 5,
+    }
+
     def set_speed(self, speed: CANSpeed):
         """
-        Set CAN bus speed
+        Set classic CAN bus speed (disables CAN FD on this channel)
+
+        For CAN FD use set_speed_fd() which configures both arbitration
+        and data phase speeds independently.
 
         Args:
-            speed: CAN speed enum
+            speed: Classic CAN speed enum (125K..1M)
         """
-        # Map CAN speed values to classic and FD fields
-        # Classic speeds: 0=OFF, 1=250K, 2=500K, 3=1M
-        # FD speeds: 0=OFF, 1=1M, 2=2M, 3=4M, 4=5M, 5=8M
-        if speed.value >= 1000000:  # CAN FD speeds
-            self.device._can_speeds[self.channel_id] = 0  # Disable classic
-            if speed.value == 1000000:
-                self.device._can_speeds_fd[self.channel_id] = 1
-            elif speed.value == 2000000:
-                self.device._can_speeds_fd[self.channel_id] = 2
-            elif speed.value == 4000000:
-                self.device._can_speeds_fd[self.channel_id] = 3
-            elif speed.value == 5000000:
-                self.device._can_speeds_fd[self.channel_id] = 4
-            elif speed.value == 8000000:
-                self.device._can_speeds_fd[self.channel_id] = 5
-        else:  # Classic CAN speeds
-            self.device._can_speeds_fd[self.channel_id] = 0  # Disable FD
-            if speed.value == 250000:
-                self.device._can_speeds[self.channel_id] = 1
-            elif speed.value == 500000:
-                self.device._can_speeds[self.channel_id] = 2
-            elif speed.value == 1000000:
-                self.device._can_speeds[self.channel_id] = 3
-            else:
-                self.device._can_speeds[self.channel_id] = 0  # OFF
+        code = self._CLASSIC_SPEED_MAP.get(speed.value, 0)
+        self.device._can_speeds[self.channel_id] = code
+        self.device._can_speeds_fd[self.channel_id] = 0  # Disable FD
 
         self.state.speed = speed.value
-        logger.debug(f"Channel {self.channel_id}: Set speed to {speed.value} bps")
+        logger.debug(f"Channel {self.channel_id}: Set classic CAN speed to {speed.value} bps")
 
-        # Send immediately if value changed (Performance optimization - change detection)
+        self._send_if_changed()
+
+    def set_speed_fd(
+        self,
+        data_speed: CANFDSpeed,
+        arbitration_speed: CANSpeed = CANSpeed.SPEED_500K,
+    ):
+        """
+        Set CAN FD speed with independent arbitration and data phase rates
+
+        CAN FD requires both an arbitration phase bitrate (classic) and a
+        data phase bitrate (FD). The firmware uses the classic speed field
+        for the arbitration phase and the FD speed field for the data phase.
+
+        Args:
+            data_speed: CAN FD data phase speed (1M..5M)
+            arbitration_speed: Arbitration phase speed (default 500K)
+        """
+        arb_code = self._CLASSIC_SPEED_MAP.get(arbitration_speed.value, 2)  # default 500K
+        fd_code = self._FD_SPEED_MAP.get(data_speed.value, 0)
+
+        if fd_code == 0:
+            raise ValueError(
+                f"Unsupported CAN FD data speed: {data_speed.value}. "
+                f"Supported: 1M, 2M, 4M, 5M"
+            )
+
+        self.device._can_speeds[self.channel_id] = arb_code
+        self.device._can_speeds_fd[self.channel_id] = fd_code
+
+        self.state.speed = data_speed.value
+        logger.debug(
+            f"Channel {self.channel_id}: Set CAN FD speed "
+            f"arb={arbitration_speed.value} bps, data={data_speed.value} bps"
+        )
+
+        self._send_if_changed()
+
+    def _send_if_changed(self):
+        """Send CAN_INFO_REQ if speed configuration changed"""
         if (self.device._can_speeds != self.device._can_speeds_last or
             self.device._can_speeds_fd != self.device._can_speeds_fd_last):
             self.device._send_can_info_req()

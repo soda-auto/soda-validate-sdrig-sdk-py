@@ -337,7 +337,7 @@ class DeviceSDR(ABC):
         while offset < (data_length + 26) and offset + 2 <= len(frame):
             # Read ACF header
             acf_header = struct.unpack_from('!H', frame, offset)[0]
-            message_length_quadlets = acf_header & 0xFF
+            message_length_quadlets = acf_header & 0x1FF
             message_length_bytes = message_length_quadlets * 4
 
             if offset + message_length_bytes > len(frame):

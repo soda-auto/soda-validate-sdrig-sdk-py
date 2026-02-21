@@ -158,24 +158,41 @@ from sdrig.types.enums import CANSpeed
 ifmux.channel(0).set_speed(CANSpeed.SPEED_500K)
 ```
 
-**Available Speeds:**
+**Classic CAN Speeds (`CANSpeed`):**
 
-| Speed | Value | Type | Common Use |
-|-------|-------|------|------------|
-| `SPEED_125K` | 125000 | Classic | Low-speed networks |
-| `SPEED_250K` | 250000 | Classic | Body electronics |
-| `SPEED_500K` | 500000 | Classic | Powertrain (most common) |
-| `SPEED_1M` | 1000000 | Classic/FD | High-speed networks |
-| `SPEED_2M` | 2000000 | FD | CAN FD data phase |
-| `SPEED_5M` | 5000000 | FD | High-performance CAN FD |
-| `SPEED_8M` | 8000000 | FD | Maximum CAN FD speed |
+| Speed | Value | Common Use |
+|-------|-------|------------|
+| `SPEED_125K` | 125000 | Low-speed networks |
+| `SPEED_250K` | 250000 | Body electronics |
+| `SPEED_500K` | 500000 | Powertrain (most common) |
+| `SPEED_1M` | 1000000 | High-speed networks |
 
-**Example - Multiple Channels:**
+**CAN FD Data Phase Speeds (`CANFDSpeed`):**
+
+| Speed | Value | Common Use |
+|-------|-------|------------|
+| `SPEED_1M` | 1000000 | Standard CAN FD |
+| `SPEED_2M` | 2000000 | Common CAN FD (most common) |
+| `SPEED_4M` | 4000000 | High-performance CAN FD |
+| `SPEED_5M` | 5000000 | Maximum CAN FD speed |
+
+**Example - Classic CAN:**
 ```python
-# Configure multiple CAN networks
+# Configure multiple classic CAN networks
 ifmux.channel(0).set_speed(CANSpeed.SPEED_500K)  # Powertrain CAN
 ifmux.channel(1).set_speed(CANSpeed.SPEED_250K)  # Body CAN
 ifmux.channel(2).set_speed(CANSpeed.SPEED_1M)    # Diagnostic CAN
+```
+
+**Example - CAN FD:**
+```python
+from sdrig.types.enums import CANSpeed, CANFDSpeed
+
+# CAN FD requires BOTH arbitration speed and data speed
+ifmux.channel(0).set_speed_fd(
+    data_speed=CANFDSpeed.SPEED_2M,           # FD data phase: 2 Mbps
+    arbitration_speed=CANSpeed.SPEED_500K,     # Arbitration phase: 500 kbps
+)
 ```
 
 ---
@@ -602,15 +619,18 @@ with SDRIG(iface="enp0s31f6", stream_id=1) as sdk:
 
 ```python
 from sdrig import SDRIG
-from sdrig.types.enums import CANSpeed
+from sdrig.types.enums import CANSpeed, CANFDSpeed
 import time
 
 def can_fd_test(ifmux, channel_id):
     """Test CAN FD with high-speed data phase"""
 
-    # Configure for CAN FD (5 Mbps data phase)
-    ifmux.channel(channel_id).set_speed(CANSpeed.SPEED_5M)
-    print(f"Channel {channel_id} configured for CAN FD @ 5 Mbps")
+    # CAN FD requires BOTH arbitration speed (classic) and data speed (FD)
+    ifmux.channel(channel_id).set_speed_fd(
+        data_speed=CANFDSpeed.SPEED_5M,            # FD data phase: 5 Mbps
+        arbitration_speed=CANSpeed.SPEED_500K,      # Arbitration: 500 kbps
+    )
+    print(f"Channel {channel_id} configured for CAN FD @ 500K/5M")
 
     # CAN FD allows up to 64 bytes
     large_payload = bytes(range(64))  # 0-63
@@ -915,7 +935,7 @@ time.sleep(0.1)
 |-----------|-------|
 | **Channels** | 8 (0-7) |
 | **CAN Classic Speeds** | 125K, 250K, 500K, 1M bps |
-| **CAN FD Speeds** | 1M, 2M, 4M, 5M, 8M bps |
+| **CAN FD Data Speeds** | 1M, 2M, 4M, 5M bps |
 | **CAN ID** | 11-bit standard, 29-bit extended |
 | **Data Length (Classic)** | Up to 8 bytes |
 | **Data Length (FD)** | Up to 64 bytes |
@@ -956,7 +976,7 @@ time.sleep(0.1)
 ### API Reference
 - **API Class**: `sdrig.devices.device_ifmux.DeviceIfMux`
 - **Channel Class**: `sdrig.devices.device_ifmux.CANChannel`
-- **Enums**: `sdrig.types.enums.CANSpeed`, `CANState`, `LastErrorCode`
+- **Enums**: `sdrig.types.enums.CANSpeed`, `CANFDSpeed`, `CANState`, `LastErrorCode`
 
 ### Standards
 - **ISO 11898**: CAN specification
@@ -976,7 +996,8 @@ time.sleep(0.1)
 
 | Method | Parameters | Description |
 |--------|------------|-------------|
-| `set_speed(speed)` | `CANSpeed` | Configure CAN speed |
+| `set_speed(speed)` | `CANSpeed` | Configure classic CAN speed |
+| `set_speed_fd(data_speed, arbitration_speed)` | `CANFDSpeed, CANSpeed` | Configure CAN FD speed |
 | `get_state()` | - | Get CAN controller state |
 | `get_lec()` | - | Get last error code |
 | `get_stats()` | - | Get TX/RX/error statistics |
@@ -995,9 +1016,14 @@ time.sleep(0.1)
 
 ### Common Patterns
 
-**Configure CAN:**
+**Configure classic CAN:**
 ```python
 ifmux.channel(0).set_speed(CANSpeed.SPEED_500K)
+```
+
+**Configure CAN FD:**
+```python
+ifmux.channel(0).set_speed_fd(CANFDSpeed.SPEED_2M, CANSpeed.SPEED_500K)
 ```
 
 **Send CAN:**
